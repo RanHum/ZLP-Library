@@ -1,10 +1,11 @@
 #include "mytcpserver.h"
 #include <QDebug>
 #include <QCoreApplication>
+#include <QString>
 
 MyTcpServer::~MyTcpServer()
 {
-    //mTcpSocket->close();
+    mTcpSocket->close();
     mTcpServer->close();
     server_status=0;
 }
@@ -33,10 +34,24 @@ void MyTcpServer::slotNewConnection(){
 }
 
 void MyTcpServer::slotServerRead(){
+    QByteArray array;
+    std::string mystr;
     while(mTcpSocket->bytesAvailable()>0)
     {
-        QByteArray array =mTcpSocket->readAll();
-        mTcpSocket->write(array);
+        array = mTcpSocket->readAll();
+        mystr = array.trimmed().toStdString();
+    }
+    if (mystr == "auth") {
+        mTcpSocket->write("Authorization");
+    }
+    else if (mystr == "reg") {
+        mTcpSocket->write("Registration");
+    }
+    else if (mystr == "message") {
+        mTcpSocket->write("Send message:");
+    }
+    else if (mystr == "disconnect") {
+        slotClientDisconnected();
     }
 }
 
