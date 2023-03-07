@@ -1,0 +1,3 @@
+@REM docker run --rm -v zlp-library_postgres:/dbdata-volume -v %cd%:/dbdata busybox tar zcvf /dbdata/zlp-library_postgres.tar.gz /dbdata-volume
+@REM docker run --rm -v zlp-library_pgadmin:/pgadata-volume -v %cd%:/dbdata busybox tar zcvf /dbdata/zlp-library_pgadmin.tar.gz /pgadata-volume
+docker run --rm -v zlp-library_postgres:/dbdata-volume -v zlp-library_pgadmin:/pgadata-volume -v %cd%/dbdata:/dbdata busybox sh -c "tar -zcvf /dbdata/zlp-library_postgres.tar.gz /dbdata-volume && tar -zcvf /dbdata/zlp-library_pgadmin.tar.gz /pgadata-volume"
