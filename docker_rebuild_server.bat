@@ -1,3 +1,2 @@
-call docker_stop
-docker volume rm zlp-library_server
-call docker_start
+docker compose down --volumes -t 1
+docker compose up -d --build
