@@ -41,18 +41,7 @@ void MyTcpServer::slotServerRead(){
         array = mTcpSocket->readAll();
         mystr = array.trimmed().toStdString();
     }
-    if (mystr == "auth") {
-        mTcpSocket->write("Authorization");
-    }
-    else if (mystr == "reg") {
-        mTcpSocket->write("Registration");
-    }
-    else if (mystr == "message") {
-        mTcpSocket->write("Send message:");
-    }
-    else if (mystr == "disconnect") {
-        slotClientDisconnected();
-    }
+    parser(mystr, mTcpSocket);
 }
 
 void MyTcpServer::slotClientDisconnected(){
