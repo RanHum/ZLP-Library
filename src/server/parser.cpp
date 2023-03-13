@@ -1,9 +1,12 @@
 #include <string>
 #include <iostream>
 #include <functions.h>
+#include <api_keywords.h>
+
 
 void parser(std::string line, QTcpSocket *clientSocket);
 void commandRecognizer(std::string command, std::map<std::string, std::string> request, QTcpSocket *clientSocket);
+
 
 void parser(std::string line, QTcpSocket *clientSocket)
 {
@@ -11,7 +14,7 @@ void parser(std::string line, QTcpSocket *clientSocket)
     if (line == "") return;
     if (pos == -1)
     {
-        clientSocket->write("Invalid data1\r\n");
+        clientSocket->write("Invalid data!\r\n");
         return;
     }
     std::string command = line.substr(0, pos);
@@ -46,18 +49,17 @@ void parser(std::string line, QTcpSocket *clientSocket)
 
 void commandRecognizer(std::string command, std::map<std::string, std::string> request, QTcpSocket *clientSocket)
 {
-    qDebug() << QByteArray::fromStdString(command);
-    if (command == "auth")
+    if (command == AUTHORIZATION)
     {
         std::string result = authorization(request, clientSocket);
         if (result.size() != 0) clientSocket->write(QByteArray::fromStdString(result));
     }
-    else if (command == "reg")
+    else if (command == REGISTRATION)
     {
         std::string result = registration(request, clientSocket);
         if (result.size() != 0) clientSocket->write(QByteArray::fromStdString(result));
     }
-    else if (command == "message")
+    else if (command == SEND_MESSAGE)
     {
         std::string result = sendMessage(request, clientSocket);
         if (result.size() != 0) clientSocket->write(QByteArray::fromStdString(result));

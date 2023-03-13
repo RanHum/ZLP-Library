@@ -1,4 +1,5 @@
 #include "mytcpserver.h"
+#include "parser.h"
 #include <QDebug>
 #include <QCoreApplication>
 #include <QString>

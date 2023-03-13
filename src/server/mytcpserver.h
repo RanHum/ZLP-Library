@@ -8,7 +8,6 @@
 #include <QByteArray>
 #include <QDebug>
 
-#include "parser.h"
 
 class MyTcpServer : public QObject
 {
