@@ -6,7 +6,10 @@
 
 MyTcpServer::~MyTcpServer()
 {
-    mTcpSocket->close();
+    foreach (int i, SClients.keys()) {
+        SClients[i]->close();
+        SClients.remove(i);
+    }
     mTcpServer->close();
     server_status=0;
 }
@@ -25,26 +28,30 @@ MyTcpServer::MyTcpServer(QObject *parent) : QObject(parent){
 
 void MyTcpServer::slotNewConnection(){
     if(server_status==1){
-        mTcpSocket = mTcpServer->nextPendingConnection();
-        mTcpSocket->write("Hello, World!!! I am echo server!\r\n");
-        connect(mTcpSocket, &QTcpSocket::readyRead,
+        QTcpSocket* clientSocket = mTcpServer->nextPendingConnection();
+        int user_socket_id = clientSocket->socketDescriptor();
+        SClients[user_socket_id] = clientSocket;
+        connect(SClients[user_socket_id], &QTcpSocket::readyRead,
                 this,&MyTcpServer::slotServerRead);
-        connect(mTcpSocket,&QTcpSocket::disconnected,
+        connect(SClients[user_socket_id], &QTcpSocket::disconnected,
                 this,&MyTcpServer::slotClientDisconnected);
     }
 }
 
 void MyTcpServer::slotServerRead(){
-    QByteArray array;
+    QTcpSocket* clientSocket = (QTcpSocket*)sender();
     std::string mystr;
-    while(mTcpSocket->bytesAvailable()>0)
+    while(clientSocket->bytesAvailable()>0)
     {
-        array = mTcpSocket->readAll();
+        QByteArray array = clientSocket->readAll();
         mystr = array.trimmed().toStdString();
     }
-    parser(mystr, mTcpSocket);
+    parser(mystr, clientSocket);
 }
 
 void MyTcpServer::slotClientDisconnected(){
-    mTcpSocket->close();
+    QTcpSocket* clientSocket = (QTcpSocket*)sender();
+    int user_socket_id = clientSocket->socketDescriptor();
+    clientSocket->close();
+    SClients.remove(user_socket_id);
 }

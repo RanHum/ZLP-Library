@@ -23,8 +23,8 @@ public slots:
     //void slotReadClient();
 private:
     QTcpServer * mTcpServer;
-    QTcpSocket * mTcpSocket;
     int server_status;
+    QMap<int, QTcpSocket*> SClients;
 };
 #endif // MYTCPSERVER_H
 
