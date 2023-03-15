@@ -40,11 +40,11 @@ void MyTcpServer::slotNewConnection(){
 
 void MyTcpServer::slotServerRead(){
     QTcpSocket* clientSocket = (QTcpSocket*)sender();
-    std::string mystr;
+    QString mystr;
     while(clientSocket->bytesAvailable()>0)
     {
         QByteArray array = clientSocket->readAll();
-        mystr = array.trimmed().toStdString();
+        mystr = array.trimmed();
     }
     parser(mystr, clientSocket);
 }

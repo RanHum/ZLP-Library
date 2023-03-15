@@ -3,8 +3,10 @@
 #define PARSER_H
 
 #include <QTcpSocket>
+#include <api_keywords.h>
 
-void parser(std::string line, QTcpSocket *clientSocket);
-void commandRecognizer(std::vector<std::string> request, QTcpSocket *clientSocket);
+void parser(QString line, QTcpSocket *clientSocket);
+void commandRecognizer(std::string command, Parameters request, QTcpSocket *clientSocket);
+
 
 #endif // PARSER_H

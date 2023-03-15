@@ -1,56 +1,42 @@
-#include <string>
-#include <iostream>
 #include <functions.h>
-#include <api_keywords.h>
+#include <parser.h>
+#include <QRegularExpression>
 
 
-void parser(std::string line, QTcpSocket *clientSocket);
-void commandRecognizer(std::string command, std::map<std::string, std::string> request, QTcpSocket *clientSocket);
-
-
-void parser(std::string line, QTcpSocket *clientSocket)
+void parser(QString line, QTcpSocket *clientSocket)
 {
-    int pos = line.find('?');
-    if (line == "") return;
+    int pos = line.indexOf('?');
+    if (line.isEmpty()) return;
     if (pos == -1)
     {
         clientSocket->write("Invalid data!\r\n");
         return;
     }
-    std::string command = line.substr(0, pos);
-    line.erase(0, pos + 1);
-
-    std::map<std::string, std::string> req;
-    std::string key = "";
-    std::string value = "";
-    bool isKey = true;
-    for (auto i : line)
-    {
-        if (i == '=') {
-            isKey = false;
-        }
-        else if (i == '&') {
-            req.insert(std::make_pair(key, value));
-            key = "";
-            value = "";
-            isKey = true;
-        }
-        else if (isKey)
-        {
-            key += i;
-        }
-        else {
-            value += i;
-        }
+    QRegularExpression command_regex("^[^?]+");
+    QRegularExpression params_regex("([^&]+)=([^&]+)");
+    QRegularExpressionMatch match = command_regex.match(line);
+    QString command;
+    if (match.hasMatch()) {
+        command = match.captured(0);
     }
-    req.insert(std::make_pair(key, value));
-    commandRecognizer(command, req, clientSocket);
+    else {
+        clientSocket->write("Invalid data!\r\n");
+        return;
+    }
+    QString params_str = line.mid(pos + 1);
+    std::map<std::string, std::string> params;
+    QRegularExpressionMatchIterator it = params_regex.globalMatch(params_str);
+    while (it.hasNext()) {
+        match = it.next();
+        params.insert(std::make_pair(match.captured(1).toStdString(), match.captured(2).toStdString()));
+    }
+    commandRecognizer(command.toStdString(), params, clientSocket);
 }
 
-void commandRecognizer(std::string command, std::map<std::string, std::string> request, QTcpSocket *clientSocket)
+void commandRecognizer(std::string command, Parameters request, QTcpSocket *clientSocket)
 {
     if (command_function_map.find(command) != command_function_map.end()) {
-        std::string result = command_function_map.at(command)(request, clientSocket);
+        std::string result = command_function_map.at(command)(request);
         if (result.size() != 0) clientSocket->write(QByteArray::fromStdString(result));
     }
     else

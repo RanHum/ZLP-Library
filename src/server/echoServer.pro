@@ -30,4 +30,5 @@ HEADERS += \
     api_keywords.h \
     functions.h \
     mytcpserver.h \
-    parser.h
+    parser.h \
+    zlp-commons.h

@@ -1,8 +1,9 @@
 
 #ifndef API_KEYWORDS_H
 #define API_KEYWORDS_H
-#include <string>
 #include <functions.h>
+#include <zlp-commons.h>
+
 
 const std::string
     API_ROUTE_AUTHORIZATION = "auth",
@@ -19,7 +20,7 @@ const std::string
     API_ROUTE_ACCEPT_INVITE = "invite_accept",
     API_ROUTE_CANCEL_INVITE = "invite_cancel";
 
-const std::map<std::string, std::function<std::string(std::map<std::string, std::string>, QTcpSocket *)>>
+const std::map<std::string, std::function<std::string(Parameters)>>
     command_function_map = {
         {API_ROUTE_AUTHORIZATION, authorization},
         {API_ROUTE_REGISTRATION, registration},
