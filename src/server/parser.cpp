@@ -49,19 +49,8 @@ void parser(std::string line, QTcpSocket *clientSocket)
 
 void commandRecognizer(std::string command, std::map<std::string, std::string> request, QTcpSocket *clientSocket)
 {
-    if (command == AUTHORIZATION)
-    {
-        std::string result = authorization(request, clientSocket);
-        if (result.size() != 0) clientSocket->write(QByteArray::fromStdString(result));
-    }
-    else if (command == REGISTRATION)
-    {
-        std::string result = registration(request, clientSocket);
-        if (result.size() != 0) clientSocket->write(QByteArray::fromStdString(result));
-    }
-    else if (command == SEND_MESSAGE)
-    {
-        std::string result = sendMessage(request, clientSocket);
+    if (command_function_map.find(command) != command_function_map.end()) {
+        std::string result = command_function_map.at(command)(request, clientSocket);
         if (result.size() != 0) clientSocket->write(QByteArray::fromStdString(result));
     }
     else
