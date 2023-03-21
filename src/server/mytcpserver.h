@@ -16,6 +16,7 @@ public:
     explicit MyTcpServer(QObject *parent = nullptr);
     ~MyTcpServer();
 public slots:
+    void close();
     void slotNewConnection();
     void slotClientDisconnected();
 
@@ -27,10 +28,3 @@ private:
     QMap<int, QTcpSocket*> SClients;
 };
 #endif // MYTCPSERVER_H
-
-
-
-
-
-
-

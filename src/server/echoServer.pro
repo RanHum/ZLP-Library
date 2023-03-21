@@ -1,6 +1,6 @@
 QT -= gui
 
-QT += network
+QT += network sql
 
 CONFIG += c++11 console
 
@@ -19,6 +19,7 @@ SOURCES += \
     functions.cpp \
         main.cpp \
         parser.cpp \
+        db_server.cpp \
     mytcpserver.cpp
 
 # Default rules for deployment.
@@ -31,4 +32,5 @@ HEADERS += \
     functions.h \
     mytcpserver.h \
     parser.h \
+    db_server.h \
     zlp-commons.h

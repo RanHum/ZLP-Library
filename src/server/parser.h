@@ -2,11 +2,9 @@
 #ifndef PARSER_H
 #define PARSER_H
 
-#include <QTcpSocket>
-#include <api_keywords.h>
+#include <zlp-commons.h>
 
-void parser(QString line, QTcpSocket *clientSocket);
-void commandRecognizer(std::string command, Parameters request, QTcpSocket *clientSocket);
-
+std::string execute_request(QString line);
+std::string commandDispatcher(std::string command, Parameters request);
 
 #endif // PARSER_H

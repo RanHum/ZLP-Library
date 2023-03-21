@@ -19,10 +19,10 @@ MyTcpServer::MyTcpServer(QObject *parent) : QObject(parent){
             this, &MyTcpServer::slotNewConnection);
 
     if(!mTcpServer->listen(QHostAddress::Any, 33333)){
-        qDebug() << "server is not started";
+        qDebug() << "Server failed to start, port is occupied or blocked";
     } else {
         server_status=1;
-        qDebug() << "server is started";
+        qDebug() << "Server started";
     }
 }
 
@@ -40,13 +40,15 @@ void MyTcpServer::slotNewConnection(){
 
 void MyTcpServer::slotServerRead(){
     QTcpSocket* clientSocket = (QTcpSocket*)sender();
-    QString mystr;
+    QString request_line;
     while(clientSocket->bytesAvailable()>0)
     {
         QByteArray array = clientSocket->readAll();
-        mystr = array.trimmed();
+        request_line = array.trimmed();
     }
-    parser(mystr, clientSocket);
+    if (request_line.isEmpty()) return;
+	auto result = QString::fromStdString(execute_request(request_line)).append('\n').replace(QRegularExpression("\n"), "\r\n");
+	clientSocket->write(QByteArray().append(result));
 }
 
 void MyTcpServer::slotClientDisconnected(){
@@ -54,4 +56,9 @@ void MyTcpServer::slotClientDisconnected(){
     int user_socket_id = clientSocket->socketDescriptor();
     clientSocket->close();
     SClients.remove(user_socket_id);
+}
+
+void MyTcpServer::close() {
+    this->~MyTcpServer();
+    QCoreApplication::quit();
 }
