@@ -58,6 +58,7 @@ CREATE TABLE IF NOT EXISTS zlplib.users
 (
     user_id integer NOT NULL DEFAULT nextval('zlplib.users_user_id_seq'::regclass),
     name character varying(50) NOT NULL,
+    password character varying(50) NOT NULL,
     avatar integer,
     CONSTRAINT users_pkey PRIMARY KEY (user_id),
     CONSTRAINT users_avatar_fkey FOREIGN KEY (avatar)
