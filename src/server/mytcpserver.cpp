@@ -1,8 +1,6 @@
 #include "mytcpserver.h"
 #include "parser.h"
-#include <QDebug>
 #include <QCoreApplication>
-#include <QString>
 
 MyTcpServer::~MyTcpServer()
 {
@@ -40,15 +38,14 @@ void MyTcpServer::slotNewConnection(){
 
 void MyTcpServer::slotServerRead(){
     QTcpSocket* clientSocket = (QTcpSocket*)sender();
-    QString request_line;
-    while(clientSocket->bytesAvailable()>0)
-    {
-        QByteArray array = clientSocket->readAll();
-        request_line = array.trimmed();
+	QByteArray array;
+    while (clientSocket->bytesAvailable() > 0) {
+		array = clientSocket->readAll().trimmed();
+	}
+    if (!array.isEmpty()) {
+	    clientSocket->write(execute_line(array));
+	    clientSocket->write("\r\n");
     }
-    if (request_line.isEmpty()) return;
-	auto result = QString::fromStdString(execute_request(request_line)).append('\n').replace(QRegularExpression("\n"), "\r\n");
-	clientSocket->write(QByteArray().append(result));
 }
 
 void MyTcpServer::slotClientDisconnected(){

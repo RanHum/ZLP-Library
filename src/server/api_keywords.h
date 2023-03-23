@@ -1,9 +1,11 @@
 
 #ifndef API_KEYWORDS_H
 #define API_KEYWORDS_H
-// #include <functions.h>
+#include <QJsonArray>
+#include <QJsonDocument>
+#include <QJsonObject>
+#include <QJsonValue>
 #include <zlp-commons.h>
-
 
 const std::string
     API_ROUTE_AUTHORIZATION = "auth",

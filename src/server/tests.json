@@ -1,0 +1,7 @@
+{"test"}
+["test"]
+{"_domain":"user","_intent":"login"}
+{"_domain":"user","_intent":"login","name":"Ranhum"}
+{"_domain":"user","_intent":"login","name":"Ranhum", "password":"qwerty"}
+{"_domain":"user"}
+{"_domain":"user","_intent":"get"}

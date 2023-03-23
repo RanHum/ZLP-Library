@@ -1,11 +1,9 @@
 #ifndef DB_SERVER_H
 #define DB_SERVER_H
-
 #include <QSqlQuery>
 #include <QObject>
 #include <QDebug>
 #include <QSqlError>
-#include <zlp-commons.h>
 
 class DB_Server : public QObject {
 	Q_OBJECT
@@ -42,6 +40,11 @@ public:
 	QSqlQuery query_simple(const QString q) {
 		QSqlQuery query;
 		query.exec(q);
+		return query;
+	}
+	QSqlQuery query_prepare(const QString q) {
+		QSqlQuery query;
+		query.prepare(q);
 		return query;
 	}
 public slots:

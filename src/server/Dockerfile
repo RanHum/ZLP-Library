@@ -7,6 +7,7 @@ WORKDIR /server
 COPY *.cpp /server
 COPY *.h /server
 COPY *.pro /server
+COPY *.json /server
 
 RUN qmake && make
 ENTRYPOINT [ "/server/echoServer" ]

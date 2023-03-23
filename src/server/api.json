@@ -1,0 +1,95 @@
+{
+	"api": {
+		"user": {
+			"register": {
+				"auth_routine": true,
+				"required": ["name", "password"]
+			},
+			"login": {
+				"auth_routine": true,
+				"required": ["name", "password"]
+			},
+			"edit": {
+				"optional": ["name", "password", "avatar"]
+			},
+			"exit": {
+				"required": []
+			},
+			"get": {
+				"required": ["user_id"]
+			}
+		},
+		"book": {
+			"get": {
+				"required": ["book_id"]
+			},
+			"add": {
+				"required": ["name"],
+				"optional": [
+					"book_cover",
+					"creation_date",
+					"description",
+					"page_count",
+					"format",
+					"locator",
+					"owner",
+					"genre_ids",
+					"authors_ids"
+				]
+			},
+			"delete": {
+				"admin": true,
+				"required": ["book_id"]
+			},
+			"edit": {
+				"required": ["book_id"],
+				"optional": [
+					"name",
+					"book_cover",
+					"creation_date",
+					"description",
+					"page_count",
+					"format",
+					"locator",
+					"owner"
+				]
+			}
+		}
+	},
+	"responses": {
+		"success": {
+			"status" : "Success"
+		},
+		"request_invalid": {
+			"status" : "Error",
+			"text": "Invalid JSON request!"
+		},
+		"auth_failed": {
+			"status" : "Error",
+			"text": "Auth failed!"
+		},
+		"username_exists": {
+			"status" : "Error",
+			"text": "Username assigning failed, it's already taken!"
+		},
+		"missing_fields": {
+			"status" : "Error",
+			"text": "Missing fields!",
+			"fields": []
+		}
+	},
+	"auth_fields": [
+		"_as_user_id",
+		"_with_password"
+	],
+	"intent_fields": [
+		"_domain",
+		"_intent"
+	],
+	"db_types_to_api_map": {
+		"integer": "integer",
+		"text": "string",
+		"character varying": "string",
+		"bytea": "b64"
+	}
+}
