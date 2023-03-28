@@ -16,11 +16,10 @@ CONFIG += c++11 console
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    functions.cpp \
         main.cpp \
         parser.cpp \
         db_server.cpp \
-    mytcpserver.cpp
+        mytcpserver.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -28,9 +27,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
-    api_keywords.h \
-    functions.h \
     mytcpserver.h \
     parser.h \
-    db_server.h \
-    zlp-commons.h
+    db_server.h

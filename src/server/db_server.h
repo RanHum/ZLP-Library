@@ -1,6 +1,8 @@
 #ifndef DB_SERVER_H
 #define DB_SERVER_H
 #include <QSqlQuery>
+#include <QSqlRecord>
+#include <QVariant>
 #include <QObject>
 #include <QDebug>
 #include <QSqlError>
@@ -32,10 +34,11 @@ public:
 		db.setUserName(db_user = user.isEmpty() ? db_user : user);
 		db.setPassword(db_pass = pass.isEmpty() ? db_pass : pass);
 		db.setPort(db_port = port ? port : db_port);
-		bool status = db.open();
-		if (!status)
-			qDebug() << db.lastError().text();
-		return status;
+		if (!db.open() && db.lastError().isValid()) {
+			qDebug() << "Error loading database:" << db.lastError();
+			return false;
+		}
+		return true;
 	}
 	QSqlQuery query_simple(const QString q) {
 		QSqlQuery query;

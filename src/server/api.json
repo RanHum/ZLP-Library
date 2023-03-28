@@ -3,20 +3,50 @@
 		"user": {
 			"register": {
 				"auth_routine": true,
-				"required": ["name", "password"]
+				"required": ["name", "password"],
+				"optional": ["avatar"],
+				"actions": [
+					{
+						"type": "test",
+						"sql": "select user_id, name, avatar from users where name = :name",
+						"error_when_not_empty": true,
+						"error": "Username is already taken!"
+					},
+					{
+						"type": "action",
+						"sql": "insert into users (name, password) values (:name, :password)"
+					},
+					"select * from users where name = :name"
+				]
 			},
 			"login": {
 				"auth_routine": true,
-				"required": ["name", "password"]
+				"required": ["name", "password"],
+				"actions": {
+						"sql": "select * from users where name = :name and password = :password",
+						"error": "Login failed!"
+					}
 			},
 			"edit": {
-				"optional": ["name", "password", "avatar"]
+				"optional": ["name", "password", "avatar"],
+				"actions": [{
+					"type":"action",
+					"template": true,
+					"sql": "update <users> set |FIELDS| where user_id = :_as_user_id"
+					},
+					"select * from users where user_id = :_as_user_id"
+				]
 			},
 			"exit": {
 				"required": []
 			},
 			"get": {
-				"required": ["user_id"]
+				"required": ["user_id"],
+				"actions": {
+						"multiple_rows": true,
+						"sql": "select user_id, name, avatar from users where user_id = :user_id",
+						"error": "No such user!"
+				}
 			}
 		},
 		"book": {
@@ -54,30 +84,149 @@
 					"owner"
 				]
 			}
+		},
+		"author": {
+			"get": {
+				"required": ["author_id"]
+			},
+			"add": {
+				"required": ["name"]
+			},
+			"edit": {
+				"required": ["author_id"]
+			}
+		},
+		"bookmark": {
+			"get": {
+				"required": ["user_id"],
+				"optional": [
+					"book_id", 
+					"status"
+				]
+			},
+			"add": {
+				"required": ["book_id"],
+				"optional": ["status"]
+			},
+			"edit": {
+				"required": ["book_id"],
+				"optional": ["status"]
+			},
+			"delete": {
+				"required": ["book_id"]
+			}
+		},
+		"desk": {
+			"get": {
+				"required": ["desk_id"]
+			},
+			"add": {
+				"required": ["name"]
+			},
+			"edit": {
+				"required": ["desk_id"],
+				"optional": ["name"]
+			},
+			"delete": {
+				"admin": true,
+				"required": ["desk_id"]
+			}
+		},
+		"genre": {
+			"get": {
+				"required": ["genre_id"]
+			},
+			"add": {
+				"required": ["name"]
+			},
+			"edit": {
+				"required": ["genre_id"]
+			}
+		},
+		"image": {
+			"get": {
+				"required": ["image_id"]
+			},
+			"add": {
+				"required": ["image"]
+			},
+			"edit": {
+				"required": ["image_id"]
+			}
+		},
+		"invite": {
+			"get": {
+				"required": ["desk_id", "user_id"]
+			},
+			"add": {
+				"required": ["desk_id", "user_id"]
+			},
+			"edit": {
+				"required": ["desk_id", "user_id"],
+				"optional": ["status"]
+			},
+			"delete": {
+				"required": ["desk_id", "user_id"]
+			}
+		},
+		"review": {
+			"get": {
+				"required": ["book_desk_id", "user_id"],
+				"optional": ["evaluation_mark", "description"]
+			},
+			"add": {
+				"required": [
+					"book_desk_id", 
+					"user_id", 
+					"evaluation_mark"
+				],
+				"optional": ["description"]
+			},
+			"edit": {
+				"required": ["book_desk_id", "user_id"],
+				"optional": ["evaluation_mark", "description"]
+			},
+			"delete": {
+				"required": ["book_desk_id", "user_id"]
+			}
 		}
 	},
 	"responses": {
 		"success": {
 			"status" : "Success"
 		},
+		"error": {
+			"status" : "Error"
+		},
 		"request_invalid": {
 			"status" : "Error",
 			"text": "Invalid JSON request!"
 		},
-		"auth_failed": {
+		"request_failed": {
 			"status" : "Error",
-			"text": "Auth failed!"
-		},
-		"username_exists": {
-			"status" : "Error",
-			"text": "Username assigning failed, it's already taken!"
+			"text": "Server Error!"
 		},
 		"missing_fields": {
 			"status" : "Error",
 			"text": "Missing fields!",
 			"fields": []
+		},
+		"auth_failed": {
+			"status" : "Error",
+			"text": "Auth failed!"
 		}
 	},
+	"intent_action_result":{
+		"type": "result"
+	},
+	"intent_action_template":{
+		"type": "result",
+		"sql": "",
+		"error": "",
+		"error_when_not_empty": false,
+		"multiple_rows": false
+	},
+	"auth_sql": "select * from users where user_id = :_as_user_id and password = :_with_password",
 	"auth_fields": [
 		"_as_user_id",
 		"_with_password"
@@ -86,10 +235,5 @@
 		"_domain",
 		"_intent"
 	],
-	"db_types_to_api_map": {
-		"integer": "integer",
-		"text": "string",
-		"character varying": "string",
-		"bytea": "b64"
-	}
+	"db_fields_query": "SELECT table_name, column_name, data_type FROM information_schema.columns WHERE table_schema = 'zlplib' ORDER BY table_name, ordinal_position"
 }

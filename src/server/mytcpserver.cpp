@@ -25,7 +25,7 @@ MyTcpServer::MyTcpServer(QObject *parent) : QObject(parent){
 }
 
 void MyTcpServer::slotNewConnection(){
-    if(server_status==1){
+    if(server_status==1) {
         QTcpSocket* clientSocket = mTcpServer->nextPendingConnection();
         int user_socket_id = clientSocket->socketDescriptor();
         SClients[user_socket_id] = clientSocket;
@@ -39,9 +39,8 @@ void MyTcpServer::slotNewConnection(){
 void MyTcpServer::slotServerRead(){
     QTcpSocket* clientSocket = (QTcpSocket*)sender();
 	QByteArray array;
-    while (clientSocket->bytesAvailable() > 0) {
+    while (clientSocket->bytesAvailable() > 0)
 		array = clientSocket->readAll().trimmed();
-	}
     if (!array.isEmpty()) {
 	    clientSocket->write(execute_line(array));
 	    clientSocket->write("\r\n");

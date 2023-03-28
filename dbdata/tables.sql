@@ -50,7 +50,7 @@ CREATE SEQUENCE IF NOT EXISTS zlplib.images_image_id_seq
 CREATE TABLE IF NOT EXISTS zlplib.images
 (
     image_id integer NOT NULL DEFAULT nextval('zlplib.images_image_id_seq'::regclass),
-    image bytea NOT NULL,
+    image text NOT NULL,
     CONSTRAINT images_pkey PRIMARY KEY (image_id)
 );
 
@@ -77,7 +77,7 @@ CREATE TABLE IF NOT EXISTS zlplib.users_to_desks
 (
     desk_id integer NOT NULL,
     user_id integer NOT NULL,
-    background bytea NOT NULL DEFAULT '0xFFFFFFFF'::bytea,
+    background character varying(20) NOT NULL DEFAULT "white",
     sort integer NOT NULL DEFAULT 0,
     CONSTRAINT users_to_desks_pkey PRIMARY KEY (desk_id, user_id),
     CONSTRAINT desk_id_fkey FOREIGN KEY (desk_id)

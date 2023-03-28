@@ -10,5 +10,16 @@
 			"password": "zlplibpass",
 			"database": "zlplib"
 		}
-	]
+	],
+	"files.associations": {
+		"*.script": "lua",
+		"*.ltx": "ini",
+		"*.json": "jsonc",
+		"future": "cpp",
+		"variant": "cpp",
+		"xstring": "cpp",
+		"string": "cpp"
+	},
+	"cmake.configureOnOpen": true
+
 }
