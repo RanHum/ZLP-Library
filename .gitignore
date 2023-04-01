@@ -4,3 +4,4 @@ src/server/release/
 src/server/debug/
 src/server/.qmake.stash
 src/server/Makefile*
+DockerPSQL.session.sql

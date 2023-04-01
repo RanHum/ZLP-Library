@@ -18,7 +18,8 @@
 		"future": "cpp",
 		"variant": "cpp",
 		"xstring": "cpp",
-		"string": "cpp"
+		"string": "cpp",
+		"xutility": "cpp"
 	},
 	"cmake.configureOnOpen": true
 
