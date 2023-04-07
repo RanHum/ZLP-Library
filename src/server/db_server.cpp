@@ -32,3 +32,13 @@ QSqlQuery DB_Server::query_prepare(const QString q) {
   query.prepare(q);
   return query;
 }
+
+static DB_Server *DB_Server::get() {
+  return instance ? instance : instance = new DB_Server();
+}
+
+void DB_Server::close() {
+  db.close();
+  this->~DB_Server();
+  instance = nullptr;
+}

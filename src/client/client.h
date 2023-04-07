@@ -8,33 +8,33 @@
 #include <QString>
 #include <QTcpSocket>
 
-class SingletonClient;
+class Client;
 
-class SingletonDestroyer
+class ClientDestroyer
 {
 private:
-    SingletonClient * p_instance;
+    Client * p_instance;
 public:
-    ~SingletonDestroyer() { delete p_instance; }
-    void initialize(SingletonClient * p) { p_instance = p; };
+    ~ClientDestroyer() { delete p_instance; }
+    void initialize(Client * p) { p_instance = p; };
 };
 
 
-class SingletonClient : public QObject
+class Client : public QObject
 {
     Q_OBJECT
 private:
-    static SingletonClient * p_instance;
-    static SingletonDestroyer destroyer;
+    static Client * p_instance;
+    static ClientDestroyer destroyer;
     QTcpSocket * mTcpSocket;
 protected:
-    explicit SingletonClient(QObject *parent = nullptr);
-    SingletonClient(const SingletonClient& ) = delete;
-    SingletonClient& operator = (SingletonClient &) = delete;
-    ~SingletonClient();
-    friend class SingletonDestroyer;
+    explicit Client(QObject *parent = nullptr);
+    Client(const Client& ) = delete;
+    Client& operator = (Client &) = delete;
+    ~Client();
+    friend class ClientDestroyer;
 public:
-    static SingletonClient* getInstance();
+    static Client* getInstance();
     void send_msg_to_server(QString query);
 signals:
     void message_from_server(QString msg);

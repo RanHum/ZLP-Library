@@ -18,9 +18,7 @@ class DB_Server : public QObject {
 	int db_port = 5432;
 
 public:
-	static DB_Server *get() {
-		return instance ? instance : instance = new DB_Server();
-	}
+	static DB_Server *get();
 	bool init(
 		const QString host = "",
 		const int port = 0,
@@ -31,11 +29,7 @@ public:
 	QSqlQuery query_simple(const QString q);
 	QSqlQuery query_prepare(const QString q);
 public slots:
-	void close() {
-		db.close();
-		this->~DB_Server();
-		instance = nullptr;
-	}
+	void close();
 };
 
 #endif // DB_SERVER_H

@@ -1,27 +1,26 @@
 #include "client.h"
 
-SingletonClient::SingletonClient(QObject *parent) : QObject(parent){
+Client::Client(QObject *parent) : QObject(parent){
     mTcpSocket = new QTcpSocket(this);
     mTcpSocket -> connectToHost("127.0.0.1", 33333);
     connect(mTcpSocket, &QTcpSocket::readyRead,
-            this, &SingletonClient::slotServerRead);
+            this, &Client::slotServerRead);
 
 }
-SingletonClient* SingletonClient::getInstance(){
+Client* Client::getInstance(){
     if (!p_instance)
     {
-        p_instance = new SingletonClient();
+        p_instance = new Client();
         destroyer.initialize(p_instance);
     }
     return p_instance;
 }
 
-void SingletonClient::send_msg_to_server(QString query){
+void Client::send_msg_to_server(QString query){
     mTcpSocket->write(query.toUtf8());
 }
 
-void SingletonClient::slotServerRead(){
-    qDebug()<<"slot";
+void Client::slotServerRead(){
     QString msg = "";
     while(mTcpSocket->bytesAvailable()>0)
     {
@@ -32,11 +31,10 @@ void SingletonClient::slotServerRead(){
     emit message_from_server(msg);
 }
 
-SingletonClient::~SingletonClient(){
+
+Client::~Client(){
     mTcpSocket->close();
 };
 
-
-
-SingletonClient* SingletonClient::p_instance;
-SingletonDestroyer SingletonClient::destroyer;
+Client* Client::p_instance;
+ClientDestroyer Client::destroyer;
