@@ -1,0 +1,29 @@
+\hypertarget{mytcpserver_8h_source}{}\doxysection{mytcpserver.\+h}
+\label{mytcpserver_8h_source}\index{src/server/mytcpserver.h@{src/server/mytcpserver.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ MYTCPSERVER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ MYTCPSERVER\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <QTcpServer>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QTcpSocket>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_my_tcp_server}{MyTcpServer}}\ :\ \textcolor{keyword}{public}\ QObject}
+\DoxyCodeLine{00007\ \{}
+\DoxyCodeLine{00008\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00009\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_my_tcp_server}{MyTcpServer}}(QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00011\ \ \ \ \ \mbox{\hyperlink{class_my_tcp_server_ab39e651ff7c37c152215c02c225e79ef}{\string~MyTcpServer}}();}
+\DoxyCodeLine{00012\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{void}\ close();}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{void}\ slotNewConnection();}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{void}\ slotClientDisconnected();}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{void}\ slotServerRead();}
+\DoxyCodeLine{00018\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00019\ \ \ \ \ QTcpServer\ *\ mTcpServer;}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{int}\ server\_status;}
+\DoxyCodeLine{00021\ \ \ \ \ QMap<int,\ QTcpSocket*>\ SClients;}
+\DoxyCodeLine{00022\ \};}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ MYTCPSERVER\_H}}
+
+\end{DoxyCode}

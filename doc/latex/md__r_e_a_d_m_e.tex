@@ -1,0 +1,13 @@
+Для разворачивания репозитория с нуля потребуется запустить\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{db\_restore.bat\ //\ для\ развертывания\ бекапа\ образов\ базы\ данных}
+\DoxyCodeLine{docker\_start.bat\ //\ для\ запуска\ контейнеров}
+
+\end{DoxyCode}
+
+
+По аналогии работают зеркальные файлы
+
+После запуска можно открыть \texorpdfstring{$<$}{<}localhost\+:15432\texorpdfstring{$>$}{>} и работать в удаленном pg\+Admin по логину {\ttfamily ranhummer@gmail.\+com} и паролю {\ttfamily zlplibpass}. После завершения работы можно безопасно забекапить данные базы через {\ttfamily db\+\_\+backup.\+bat} 

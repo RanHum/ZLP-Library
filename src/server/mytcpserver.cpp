@@ -2,6 +2,11 @@
 #include "parser.h"
 #include <QCoreApplication>
 
+/*!
+\brief Class that do something
+\param MyTcpServer Parametr, that just justing the just
+\return nothing
+*/ 
 MyTcpServer::~MyTcpServer()
 {
     foreach (int i, SClients.keys()) {
