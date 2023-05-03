@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['_7emytcpserver_0',['~MyTcpServer',['../class_my_tcp_server.html#ab39e651ff7c37c152215c02c225e79ef',1,'MyTcpServer']]]
+  ['close_0',['close',['../class_my_tcp_server.html#ae174239241daedf24a61dfb35b107a0c',1,'MyTcpServer']]]
 ];

@@ -2,11 +2,7 @@
 #include "parser.h"
 #include <QCoreApplication>
 
-/*!
-\brief Class that do something
-\param MyTcpServer Parametr, that just justing the just
-\return nothing
-*/ 
+
 MyTcpServer::~MyTcpServer()
 {
     foreach (int i, SClients.keys()) {
@@ -16,6 +12,8 @@ MyTcpServer::~MyTcpServer()
     mTcpServer->close();
     server_status=0;
 }
+
+
 MyTcpServer::MyTcpServer(QObject *parent) : QObject(parent){
     mTcpServer = new QTcpServer(this);
     connect(mTcpServer, &QTcpServer::newConnection,
@@ -28,7 +26,11 @@ MyTcpServer::MyTcpServer(QObject *parent) : QObject(parent){
         qDebug() << "Server started";
     }
 }
+/*!
+\brief Method, that creating new slot connection
 
+If server is started, method create a slot connection
+*/
 void MyTcpServer::slotNewConnection(){
     if(server_status==1) {
         QTcpSocket* clientSocket = mTcpServer->nextPendingConnection();
@@ -40,7 +42,11 @@ void MyTcpServer::slotNewConnection(){
                 this,&MyTcpServer::slotClientDisconnected);
     }
 }
+/*!
+\brief Method, that reading byte array from server slot
 
+Reading information (byte array) from clientSocket and writing it in execute_line
+*/
 void MyTcpServer::slotServerRead(){
     QTcpSocket* clientSocket = (QTcpSocket*)sender();
 	QByteArray array;
@@ -51,14 +57,20 @@ void MyTcpServer::slotServerRead(){
 	    clientSocket->write("\r\n");
     }
 }
+/*!
+\brief Method, that closing included socket
 
+Closing client's Socket, removing user's socket id
+*/
 void MyTcpServer::slotClientDisconnected(){
     QTcpSocket* clientSocket = (QTcpSocket*)sender();
     int user_socket_id = clientSocket->socketDescriptor();
     clientSocket->close();
     SClients.remove(user_socket_id);
 }
-
+/*!
+\brief Method, that deactivating Server
+*/
 void MyTcpServer::close() {
     this->~MyTcpServer();
     QCoreApplication::quit();
