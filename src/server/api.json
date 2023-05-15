@@ -1,0 +1,649 @@
+{
+	"api": {
+		// todo write documentation for api format and options, especially actions
+		"user": {
+			"register": {
+				"auth_routine": true,
+				"required": ["name", "password"],
+				"actions": [
+					{
+						"type": "test",
+						"sql": "select user_id, name, avatar from users where name = :name",
+						"error_when_not_empty": true,
+						"error": "Username is already taken!"
+					},
+					{
+						// readme: sql templates (but not with select) return all fields of affected rows by default
+						"sql": {
+							"template": "insert into users (name, password) values (:name, :password)"
+						}
+					}
+				]
+			},
+			"login": {
+				"auth_routine": true,
+				"required": ["name", "password"],
+				"actions": {
+						"sql": "select * from users where name = :name and password = :password",
+						"error": "Login failed!"
+					}
+			},
+			"edit": {
+				"optional": ["name", "password", "avatar"],
+				"actions": [
+					{
+						"sql": {
+							"template": "update <users> set |FIELDS:VALUES| where user_id = :_as_user_id"
+						}
+					}
+				]
+			},
+			"get": {
+				"required": ["user_id"],
+				"actions": {
+						"sql": "select user_id, name, avatar from users where user_id = :user_id",
+						"error": "No such user!"
+				}
+			}
+		},
+		"book": {
+			"list": {
+				"optional": [
+					"name",
+					"book_cover",
+					"creation_date",
+					"description",
+					"page_count",
+					"format",
+					"locator",
+					"owner",
+					"genre_ids",
+					"author_ids"
+				],
+				"actions": [
+					{
+						"sql": {
+							"str_partial_compare": true,
+							"joining": " and ",
+							// todo return arrays of genres and authors too
+							"template": "select books.* from <books>, genres_to_books, genres, authors_to_books, authors where |FIELDS:VALUES| and books.book_id = genres_to_books.book_id and genres_to_books.genre_id = any(array[++genre_ids++]::int[]) and books.book_id = authors_to_books.book_id and authors_to_books.author_id = any(array[++author_ids++]::int[])"
+						},
+						"multiple_rows": true,
+						"error": "No such books!"
+					}
+				]
+			},
+			// todo all else for books
+			"get": {
+				"required": ["book_id"],
+				"actions": {
+					"sql": "select * from books where book_id = :book_id",
+					"error": "No such book!"
+				}
+			},
+			"add": {
+				"required": ["name"],
+				"optional": [
+					"book_cover",
+					"creation_date",
+					"description",
+					"page_count",
+					"format",
+					"locator",
+					"owner",
+					"genre_ids",
+					"authors_ids"
+				],
+				"actions": [
+					{
+						"type": "test",
+						"sql": "select * from books where name = :name",
+						"error_when_not_empty": true,
+						"error": "Book is already created!"
+					},
+					{
+						"type": "action",
+						"sql": "insert into books (name) values (:name)"
+					},
+					"select * from books where name = :name"
+				]
+			},
+			"delete": {
+				"required": ["book_id"],
+				"actions": [
+					{
+						"type": "test",
+						"sql": "select * from books where book_id = :book_id",
+						"error": "No such book!"
+					},
+					{
+						"type": "action",
+						"sql": "delete from books where book_id = :book_id"
+					}
+				]
+			},
+			"edit": {
+				"required": ["book_id"],
+				"optional": [
+					"name",
+					"book_cover",
+					"creation_date",
+					"description",
+					"page_count",
+					"format",
+					"locator",
+					"owner"
+				],
+				"actions": [
+					{
+						"type": "test",
+						"sql": "select |FIELDS| from books where book_id = :book_id",
+						"error": "No such book!"
+					},
+					{
+						"type": "action",
+						"template": true,
+						"sql": "update <books> set |FIELDS| where book_id = :book_id"
+					},
+					"select * from books where book_id = :book_id"
+				]
+			}
+		},
+		"author": {
+			"get": {
+				"required": ["author_id"],
+				"actions": {
+					"sql": "select * from authors where author_id = :author_id",
+					"error": "No such author!"
+				}
+			},
+			"add": {
+				"required": ["name"],
+				"actions": [
+					{
+						"type": "test",
+						"sql": "select * from authors where name = :name",
+						"error_when_not_empty": true,
+						"error": "Author is already created!"
+					},
+					{
+						"sql": {
+							"template": "insert into authors (name) values (:name)"
+						}
+					}
+				]
+			},
+			"edit": {
+				"required": ["author_id", "name"],
+				"actions": [
+					{
+						"type": "test",
+						"sql": "select * from authors where author_id = :author_id",
+						"error": "No such author!"
+					},
+					{
+						"sql": {
+							"template": "update authors set name = :name where author_id = :author_id"
+						}
+					}
+				]
+			}
+		},
+		"genre": {
+			"get": {
+				"required": ["genre_id"],
+				"actions": {
+					"sql": "select * from genres where genre_id = :genre_id",
+					"error": "No such genre!"
+				}
+			},
+			"add": {
+				"required": ["name"],
+				"actions": [
+					{
+						"type": "test",
+						"sql": "select * from genres where name = :name",
+						"error_when_not_empty": true,
+						"error": "Genre is already created!"
+					},
+					{
+						"sql": {
+							"template": "insert into genres (name) values (:name)"
+						}
+					}
+				]
+			},
+			"edit": {
+				"required": ["genre_id", "name"],
+				"actions": [
+					{
+						"type": "test",
+						"sql": "select * from genres where genre_id = :genre_id",
+						"error": "No such genre!"
+					},
+					{
+						"sql": {
+							"template": "update genres set name = :name where genre_id = :genre_id"
+						}
+					}
+				]
+			}
+		},
+		"bookmark": {
+			"list": {
+				"optional": ["book_id",	"status"],
+				"actions": {
+					"multiple_rows": true,
+					"error": "No such bookmarks!",
+					"sql": {
+						// readme: exclude all fields that have not standard binding, there for user_id we must take current user id
+						"excludes": ["user_id"],
+						"template": "select * from <bookmarks> where user_id = :_as_user_id, |FIELDS:VALUES|"
+					}
+				}
+			},
+			"add": {
+				"required": ["book_id", "status"],
+				"actions": [
+					{
+						"type": "test",
+						"sql": "select * from bookmarks where user_id = :_as_user_id and book_id = :book_id",
+						"error_when_not_empty": true,
+						"error": "Book is already in bookmarks!"
+					},
+					{
+						"sql": {
+							"template": "insert into bookmarks (user_id, book_id, status) values (:_as_user_id, :book_id, :status)"
+						}
+					}
+				]
+			},
+			"edit": {
+				"required": ["book_id", "status"],
+				"actions": [
+					{
+						"type": "test",
+						"sql": "select * from bookmarks where user_id = :_as_user_id and book_id = :book_id",
+						"error": "No such bookmark!"
+					},
+					{
+						"sql": {
+							"template": "update bookmarks set status = :status where user_id = :_as_user_id and book_id = :book_id"
+						}
+					}
+				]
+			},
+			"delete": {
+				"required": ["book_id"],
+				"actions": [
+					{
+						"type": "test",
+						"sql": "select * from bookmarks where user_id = :_as_user_id and book_id = :book_id",
+						"error": "No such bookmark!"
+					},
+					"delete from bookmarks where user_id = :_as_user_id and book_id = :book_id"
+				]
+			}
+		},
+		"desk": {
+			"get": {
+				"required": ["desk_id"],
+				"actions": {
+					"sql": "select desks.name, users_to_desks.*, users.name as users_name from desks, users_to_desks, users where desks.desk_id = :desk_id and users_to_desks.desk_id = desks.desk_id and users_to_desks.user_id = users.user_id",
+					"error": "No such desk!"
+				}
+			},
+			"list_books": {
+				"required": ["desk_id"],
+				"actions": {
+					"multiple_rows": true,
+					"sql": "select book_id from books_to_desks where desk_id = :desk_id",
+					"error": "No books in this desk!"
+				}
+			},
+			"add_book": {
+				"required": ["desk_id", "book_id"],
+				"actions": [
+					{
+						"type": "test",
+						"sql": "select * from desks where desk_id = :desk_id and owner = :_as_user_id",
+						"error": "No such desk you owm!"
+					},
+					{
+						"type": "test",
+						"sql": "select * from books where book_id = :book_id",
+						"error": "No such book!"
+					},
+					{
+						"type": "test",
+						"sql": {
+							"joining": " and ",
+							"template": "select * from <books_to_desks> where |FIELDS:VALUES|"
+						},
+						"error_when_not_empty": true,
+						"error": "This book is already on this desk!"
+					},
+					{
+						"sql": {
+							"template": "insert into <books_to_desks> (|FIELDS|) values (|VALUES|)"
+						}
+					}
+				]
+			},
+			"delete_book": {
+				"required": ["desk_id", "book_id"],
+				"actions": [
+					{
+						"type": "test",
+						"sql": "select * from desks where desk_id = :desk_id and owner = :_as_user_id",
+						"error": "No such desk you owm!"
+					},
+					{
+						"type": "test",
+						"sql": {
+							"joining": " and ",
+							"template": "select * from <books_to_desks> where |FIELDS:VALUES|"
+						},
+						"error": "This book is not on this desk!"
+					},
+					{
+						"sql": {
+							"joining": " and ",
+							"template": "delete from <books_to_desks> where |FIELDS:VALUES|"
+						}
+					}
+				]
+			},
+			"add": {
+				"required": ["name"],
+				"actions": [
+					{
+						"type": "test",
+						"sql": "select desks.name, users_to_desks.*, users.name as users_name from desks, users_to_desks, users where desks.name = :name and users_to_desks.desk_id = desks.desk_id and users_to_desks.user_id = users.user_id and users.user_id = :_as_user_id",
+						"error_when_not_empty": true,
+						"error": "Desk with this name is already created for you!"
+					},
+					{
+						// readme: actions can not only return affected rows, but also save returned fields in temp storage to use in later tasks, only one action result at a time
+						"type": "action",
+						"sql": {
+							"template": "insert into desks (name) values (:name)"
+						}
+					},
+					{
+						"type": "action",
+						"sql": {
+							// readme: _desk_id is accessing desk_id from result of previous action
+							"template": "insert into users_to_desks (desk_id, user_id) values (:_desk_id, _as_user_id)"
+						}
+					},
+					"select desks.name, users_to_desks.*, users.name as users_name from desks, users_to_desks, users where desks.desk_id = :_desk_id and users_to_desks.desk_id = desks.desk_id and users_to_desks.user_id = users.user_id and users.user_id = :_as_user_id"
+				]
+			},
+			"edit": {
+				"required": ["desk_id", "name"],
+				"actions": [
+					{
+						"type": "test",
+						"sql": "select * from desks where desk_id = :desk_id and owner = :_as_user_id",
+						"error": "No such desk you owm!"
+					},
+					{
+						"sql": {"template": "update desks set name = :name where desk_id = :desk_id"}
+					}
+				]
+			},
+			"delete": {
+				"required": ["desk_id"],
+				"actions": [
+					{
+						"type": "test",
+						"sql": "select * from desks where desk_id = :desk_id and owner = :_as_user_id",
+						"error": "No such desk you owm!"
+					},
+					"delete from users_to_desks where desk_id = :desk_id",
+					"delete from books_to_desks where desk_id = :desk_id",
+					"delete from desks where desk_id = :desk_id"
+				]
+			}
+		},
+		"image": {
+			"get": {
+				"required": ["image_id"],
+				"actions": {
+					"sql": "select * from images where image_id = :image_id",
+					"error": "No such image!"
+				}
+			},
+			"add": {
+				"required": ["image"],
+				"actions": [
+					{
+						"sql": {"template": "insert into images (image) values (:image)"}
+					}
+				]
+			},
+			"change": {
+				"required": ["image_id", "image"],
+				"actions": [
+					{
+						"type": "test",
+						"sql": "select image_id from images where image_id = :image_id",
+						"error": "No such image!"
+					},
+					{
+						"sql": {"template": "update images set image = :image where image_id = :image_id"}
+					}
+				]
+			}
+		},
+		"invite": {
+			"list": {
+				"required": ["status"],
+				"actions": {
+					"multiple_rows": true,
+					"sql": "select * from invites where user_id = :_as_user_id and status = :status",
+					"error": "No such invites!"
+				}
+			},
+			"send": {
+				"required": ["desk_id", "user_id"],
+				"actions": [
+					{
+						"type": "test",
+						"sql": "select * from desks where desk_id = :desk_id and owner = _as_user_id",
+						"error": "You are not the owner of that board!"
+					},
+					{
+						"type": "test",
+						"sql": "select * from invites, desks where invites.desk_id = :desk_id and user_id = :user_id and desks.owner = _as_user_id and status = 1",
+						"error_when_not_empty": true,
+						"error": "Active invite is already sent!"
+					},
+					{
+						"sql": {"template": "insert into invites (desk_id, user_id, status) values (:desk_id, :user_id, 1)"}
+					}
+				]
+			},
+			"unsend": {
+				"required": ["desk_id", "user_id"],
+				"actions": [
+					{
+						"type": "test",
+						"sql": "select * from desks where desk_id = :desk_id and owner = _as_user_id",
+						"error": "You are not the owner of that board!"
+					},
+					{
+						"type": "test",
+						"sql": "select * from invites where desk_id = :desk_id and user_id = :_as_user_id and status = 1",
+						"error": "No such active invite!"
+					},
+					{
+						"sql": {"template": "update invites set status = 2 where desk_id = :desk_id and user_id = :_as_user_id"}
+					}
+				]
+			},
+			"decline": {
+				"required": ["desk_id"],
+				"actions": [
+					{
+						"type": "test",
+						"sql": "select * from invites where desk_id = :desk_id and user_id = :_as_user_id and status = 1",
+						"error": "No such active invite!"
+					},
+					{
+						"sql": {"template": "update invites set status = 4 where desk_id = :desk_id and user_id = :_as_user_id"}
+					}
+				]
+			},
+			"accept": {
+				"required": ["desk_id"],
+				"actions": [
+					{
+						"type": "test",
+						"sql": "select * from invites where desk_id = :desk_id and user_id = :_as_user_id and status = 1",
+						"error": "No such active invite!"
+					},
+					{
+						"type": "action",
+						"sql": {"template": "update invites set status = 3 where desk_id = :desk_id and user_id = :_as_user_id"}
+					},
+					{
+						"sql": {"template": "insert into users_to_desks (desk_id, user_id) values (:desk_id, :_as_user_id)"}
+					}
+				]
+			}
+		},
+		"review": {
+			"list": {
+				"required": ["book_id", "desk_id"],
+				"optional": ["user_id"],
+				"actions": [
+					{
+						"type": "action",
+						"error": "No such book in this desk!",
+						"sql": {
+							"template": "select book_desk_id from <books_to_desks> where |FIELDS:VALUES|"
+						}
+					},
+					{
+						"sql": {
+							"excludes": ["book_desk_id"],
+							"template": "select * from <reviews> where book_desk_id = :_book_desk_id |FIELDS:VALUES|"
+						},
+						"error": "No such reviews!"
+					}
+				]
+			},
+			"add": {
+				"required": [
+					"book_id", "desk_id",
+					"evaluation_mark",
+					"description"
+				],
+				"actions": [
+					{
+						"type": "action",
+						"error": "No such book in this desk!",
+						"sql": {
+							"template": "select book_desk_id from <books_to_desks> where |FIELDS:VALUES|"
+						}
+					},
+					{
+						"type": "test",
+						"sql": "select * from reviews where book_desk_id = :_book_desk_id and user_id = :_as_user_id",
+						"error_when_not_empty": true,
+						"error": "Review is already created!"
+					},
+					{
+						"sql": {"template": "insert into reviews (book_desk_id, user_id, evaluation_mark, description) values (:_book_desk_id, :user_id, :evaluation_mark, :description)"}
+					}
+				]
+			},
+			"edit": {
+				"required": ["book_id", "desk_id"],
+				"optional": ["evaluation_mark", "description"],
+				"actions": [
+					{
+						"type": "action",
+						"error": "No such book in this desk!",
+						"sql": {
+							"template": "select book_desk_id from <books_to_desks> where |FIELDS:VALUES|"
+						}
+					},
+					{
+						"type": "test",
+						"sql": "select * from reviews where book_desk_id = :_book_desk_id and user_id = :_as_user_id",
+						"error": "No such review you own!"
+					},
+					{
+						"sql": {"template": "update <reviews> set |FIELDS:VALUES| where book_desk_id = :_book_desk_id and user_id = :_as_user_id"}
+					}
+				]
+			},
+			"delete": {
+				"required": ["book_id", "desk_id"],
+				"actions": [
+					{
+						"type": "action",
+						"error": "No such book in this desk!",
+						"sql": {
+							"template": "select book_desk_id from <books_to_desks> where |FIELDS:VALUES|"
+						}
+					},
+					{
+						"type": "test",
+						"sql": "select * from reviews where book_desk_id = :_book_desk_id and user_id = :_as_user_id",
+						"error": "No such review you own!"
+					},
+					"delete from reviews where book_desk_id = :_book_desk_id and user_id = :_as_user_id"
+				]
+			}
+		}
+	},
+	"responses": {
+		"success": {
+			"status" : "Success"
+		},
+		"error": {
+			"status" : "Error"
+		},
+		"request_invalid": {
+			"status" : "Error",
+			"text": "Invalid JSON request!"
+		},
+		"request_failed": {
+			"status" : "Error",
+			"text": "Server Error!"
+		},
+		"missing_fields": {
+			"status" : "Error",
+			"text": "Missing fields!",
+			"fields": []
+		},
+		"auth_failed": {
+			"status" : "Error",
+			"text": "Auth failed!"
+		}
+	},
+	"intent_action_result":{
+		"type": "result"
+	},
+	"intent_action_template":{
+		"type": "result",
+		"sql": "",
+		"error": "",
+		"error_when_not_empty": false,
+		"multiple_rows": false
+	},
+	"auth_sql": "select * from users where user_id = :_as_user_id and password = :_with_password",
+	"auth_fields": [
+		"_as_user_id",
+		"_with_password"
+	],
+	"intent_fields": [
+		"_domain",
+		"_intent"
+	],
+	"db_fields_query": "SELECT table_name, column_name, data_type FROM information_schema.columns WHERE table_schema = 'zlplib' ORDER BY table_name, ordinal_position"
+}

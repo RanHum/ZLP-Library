@@ -1,10 +1,8 @@
 
 #ifndef PARSER_H
 #define PARSER_H
+#include <QByteArray>
 
-#include <zlp-commons.h>
-
-std::string execute_request(QString line);
-std::string commandDispatcher(std::string command, Parameters request);
+QByteArray execute_line(const QByteArray& line);
 
 #endif // PARSER_H

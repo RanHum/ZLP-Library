@@ -1,0 +1,8 @@
+{"_domain":"user","_intent":"register","name":"Ranhum", "password":"hello kitty"}
+{"_domain":"user","_intent":"login","name":"Ranhum"}
+{"_domain":"user","_intent":"login","name":"Ranhum", "password":"hello kitty"}
+{"_domain":"user","_intent":"edit","_as_user_id":1, "_with_password":"hello kitty", "avatar": 1}
+{"_domain":"user","_intent":"get","_as_user_id":1, "_with_password":"hello kitty", "user_id":1}
+{"_domain":"user","_intent":"get","_as_user_id":1, "_with_password":"hello kitty", "user_id":1000}
+{"_domain":"user","_intent":"register","name":"Ranhummer", "password":"qwerty123"}
+{"_domain":"book","_intent":"list","_as_user_id":1, "_with_password":"hello kitty", "author_ids":[1,2], "genre_ids":[1,2], "name":"opus"}

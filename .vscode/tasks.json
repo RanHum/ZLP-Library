@@ -9,8 +9,7 @@
 			"command": "cd ./src/server && qmake && make",
 			"problemMatcher": [],
 			"group": {
-				"kind": "build",
-				"isDefault": true
+				"kind": "build"
 			}
 		},
 		{
@@ -20,6 +19,7 @@
 			"problemMatcher": [],
 			"group": {
 				"kind": "build",
+				"isDefault": true
 			}
 		}
 	]
