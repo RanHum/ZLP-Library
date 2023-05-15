@@ -4,6 +4,24 @@
 	"version": "2.0.0",
 	"tasks": [
 		{
+			"label": "build client",
+			"type": "shell",
+			"command": "cd ./src/client && qmake && make",
+			"problemMatcher": [],
+			"group": {
+				"kind": "build"
+			}
+		},
+		{
+			"label": "build and run client",
+			"type": "shell",
+			"command": "build_run_client",
+			"problemMatcher": [],
+			"group": {
+				"kind": "build"
+			}
+		},
+		{
 			"label": "build server",
 			"type": "shell",
 			"command": "cd ./src/server && qmake && make",

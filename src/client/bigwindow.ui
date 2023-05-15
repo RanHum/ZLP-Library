@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Bigwindow</class>
+ <widget class="QDialog" name="Bigwindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1500</width>
+    <height>1000</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Главный экран</string>
+  </property>
+  <widget class="QPushButton" name="pushButton_4">
+   <property name="geometry">
+    <rect>
+     <x>815</x>
+     <y>30</y>
+     <width>300</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">float: right;
+margin-right: 3%;
+margin-top: 5px;
+border-radius: 5px;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+padding: 5px 9px;
+font-size: 1.2em;
+background-color: rgba(236, 101, 80, 1);
+text-shadow: #454545 0 0 2px;
+border-bottom: 4px solid rgba(217, 91, 72, 1);
+color: white;
+font-family: 'Roboto Slab', serif;</string>
+   </property>
+   <property name="text">
+    <string>Поиск досок</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_3">
+   <property name="geometry">
+    <rect>
+     <x>385</x>
+     <y>30</y>
+     <width>300</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">float: right;
+margin-right: 3%;
+margin-top: 5px;
+border-radius: 5px;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+padding: 5px 9px;
+font-size: 1.2em;
+background-color: rgba(236, 101, 80, 1);
+text-shadow: #454545 0 0 2px;
+border-bottom: 4px solid rgba(217, 91, 72, 1);
+color: white;
+font-family: 'Roboto Slab', serif;</string>
+   </property>
+   <property name="text">
+    <string>Создать доску</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>1430</x>
+     <y>0</y>
+     <width>71</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">float: right;
+margin-right: 3%;
+margin-top: 5px;
+border-radius: 30px;
+-moz-border-radius: 5px;
+webkit-border-radius: 5px;
+padding: 5pх 9рх;
+font-size: 1.2em;
+background-color: rgba(0, 0, 0, 1);
+text-shadow: #454545 0 0 2px;
+color: white;
+font-family: 'Roboto Slab', serif;</string>
+   </property>
+   <property name="text">
+    <string>ава</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="verticalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>1390</x>
+     <y>80</y>
+     <width>124</width>
+     <height>151</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <item>
+     <widget class="QPushButton" name="pushButton_25">
+      <property name="styleSheet">
+       <string notr="true">float: right;
+margin-right: 3%;
+margin-top: 5px;
+border-radius: 5px;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+padding: 5px 9px;
+font-size: 1.2em;
+background-color: rgba(236, 101, 80, 1);
+text-shadow: #454545 0 0 2px;
+border-bottom: 4px solid rgba(217, 91, 72, 1);
+color: white;
+font-family: 'Roboto Slab', serif;</string>
+      </property>
+      <property name="text">
+       <string>Закладки</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pushButton_26">
+      <property name="styleSheet">
+       <string notr="true">float: right;
+margin-right: 3%;
+margin-top: 5px;
+border-radius: 5px;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+padding: 5px 9px;
+font-size: 1.2em;
+background-color: rgba(236, 101, 80, 1);
+text-shadow: #454545 0 0 2px;
+border-bottom: 4px solid rgba(217, 91, 72, 1);
+color: white;
+font-family: 'Roboto Slab', serif;</string>
+      </property>
+      <property name="text">
+       <string>Профиль</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pushButton_27">
+      <property name="styleSheet">
+       <string notr="true">float: right;
+margin-right: 3%;
+margin-top: 5px;
+border-radius: 5px;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+padding: 5px 9px;
+font-size: 1.2em;
+background-color: rgba(236, 101, 80, 1);
+text-shadow: #454545 0 0 2px;
+border-bottom: 4px solid rgba(217, 91, 72, 1);
+color: white;
+font-family: 'Roboto Slab', serif;</string>
+      </property>
+      <property name="text">
+       <string>Настройки</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>520</y>
+     <width>211</width>
+     <height>121</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <zorder>pushButton_4</zorder>
+  <zorder>pushButton_3</zorder>
+  <zorder>verticalLayoutWidget</zorder>
+  <zorder>pushButton</zorder>
+  <zorder>label</zorder>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

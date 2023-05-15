@@ -1,10 +1,23 @@
+#include "mainwindow.h"
 
-#include <QCoreApplication>
-#include "client.h"
+#include <QApplication>
+#include <QLocale>
+#include <QTranslator>
 
 int main(int argc, char *argv[])
 {
-    QCoreApplication a(argc, argv);
-    Client::getInstance()->send_msg_to_server("{\"_domain\":\"user\",\"_intent\":\"get\",\"_as_user_id\":1, \"_with_password\":\"hello kitty\", \"user_id\":1}");
+    QApplication a(argc, argv);
+
+    QTranslator translator;
+    const QStringList uiLanguages = QLocale::system().uiLanguages();
+    for (const QString &locale : uiLanguages) {
+        const QString baseName = "FirstTry_" + QLocale(locale).name();
+        if (translator.load(":/i18n/" + baseName)) {
+            a.installTranslator(&translator);
+            break;
+        }
+    }
+    MainWindow w;
+    w.show();
     return a.exec();
 }
