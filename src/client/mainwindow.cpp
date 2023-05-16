@@ -3,6 +3,9 @@
 #include <QMessageBox>
 #include "bigwindow.h"
 #include <QThread>
+#include <requests.h>
+#include <api_utils.h>
+
 MainWindow::MainWindow(QWidget *parent)
     :
       QMainWindow(parent)
@@ -24,30 +27,38 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {
-
     form->show();
     this->close();
 }
 
+void delay(int ms) {
+	QTime dieTime = QTime::currentTime().addMSecs(ms);
+	while (QTime::currentTime() < dieTime)
+		QCoreApplication::processEvents(QEventLoop::AllEvents, 100);
+}
 
 void MainWindow::on_pushButton_2_clicked()
 {
     QString login= ui->login->text();
     QString password= ui->password->text();
-    if (login== "test" && password== "test")
-    {
-
-        //QThread::sleep(2);
+    Connection::getInstance().setServer("localhost", 33333);
+	auto req = makeReqJson("user", "login");
+    req.insert("name", login);
+    req.insert("password", password);
+    const auto resp = RequestClass().sendRequest(req);
+	if (resp["status"].toString() == "Success") {
         ui->statusbar->showMessage("Вы успешно авторизовались!");
-        //this->thread()->sleep(2);
+		UserCredentials::instance().setLogin(login);
+		UserCredentials::instance().setPassword(password);
+		UserCredentials::instance().setUserId(resp["result"]["user_id"].toInt());
+		UserCredentials::instance().setAvatar(resp["result"]["avatar"].toString());
+        qDebug() << "logged in as" << UserCredentials::instance().login();
+		delay(1000);
         this->close();
         Bigwindow window;
         window.setModal(true);
         window.exec();
-
-    }
-    else
-    {
-        ui->statusbar->showMessage("Ошибка! Вы не авторизованы.");
-    }
+	} else {
+		ui->statusbar->showMessage("Ошибка! Вы не авторизованы.");
+	}
 }

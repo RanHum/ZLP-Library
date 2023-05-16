@@ -1,6 +1,6 @@
-QT += core gui widgets
+QT += core gui widgets network
 
-CONFIG += c++17
+CONFIG += c++17 console
 
 # You can make your code fail to compile if it uses deprecated APIs.
 # In order to do so, uncomment the following line.
@@ -12,14 +12,17 @@ SOURCES += \
     form.cpp \
     full.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    requests.cpp
 
 HEADERS += \
     bigwindow.h \
     doska.h \
     form.h \
     full.h \
-    mainwindow.h
+    mainwindow.h \
+    requests.h \
+    api_utils.h
 
 FORMS += \
     bigwindow.ui \

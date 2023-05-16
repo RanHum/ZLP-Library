@@ -4,6 +4,15 @@
 	"version": "2.0.0",
 	"tasks": [
 		{
+			"label": "run client",
+			"type": "shell",
+			"command": "start ./src/client/release/firsttry",
+			"problemMatcher": [],
+			"group": {
+				"kind": "none"
+			}
+		},
+		{
 			"label": "build client",
 			"type": "shell",
 			"command": "cd ./src/client && qmake && make",
@@ -28,6 +37,15 @@
 			"problemMatcher": [],
 			"group": {
 				"kind": "build"
+			}
+		},
+		{
+			"label": "run server",
+			"type": "shell",
+			"command": "./docker_start.bat",
+			"problemMatcher": [],
+			"group": {
+				"kind": "none"
 			}
 		},
 		{
