@@ -39,3 +39,7 @@ QJsonObject makeReqJson(const QString &domain, const QString &intent) {
 		{"_domain", domain},
 		{"_intent", intent}};
 }
+
+bool check_status(const QJsonObject &response) {
+	return response["status"].toString() == "Success";
+}

@@ -46,7 +46,7 @@ void MainWindow::on_pushButton_2_clicked()
     req.insert("name", login);
     req.insert("password", password);
     const auto resp = RequestClass().sendRequest(req);
-	if (resp["status"].toString() == "Success") {
+	if (check_status(resp)) {
         ui->statusbar->showMessage("Вы успешно авторизовались!");
 		UserCredentials::instance().setLogin(login);
 		UserCredentials::instance().setPassword(password);
