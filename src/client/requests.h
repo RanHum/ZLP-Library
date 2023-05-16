@@ -1,4 +1,3 @@
-// mytcpsocket.h
 #pragma once
 
 #include <QTcpSocket>

@@ -13,7 +13,8 @@ SOURCES += \
     full.cpp \
     main.cpp \
     mainwindow.cpp \
-    requests.cpp
+    requests.cpp \
+    api_utils.cpp
 
 HEADERS += \
     bigwindow.h \

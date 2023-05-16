@@ -1,5 +1,3 @@
-// mytcpsocket.cpp
-#include "QThread"
 #include "requests.h"
 
 RequestClass::RequestClass(QObject *parent) : QObject(parent) {
