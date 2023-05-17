@@ -9,28 +9,56 @@ Inheritance diagram for DB\+\_\+\+Server\+:\begin{figure}[H]
 \doxysubsection*{Public Slots}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_d_b___server_a26a9265bb1bfbb83af2c4754b2134db4}\label{class_d_b___server_a26a9265bb1bfbb83af2c4754b2134db4}} 
-void {\bfseries close} ()
+void \mbox{\hyperlink{class_d_b___server_a26a9265bb1bfbb83af2c4754b2134db4}{close}} ()
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_d_b___server_a1736a4db23f2e1d626f489d9b211b4f7}\label{class_d_b___server_a1736a4db23f2e1d626f489d9b211b4f7}} 
-bool {\bfseries init} (const QString host=\char`\"{}\char`\"{}, const int port=0, const QString database\+\_\+name=\char`\"{}\char`\"{}, const QString user=\char`\"{}\char`\"{}, const QString pass=\char`\"{}\char`\"{})
-\begin{DoxyCompactList}\small\item\em doxygen documentation \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_d_b___server_ad4f05e37f946966adb7e00a2af79b845}\label{class_d_b___server_ad4f05e37f946966adb7e00a2af79b845}} 
-QSql\+Query {\bfseries query\+\_\+simple} (const QString q)
+bool \mbox{\hyperlink{class_d_b___server_a1736a4db23f2e1d626f489d9b211b4f7}{init}} (const QString host=\char`\"{}\char`\"{}, const int port=0, const QString database\+\_\+name=\char`\"{}\char`\"{}, const QString user=\char`\"{}\char`\"{}, const QString pass=\char`\"{}\char`\"{})
 \item 
-\mbox{\Hypertarget{class_d_b___server_acc10401becbd9bc94b5e2790ec171590}\label{class_d_b___server_acc10401becbd9bc94b5e2790ec171590}} 
-QSql\+Query {\bfseries query\+\_\+prepare} (const QString q)
+QSql\+Query \mbox{\hyperlink{class_d_b___server_ad4f05e37f946966adb7e00a2af79b845}{query\+\_\+simple}} (const QString q)
+\item 
+QSql\+Query \mbox{\hyperlink{class_d_b___server_acc10401becbd9bc94b5e2790ec171590}{query\+\_\+prepare}} (const QString q)
 \end{DoxyCompactItemize}
 \doxysubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_d_b___server_ae503392addf041f1b1769c88cb33bdf3}\label{class_d_b___server_ae503392addf041f1b1769c88cb33bdf3}} 
-static \mbox{\hyperlink{class_d_b___server}{DB\+\_\+\+Server}} $\ast$ {\bfseries get} ()
+static \mbox{\hyperlink{class_d_b___server}{DB\+\_\+\+Server}} $\ast$ \mbox{\hyperlink{class_d_b___server_ae503392addf041f1b1769c88cb33bdf3}{get}} ()
 \end{DoxyCompactItemize}
 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_d_b___server_a26a9265bb1bfbb83af2c4754b2134db4}\label{class_d_b___server_a26a9265bb1bfbb83af2c4754b2134db4}} 
+\index{DB\_Server@{DB\_Server}!close@{close}}
+\index{close@{close}!DB\_Server@{DB\_Server}}
+\doxysubsubsection{\texorpdfstring{close}{close}}
+{\footnotesize\ttfamily void DB\+\_\+\+Server\+::close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Method, that closing connection with database \mbox{\Hypertarget{class_d_b___server_ae503392addf041f1b1769c88cb33bdf3}\label{class_d_b___server_ae503392addf041f1b1769c88cb33bdf3}} 
+\index{DB\_Server@{DB\_Server}!get@{get}}
+\index{get@{get}!DB\_Server@{DB\_Server}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_d_b___server}{DB\+\_\+\+Server}} $\ast$ DB\+\_\+\+Server\+::get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Method, that IDK what is he doing! \mbox{\Hypertarget{class_d_b___server_a1736a4db23f2e1d626f489d9b211b4f7}\label{class_d_b___server_a1736a4db23f2e1d626f489d9b211b4f7}} 
+\index{DB\_Server@{DB\_Server}!init@{init}}
+\index{init@{init}!DB\_Server@{DB\_Server}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily bool DB\+\_\+\+Server\+::init (\begin{DoxyParamCaption}\item[{const QString}]{host = {\ttfamily \char`\"{}\char`\"{}},  }\item[{const int}]{port = {\ttfamily 0},  }\item[{const QString}]{database\+\_\+name = {\ttfamily \char`\"{}\char`\"{}},  }\item[{const QString}]{user = {\ttfamily \char`\"{}\char`\"{}},  }\item[{const QString}]{pass = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})}
+
+Object, that adding Postgre\+SQL database, setting DB parametrs and reptorting about the condition of BD loading \mbox{\Hypertarget{class_d_b___server_acc10401becbd9bc94b5e2790ec171590}\label{class_d_b___server_acc10401becbd9bc94b5e2790ec171590}} 
+\index{DB\_Server@{DB\_Server}!query\_prepare@{query\_prepare}}
+\index{query\_prepare@{query\_prepare}!DB\_Server@{DB\_Server}}
+\doxysubsubsection{\texorpdfstring{query\_prepare()}{query\_prepare()}}
+{\footnotesize\ttfamily QSql\+Query DB\+\_\+\+Server\+::query\+\_\+prepare (\begin{DoxyParamCaption}\item[{const QString}]{q }\end{DoxyParamCaption})}
+
+Method, that making complex query to DB with \char`\"{}prepare\char`\"{} parameter \mbox{\Hypertarget{class_d_b___server_ad4f05e37f946966adb7e00a2af79b845}\label{class_d_b___server_ad4f05e37f946966adb7e00a2af79b845}} 
+\index{DB\_Server@{DB\_Server}!query\_simple@{query\_simple}}
+\index{query\_simple@{query\_simple}!DB\_Server@{DB\_Server}}
+\doxysubsubsection{\texorpdfstring{query\_simple()}{query\_simple()}}
+{\footnotesize\ttfamily QSql\+Query DB\+\_\+\+Server\+::query\+\_\+simple (\begin{DoxyParamCaption}\item[{const QString}]{q }\end{DoxyParamCaption})}
+
+Method, that making simple query to DB 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

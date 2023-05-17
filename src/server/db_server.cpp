@@ -2,7 +2,9 @@
 
 DB_Server *DB_Server::instance = nullptr;
 
-///doxygen documentation
+/*!
+Object, that adding PostgreSQL database, setting DB parametrs and reptorting about the condition of BD loading
+*/
 
 bool DB_Server::init(
 		const QString host,
@@ -23,22 +25,34 @@ bool DB_Server::init(
   return true;
 }
 
+/*!
+Method, that making simple query to DB
+*/
 QSqlQuery DB_Server::query_simple(const QString q) {
   QSqlQuery query;
   query.exec(q);
   return query;
 }
 
+/*!
+Method, that making complex query to DB with "prepare" parameter
+*/
 QSqlQuery DB_Server::query_prepare(const QString q) {
   QSqlQuery query;
   query.prepare(q);
   return query;
 }
 
+/*!
+Method, that IDK what is he doing!
+*/
 static DB_Server *DB_Server::get() {
   return instance ? instance : instance = new DB_Server();
 }
 
+/*!
+Method, that closing connection with database
+*/
 void DB_Server::close() {
   db.close();
   this->~DB_Server();

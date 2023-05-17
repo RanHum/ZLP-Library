@@ -2,6 +2,9 @@
 #include "parser.h"
 #include <QCoreApplication>
 
+/*!
+\brief Object, that responsible for tcp connection between socket and server
+*/
 
 MyTcpServer::~MyTcpServer()
 {
@@ -13,6 +16,11 @@ MyTcpServer::~MyTcpServer()
     server_status=0;
 }
 
+/*!
+\brief Method, that responsible for TCPServer's working
+
+It's creating new TCPServer, listen port 33333 and report about server condition
+*/
 
 MyTcpServer::MyTcpServer(QObject *parent) : QObject(parent){
     mTcpServer = new QTcpServer(this);
@@ -32,10 +40,6 @@ MyTcpServer::MyTcpServer(QObject *parent) : QObject(parent){
 If server is started, method create a slot connection
 */
 
-///Method, that creating new slot connection
-/// If server is started, method create a slot connection
-/// Something new
-/// asdadasdasdasdasd
 void MyTcpServer::slotNewConnection(){
     if(server_status==1) {
         QTcpSocket* clientSocket = mTcpServer->nextPendingConnection();

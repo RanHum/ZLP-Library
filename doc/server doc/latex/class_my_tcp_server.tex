@@ -1,5 +1,9 @@
 \hypertarget{class_my_tcp_server}{}\doxysection{My\+Tcp\+Server Class Reference}
 \label{class_my_tcp_server}\index{MyTcpServer@{MyTcpServer}}
+
+
+{\ttfamily \#include $<$mytcpserver.\+h$>$}
+
 Inheritance diagram for My\+Tcp\+Server\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -21,10 +25,28 @@ void \mbox{\hyperlink{class_my_tcp_server_ab4a64d2eab985d723090963f5c8a2882}{slo
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_my_tcp_server_acf367c4695b4d160c7a2d25c2afaaec4}\label{class_my_tcp_server_acf367c4695b4d160c7a2d25c2afaaec4}} 
-{\bfseries My\+Tcp\+Server} (QObject $\ast$parent=nullptr)
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{class_my_tcp_server_acf367c4695b4d160c7a2d25c2afaaec4}{My\+Tcp\+Server}} (QObject $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Method, that responsible for TCPServer\textquotesingle{}s working. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_my_tcp_server_ab39e651ff7c37c152215c02c225e79ef}\label{class_my_tcp_server_ab39e651ff7c37c152215c02c225e79ef}} 
+{\bfseries $\sim$\+My\+Tcp\+Server} ()
+\begin{DoxyCompactList}\small\item\em Object, that responsible for tcp connection between socket and server. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Class, that responsible for tcp connection between socket and server 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_my_tcp_server_acf367c4695b4d160c7a2d25c2afaaec4}\label{class_my_tcp_server_acf367c4695b4d160c7a2d25c2afaaec4}} 
+\index{MyTcpServer@{MyTcpServer}!MyTcpServer@{MyTcpServer}}
+\index{MyTcpServer@{MyTcpServer}!MyTcpServer@{MyTcpServer}}
+\doxysubsubsection{\texorpdfstring{MyTcpServer()}{MyTcpServer()}}
+{\footnotesize\ttfamily My\+Tcp\+Server\+::\+My\+Tcp\+Server (\begin{DoxyParamCaption}\item[{QObject $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Method, that responsible for TCPServer\textquotesingle{}s working. 
+
+It\textquotesingle{}s creating new TCPServer, listen port 33333 and report about server condition 
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_my_tcp_server_a3e040c49dbefd65b9a58ab662fc9f7a2}\label{class_my_tcp_server_a3e040c49dbefd65b9a58ab662fc9f7a2}} 
@@ -47,7 +69,7 @@ Closing client\textquotesingle{}s Socket, removing user\textquotesingle{}s socke
 
 Method, that creating new slot connection. 
 
-If server is started, method create a slot connection Method, that creating new slot connection If server is started, method create a slot connection Something new asdadasdasdasdasd \mbox{\Hypertarget{class_my_tcp_server_ab4a64d2eab985d723090963f5c8a2882}\label{class_my_tcp_server_ab4a64d2eab985d723090963f5c8a2882}} 
+If server is started, method create a slot connection \mbox{\Hypertarget{class_my_tcp_server_ab4a64d2eab985d723090963f5c8a2882}\label{class_my_tcp_server_ab4a64d2eab985d723090963f5c8a2882}} 
 \index{MyTcpServer@{MyTcpServer}!slotServerRead@{slotServerRead}}
 \index{slotServerRead@{slotServerRead}!MyTcpServer@{MyTcpServer}}
 \doxysubsubsection{\texorpdfstring{slotServerRead}{slotServerRead}}

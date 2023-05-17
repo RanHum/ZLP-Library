@@ -2,7 +2,9 @@
 #define MYTCPSERVER_H
 #include <QTcpServer>
 #include <QTcpSocket>
-
+/*!
+Class, that responsible for tcp connection between socket and server
+*/
 class MyTcpServer : public QObject
 {
     Q_OBJECT

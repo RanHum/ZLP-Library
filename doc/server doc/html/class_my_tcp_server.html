@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ZLP-Library server: MyTcpServer Class Reference</title>
+<title>ZLP-Library: MyTcpServer Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">ZLP-Library server
+   <div id="projectname">ZLP-Library
    </div>
   </td>
  </tr>
@@ -76,6 +76,8 @@ $(function() {
   <div class="headertitle"><div class="title">MyTcpServer Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="mytcpserver_8h_source.html">mytcpserver.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for MyTcpServer:</div>
 <div class="dyncontent">
@@ -101,10 +103,46 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>close</b> ()</td></tr
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:acf367c4695b4d160c7a2d25c2afaaec4"><td class="memItemLeft" align="right" valign="top"><a id="acf367c4695b4d160c7a2d25c2afaaec4" name="acf367c4695b4d160c7a2d25c2afaaec4"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>MyTcpServer</b> (QObject *parent=nullptr)</td></tr>
+<tr class="memitem:acf367c4695b4d160c7a2d25c2afaaec4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_my_tcp_server.html#acf367c4695b4d160c7a2d25c2afaaec4">MyTcpServer</a> (QObject *parent=nullptr)</td></tr>
+<tr class="memdesc:acf367c4695b4d160c7a2d25c2afaaec4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method, that responsible for TCPServer's working.  <br /></td></tr>
 <tr class="separator:acf367c4695b4d160c7a2d25c2afaaec4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab39e651ff7c37c152215c02c225e79ef"><td class="memItemLeft" align="right" valign="top"><a id="ab39e651ff7c37c152215c02c225e79ef" name="ab39e651ff7c37c152215c02c225e79ef"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>~MyTcpServer</b> ()</td></tr>
+<tr class="memdesc:ab39e651ff7c37c152215c02c225e79ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Object, that responsible for tcp connection between socket and server. <br /></td></tr>
+<tr class="separator:ab39e651ff7c37c152215c02c225e79ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Class, that responsible for tcp connection between socket and server </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="acf367c4695b4d160c7a2d25c2afaaec4" name="acf367c4695b4d160c7a2d25c2afaaec4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf367c4695b4d160c7a2d25c2afaaec4">&#9670;&#160;</a></span>MyTcpServer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">MyTcpServer::MyTcpServer </td>
+          <td>(</td>
+          <td class="paramtype">QObject *&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>nullptr</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Method, that responsible for TCPServer's working. </p>
+<p>It's creating new TCPServer, listen port 33333 and report about server condition </p>
+
+</div>
+</div>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="a3e040c49dbefd65b9a58ab662fc9f7a2" name="a3e040c49dbefd65b9a58ab662fc9f7a2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3e040c49dbefd65b9a58ab662fc9f7a2">&#9670;&#160;</a></span>slotClientDisconnected</h2>
@@ -158,7 +196,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Method, that creating new slot connection. </p>
-<p>If server is started, method create a slot connection Method, that creating new slot connection If server is started, method create a slot connection Something new asdadasdasdasdasd </p>
+<p>If server is started, method create a slot connection </p>
 
 </div>
 </div>
