@@ -2,6 +2,8 @@
 
 DB_Server *DB_Server::instance = nullptr;
 
+///doxygen documentation
+
 bool DB_Server::init(
 		const QString host,
 		const int port,

@@ -31,6 +31,11 @@ MyTcpServer::MyTcpServer(QObject *parent) : QObject(parent){
 
 If server is started, method create a slot connection
 */
+
+///Method, that creating new slot connection
+/// If server is started, method create a slot connection
+/// Something new
+/// asdadasdasdasdasd
 void MyTcpServer::slotNewConnection(){
     if(server_status==1) {
         QTcpSocket* clientSocket = mTcpServer->nextPendingConnection();

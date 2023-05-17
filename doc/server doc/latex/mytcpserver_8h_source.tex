@@ -1,0 +1,29 @@
+\hypertarget{mytcpserver_8h_source}{}\doxysection{mytcpserver.\+h}
+\label{mytcpserver_8h_source}\index{C:/Users/yariy/Documents/GitHub/ZLP-\/Library/src/server/mytcpserver.h@{C:/Users/yariy/Documents/GitHub/ZLP-\/Library/src/server/mytcpserver.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ MYTCPSERVER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ MYTCPSERVER\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <QTcpServer>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QTcpSocket>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_my_tcp_server}{MyTcpServer}}\ :\ \textcolor{keyword}{public}\ QObject}
+\DoxyCodeLine{00007\ \{}
+\DoxyCodeLine{00008\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00009\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_my_tcp_server}{MyTcpServer}}(QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00011\ \ \ \ \ \mbox{\hyperlink{class_my_tcp_server}{\string~MyTcpServer}}();}
+\DoxyCodeLine{00012\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_my_tcp_server_ae174239241daedf24a61dfb35b107a0c}{close}}();}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_my_tcp_server_a0ba7316ffe1a26c57fabde9e74b6c8dc}{slotNewConnection}}();}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_my_tcp_server_a3e040c49dbefd65b9a58ab662fc9f7a2}{slotClientDisconnected}}();}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_my_tcp_server_ab4a64d2eab985d723090963f5c8a2882}{slotServerRead}}();}
+\DoxyCodeLine{00018\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00019\ \ \ \ \ QTcpServer\ *\ mTcpServer;}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{int}\ server\_status;}
+\DoxyCodeLine{00021\ \ \ \ \ QMap<int,\ QTcpSocket*>\ SClients;}
+\DoxyCodeLine{00022\ \};}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ MYTCPSERVER\_H}}
+
+\end{DoxyCode}
