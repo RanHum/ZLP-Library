@@ -15,25 +15,25 @@ Inheritance diagram for My\+Tcp\+Server\+:\begin{figure}[H]
 \item 
 \mbox{\Hypertarget{class_my_tcp_server_ae174239241daedf24a61dfb35b107a0c}\label{class_my_tcp_server_ae174239241daedf24a61dfb35b107a0c}} 
 void {\bfseries close} ()
-\begin{DoxyCompactList}\small\item\em Method, that deactivating Server. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em deactivates Server \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_my_tcp_server_a0ba7316ffe1a26c57fabde9e74b6c8dc}{slot\+New\+Connection}} ()
-\begin{DoxyCompactList}\small\item\em Method, that creating new slot connection. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em creates new slot connection \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_my_tcp_server_a3e040c49dbefd65b9a58ab662fc9f7a2}{slot\+Client\+Disconnected}} ()
-\begin{DoxyCompactList}\small\item\em Method, that closing included socket. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em closes included socket \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_my_tcp_server_ab4a64d2eab985d723090963f5c8a2882}{slot\+Server\+Read}} ()
-\begin{DoxyCompactList}\small\item\em Method, that reading byte array from server slot. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em reads byte array from server slot \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_my_tcp_server_acf367c4695b4d160c7a2d25c2afaaec4}{My\+Tcp\+Server}} (QObject $\ast$parent=nullptr)
-\begin{DoxyCompactList}\small\item\em Method, that responsible for TCPServer\textquotesingle{}s working. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em responsible for TCPServer\textquotesingle{}s working \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_my_tcp_server_ab39e651ff7c37c152215c02c225e79ef}\label{class_my_tcp_server_ab39e651ff7c37c152215c02c225e79ef}} 
 {\bfseries $\sim$\+My\+Tcp\+Server} ()
-\begin{DoxyCompactList}\small\item\em Object, that responsible for tcp connection between socket and server. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em responsible for tcp connection between socket and server \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Class, that responsible for tcp connection between socket and server 
+responsible for tcp connection between socket and server 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_my_tcp_server_acf367c4695b4d160c7a2d25c2afaaec4}\label{class_my_tcp_server_acf367c4695b4d160c7a2d25c2afaaec4}} 
@@ -44,9 +44,9 @@ Class, that responsible for tcp connection between socket and server
 
 
 
-Method, that responsible for TCPServer\textquotesingle{}s working. 
+responsible for TCPServer\textquotesingle{}s working 
 
-It\textquotesingle{}s creating new TCPServer, listen port 33333 and report about server condition 
+It\textquotesingle{}s creates new TCPServer, listens port 33333 and reports about server condition 
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_my_tcp_server_a3e040c49dbefd65b9a58ab662fc9f7a2}\label{class_my_tcp_server_a3e040c49dbefd65b9a58ab662fc9f7a2}} 
@@ -57,9 +57,9 @@ It\textquotesingle{}s creating new TCPServer, listen port 33333 and report about
 
 
 
-Method, that closing included socket. 
+closes included socket 
 
-Closing client\textquotesingle{}s Socket, removing user\textquotesingle{}s socket id \mbox{\Hypertarget{class_my_tcp_server_a0ba7316ffe1a26c57fabde9e74b6c8dc}\label{class_my_tcp_server_a0ba7316ffe1a26c57fabde9e74b6c8dc}} 
+Closes client\textquotesingle{}s Socket, removes user\textquotesingle{}s socket id \mbox{\Hypertarget{class_my_tcp_server_a0ba7316ffe1a26c57fabde9e74b6c8dc}\label{class_my_tcp_server_a0ba7316ffe1a26c57fabde9e74b6c8dc}} 
 \index{MyTcpServer@{MyTcpServer}!slotNewConnection@{slotNewConnection}}
 \index{slotNewConnection@{slotNewConnection}!MyTcpServer@{MyTcpServer}}
 \doxysubsubsection{\texorpdfstring{slotNewConnection}{slotNewConnection}}
@@ -67,9 +67,9 @@ Closing client\textquotesingle{}s Socket, removing user\textquotesingle{}s socke
 
 
 
-Method, that creating new slot connection. 
+creates new slot connection 
 
-If server is started, method create a slot connection \mbox{\Hypertarget{class_my_tcp_server_ab4a64d2eab985d723090963f5c8a2882}\label{class_my_tcp_server_ab4a64d2eab985d723090963f5c8a2882}} 
+If server is started, creates a slot connection \mbox{\Hypertarget{class_my_tcp_server_ab4a64d2eab985d723090963f5c8a2882}\label{class_my_tcp_server_ab4a64d2eab985d723090963f5c8a2882}} 
 \index{MyTcpServer@{MyTcpServer}!slotServerRead@{slotServerRead}}
 \index{slotServerRead@{slotServerRead}!MyTcpServer@{MyTcpServer}}
 \doxysubsubsection{\texorpdfstring{slotServerRead}{slotServerRead}}
@@ -77,11 +77,11 @@ If server is started, method create a slot connection \mbox{\Hypertarget{class_m
 
 
 
-Method, that reading byte array from server slot. 
+reads byte array from server slot 
 
-Reading information (byte array) from client\+Socket and writing it in execute\+\_\+line 
+Reads information (byte array) from client\+Socket and writes it in execute\+\_\+line 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/yariy/\+Documents/\+Git\+Hub/\+ZLP-\/\+Library/src/server/mytcpserver.\+h\item 
-C\+:/\+Users/yariy/\+Documents/\+Git\+Hub/\+ZLP-\/\+Library/src/server/mytcpserver.\+cpp\end{DoxyCompactItemize}
+C\+:/\+Users/yariy/\+Documents/\+Git\+Hub/\+ZLP-\/\+Library/src/server/\mbox{\hyperlink{mytcpserver_8h}{mytcpserver.\+h}}\item 
+C\+:/\+Users/yariy/\+Documents/\+Git\+Hub/\+ZLP-\/\+Library/src/server/\mbox{\hyperlink{mytcpserver_8cpp}{mytcpserver.\+cpp}}\end{DoxyCompactItemize}

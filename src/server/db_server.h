@@ -1,3 +1,7 @@
+/*! 
+\file 
+\brief header file for db_server.cpp
+*/
 #ifndef DB_SERVER_H
 #define DB_SERVER_H
 #include <QSqlQuery>

@@ -1,9 +1,13 @@
+/*! 
+\file 
+\brief header file for mytcpserver.cpp
+*/
 #ifndef MYTCPSERVER_H
 #define MYTCPSERVER_H
 #include <QTcpServer>
 #include <QTcpSocket>
 /*!
-Class, that responsible for tcp connection between socket and server
+responsible for tcp connection between socket and server
 */
 class MyTcpServer : public QObject
 {

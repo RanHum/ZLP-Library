@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['init_0',['init',['../class_d_b___server.html#a1736a4db23f2e1d626f489d9b211b4f7',1,'DB_Server']]]
+  ['db_5fquery_5ffields_0',['db_query_fields',['../parser_8cpp.html#a0e85ff9a0641ecc0053b767850cb4943',1,'parser.cpp']]]
 ];

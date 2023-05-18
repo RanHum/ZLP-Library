@@ -1,13 +1,19 @@
+/*! 
+\file 
+\brief methods for the interaction of the server with the database
+
+In this file realised methods that setts database and its parameters, also that methods makes query to database
+*/
 #include <db_server.h>
 
 DB_Server *DB_Server::instance = nullptr;
 
 /*!
-Object, that adding PostgreSQL database, setting DB parametrs and reptorting about the condition of BD loading
+adds PostgreSQL database, setts DB parametrs and reptorts about the condition of BD loading
 */
 
-bool DB_Server::init(
-		const QString host,
+bool DB_Server::init( 
+		const QString host, 
 		const int port,
 		const QString database_name,
 		const QString user,
@@ -26,7 +32,7 @@ bool DB_Server::init(
 }
 
 /*!
-Method, that making simple query to DB
+makes simple query to DB
 */
 QSqlQuery DB_Server::query_simple(const QString q) {
   QSqlQuery query;
@@ -35,7 +41,7 @@ QSqlQuery DB_Server::query_simple(const QString q) {
 }
 
 /*!
-Method, that making complex query to DB with "prepare" parameter
+makes complex query to DB with "prepare" parameter
 */
 QSqlQuery DB_Server::query_prepare(const QString q) {
   QSqlQuery query;
@@ -43,15 +49,13 @@ QSqlQuery DB_Server::query_prepare(const QString q) {
   return query;
 }
 
-/*!
-Method, that IDK what is he doing!
-*/
+
 static DB_Server *DB_Server::get() {
   return instance ? instance : instance = new DB_Server();
 }
 
 /*!
-Method, that closing connection with database
+closes connection with database
 */
 void DB_Server::close() {
   db.close();

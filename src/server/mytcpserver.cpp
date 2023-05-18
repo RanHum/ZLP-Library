@@ -1,9 +1,16 @@
+/*! 
+\file 
+\brief file with methods for the interaction of the socket and server
+
+In this file realised methods that creates and desctructs TCP server and sockets, also that reads information from socket and converts it to the desired form
+*/
+
 #include "mytcpserver.h"
 #include "parser.h"
 #include <QCoreApplication>
 
 /*!
-\brief Object, that responsible for tcp connection between socket and server
+\brief responsible for tcp connection between socket and server
 */
 
 MyTcpServer::~MyTcpServer()
@@ -17,9 +24,9 @@ MyTcpServer::~MyTcpServer()
 }
 
 /*!
-\brief Method, that responsible for TCPServer's working
+\brief responsible for TCPServer's working
 
-It's creating new TCPServer, listen port 33333 and report about server condition
+It's creates new TCPServer, listens port 33333 and reports about server condition
 */
 
 MyTcpServer::MyTcpServer(QObject *parent) : QObject(parent){
@@ -35,9 +42,9 @@ MyTcpServer::MyTcpServer(QObject *parent) : QObject(parent){
     }
 }
 /*!
-\brief Method, that creating new slot connection
+\brief creates new slot connection
 
-If server is started, method create a slot connection
+If server is started, creates a slot connection
 */
 
 void MyTcpServer::slotNewConnection(){
@@ -52,9 +59,9 @@ void MyTcpServer::slotNewConnection(){
     }
 }
 /*!
-\brief Method, that reading byte array from server slot
+\brief reads byte array from server slot
 
-Reading information (byte array) from clientSocket and writing it in execute_line
+Reads information (byte array) from clientSocket and writes it in execute_line
 */
 void MyTcpServer::slotServerRead(){
     QTcpSocket* clientSocket = (QTcpSocket*)sender();
@@ -67,9 +74,9 @@ void MyTcpServer::slotServerRead(){
     }
 }
 /*!
-\brief Method, that closing included socket
+\brief closes included socket
 
-Closing client's Socket, removing user's socket id
+Closes client's Socket, removes user's socket id
 */
 void MyTcpServer::slotClientDisconnected(){
     QTcpSocket* clientSocket = (QTcpSocket*)sender();
@@ -78,7 +85,7 @@ void MyTcpServer::slotClientDisconnected(){
     SClients.remove(user_socket_id);
 }
 /*!
-\brief Method, that deactivating Server
+\brief deactivates Server
 */
 void MyTcpServer::close() {
     this->~MyTcpServer();

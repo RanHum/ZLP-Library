@@ -1,3 +1,10 @@
+/*! 
+\file 
+\brief short description
+
+Long description
+*/
+
 #include <QFile>
 #include <QJsonArray>
 #include <QJsonDocument>
@@ -8,7 +15,8 @@
 #include <db_server.h>
 #include <parser.h>
 
-QJsonObject init_api_map() {
+
+QJsonObject init_api_map() { /// parses API from api.json file and report about reading condition
 	QFile json("api.json");
 	json.open(QIODevice::ReadOnly);
 	auto map = QJsonDocument::fromJson(json.readAll()).object();
@@ -19,7 +27,7 @@ QJsonObject init_api_map() {
 }
 const QJsonObject api_map = init_api_map();
 
-QJsonObject db_map;
+QJsonObject db_map; ///  
 void init_db_map() {
 	auto db_query = DB_Server::get()->query_simple(api_map["db_fields_query"].toString());
 	while (db_query.next()) {
@@ -35,16 +43,16 @@ void init_db_map() {
 		qDebug() << "DB columns fetched:" << db_map;
 }
 
-QJsonObject get_response(const QString&& error){
+QJsonObject get_response(const QString&& error){ ///?
 	return api_map["responses"][error].toObject();
 }
 
-bool check_status(const QJsonObject &response) {
+bool check_status(const QJsonObject &response) { ///?
 	return response["status"].toString() == "Success";
 }
 
-// check required fields in request
-QJsonObject check_fields_req(const QJsonObject &req, const QJsonValue &fields_to_test) {
+
+QJsonObject check_fields_req(const QJsonObject &req, const QJsonValue &fields_to_test) { /// checks required fields in request
 	QJsonArray missing;
 	for (const auto &field_tested : fields_to_test.toArray())
 		if (!req.contains(field_tested.toString()))
@@ -56,11 +64,11 @@ QJsonObject check_fields_req(const QJsonObject &req, const QJsonValue &fields_to
 	return err;
 }
 
-// qsl template engine, see api.json examples
-QString resolve_query_template(const QJsonObject &fields_values, const QJsonArray &fields_possible, const QJsonObject &sql_template) {
+
+QString resolve_query_template(const QJsonObject &fields_values, const QJsonArray &fields_possible, const QJsonObject &sql_template) { /// qsl template engine, see api.json examples
 	// get table name from sql_template first
-	auto sql = sql_template["template"].toString();
-	const auto table_name = QRegularExpression("<(.+)>").match(sql).captured(1);
+	auto sql = sql_template["template"].toString(); 
+	const auto table_name = QRegularExpression("<(.+)>").match(sql).captured(1); 
 	// only insert fields if there is a hint to table
 	if (!table_name.isEmpty()) {
 		// replace hint <table_name> with table_name
@@ -118,8 +126,8 @@ QString resolve_query_template(const QJsonObject &fields_values, const QJsonArra
 	return sql;
 }
 
-// db query generic sets of fields
-QJsonObject db_query_fields(const QJsonObject &fields_values, const QJsonArray &fields_possible, const QJsonValue &sql, const QString &result_name, const bool multiple_rows = false, const QJsonObject &action_storage = QJsonObject()) {
+
+QJsonObject db_query_fields(const QJsonObject &fields_values, const QJsonArray &fields_possible, const QJsonValue &sql, const QString &result_name, const bool multiple_rows = false, const QJsonObject &action_storage = QJsonObject()) { /// db query generic sets of fields
 	// prepare query with fields. via template engine if it's template object
 	auto db_query = DB_Server::get()->query_prepare(sql.isObject()? resolve_query_template(fields_values, fields_possible, sql.toObject()) : sql.toString());
 	// insert values in prepared query
@@ -153,8 +161,8 @@ QJsonObject db_query_fields(const QJsonObject &fields_values, const QJsonArray &
 	return result;
 }
 
-// just wrap single sql result in template and add default action type
-const QJsonObject action_to_object(const QJsonValue &action) {
+
+const QJsonObject action_to_object(const QJsonValue &action) { /// just wrap single sql result in template and add default action type
 	if (action.isObject())
 		return action.toObject();
 	auto action_new = api_map["intent_action_result"].toObject();
@@ -162,8 +170,8 @@ const QJsonObject action_to_object(const QJsonValue &action) {
 	return action_new;
 }
 
-// actions engine for intents
-QJsonObject actions_dispatcher(const QJsonObject &req, const QJsonObject &api_intent) {
+
+QJsonObject actions_dispatcher(const QJsonObject &req, const QJsonObject &api_intent) { /// actions engine for intents
 	// prepare all possible fields for request
 	auto fields_all = api_intent["optional"].toArray();
 	for (const auto &field : api_intent["required"].toArray())
@@ -204,8 +212,8 @@ QJsonObject actions_dispatcher(const QJsonObject &req, const QJsonObject &api_in
 	}
 }
 
-// first-hand validating request before dispatching for intent execution, e.g. required fields and auth checking
-QJsonObject execute_request(const QJsonObject &req) {
+
+QJsonObject execute_request(const QJsonObject &req) { /// first-hand validating request before dispatching for intent execution, e.g. required fields and auth checking
 	// test for invalid or empty request
 	if (req.isEmpty())
 		return get_response("request_invalid");
@@ -235,7 +243,7 @@ QJsonObject execute_request(const QJsonObject &req) {
 	return actions_dispatcher(req, api_intent);
 }
 
-QByteArray execute_line(const QByteArray& line) {
+QByteArray execute_line(const QByteArray& line) { /// converts byte array to json
 	auto response = execute_request(QJsonDocument::fromJson(line).object());
 	return QJsonDocument(response).toJson(QJsonDocument::JsonFormat::Compact);
 }

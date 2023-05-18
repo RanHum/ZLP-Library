@@ -1,0 +1,120 @@
+\hypertarget{parser_8cpp}{}\doxysection{C\+:/\+Users/yariy/\+Documents/\+Git\+Hub/\+ZLP-\/\+Library/src/server/parser.cpp File Reference}
+\label{parser_8cpp}\index{C:/Users/yariy/Documents/GitHub/ZLP-\/Library/src/server/parser.cpp@{C:/Users/yariy/Documents/GitHub/ZLP-\/Library/src/server/parser.cpp}}
+
+
+short description  
+
+
+{\ttfamily \#include $<$QFile$>$}\newline
+{\ttfamily \#include $<$QJson\+Array$>$}\newline
+{\ttfamily \#include $<$QJson\+Document$>$}\newline
+{\ttfamily \#include $<$QJson\+Object$>$}\newline
+{\ttfamily \#include $<$QJson\+Value$>$}\newline
+{\ttfamily \#include $<$QRegular\+Expression$>$}\newline
+{\ttfamily \#include $<$QString\+List$>$}\newline
+{\ttfamily \#include $<$db\+\_\+server.\+h$>$}\newline
+{\ttfamily \#include $<$parser.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+QJson\+Object \mbox{\hyperlink{parser_8cpp_a659a37680a9a7ae9bddefff934fed958}{init\+\_\+api\+\_\+map}} ()
+\item 
+\mbox{\Hypertarget{parser_8cpp_a8b6ca778a788f3555773d8a8bd6227f9}\label{parser_8cpp_a8b6ca778a788f3555773d8a8bd6227f9}} 
+void {\bfseries init\+\_\+db\+\_\+map} ()
+\item 
+QJson\+Object \mbox{\hyperlink{parser_8cpp_a9181af4ff2efafc8d2213ca87efac61b}{get\+\_\+response}} (const QString \&\&error)
+\item 
+bool \mbox{\hyperlink{parser_8cpp_ab50c5f96d7d35fedebe7da7cde5107df}{check\+\_\+status}} (const QJson\+Object \&response)
+\item 
+QJson\+Object \mbox{\hyperlink{parser_8cpp_aa8fe6ca741972e7ffe29698be64cdbc3}{check\+\_\+fields\+\_\+req}} (const QJson\+Object \&req, const QJson\+Value \&fields\+\_\+to\+\_\+test)
+\item 
+QString \mbox{\hyperlink{parser_8cpp_ada488f926708a23a05701a99ad51a205}{resolve\+\_\+query\+\_\+template}} (const QJson\+Object \&fields\+\_\+values, const QJson\+Array \&fields\+\_\+possible, const QJson\+Object \&sql\+\_\+template)
+\item 
+QJson\+Object \mbox{\hyperlink{parser_8cpp_a0e85ff9a0641ecc0053b767850cb4943}{db\+\_\+query\+\_\+fields}} (const QJson\+Object \&fields\+\_\+values, const QJson\+Array \&fields\+\_\+possible, const QJson\+Value \&sql, const QString \&result\+\_\+name, const bool multiple\+\_\+rows=false, const QJson\+Object \&action\+\_\+storage=QJson\+Object())
+\item 
+const QJson\+Object \mbox{\hyperlink{parser_8cpp_aa72aeaaa6e6c3e1da56f43716e86d0a6}{action\+\_\+to\+\_\+object}} (const QJson\+Value \&action)
+\item 
+QJson\+Object \mbox{\hyperlink{parser_8cpp_afc955b2c91e49de904c86bcd2320fbda}{actions\+\_\+dispatcher}} (const QJson\+Object \&req, const QJson\+Object \&api\+\_\+intent)
+\item 
+QJson\+Object \mbox{\hyperlink{parser_8cpp_a59b964523c154d7ad8f0dc4580aa5124}{execute\+\_\+request}} (const QJson\+Object \&req)
+\item 
+QByte\+Array \mbox{\hyperlink{parser_8cpp_ae8829765c32fd7d2f8efc4d2b689ebf5}{execute\+\_\+line}} (const QByte\+Array \&line)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{parser_8cpp_abe057414fc6da735e6a3a7361de0c914}\label{parser_8cpp_abe057414fc6da735e6a3a7361de0c914}} 
+const QJson\+Object {\bfseries api\+\_\+map} = \mbox{\hyperlink{parser_8cpp_a659a37680a9a7ae9bddefff934fed958}{init\+\_\+api\+\_\+map}}()
+\item 
+\mbox{\Hypertarget{parser_8cpp_a0518254785ad5131b52d90c03ea47b77}\label{parser_8cpp_a0518254785ad5131b52d90c03ea47b77}} 
+QJson\+Object {\bfseries db\+\_\+map}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+short description 
+
+Long description 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{parser_8cpp_aa72aeaaa6e6c3e1da56f43716e86d0a6}\label{parser_8cpp_aa72aeaaa6e6c3e1da56f43716e86d0a6}} 
+\index{parser.cpp@{parser.cpp}!action\_to\_object@{action\_to\_object}}
+\index{action\_to\_object@{action\_to\_object}!parser.cpp@{parser.cpp}}
+\doxysubsubsection{\texorpdfstring{action\_to\_object()}{action\_to\_object()}}
+{\footnotesize\ttfamily const QJson\+Object action\+\_\+to\+\_\+object (\begin{DoxyParamCaption}\item[{const QJson\+Value \&}]{action }\end{DoxyParamCaption})}
+
+just wrap single sql result in template and add default action type\mbox{\Hypertarget{parser_8cpp_afc955b2c91e49de904c86bcd2320fbda}\label{parser_8cpp_afc955b2c91e49de904c86bcd2320fbda}} 
+\index{parser.cpp@{parser.cpp}!actions\_dispatcher@{actions\_dispatcher}}
+\index{actions\_dispatcher@{actions\_dispatcher}!parser.cpp@{parser.cpp}}
+\doxysubsubsection{\texorpdfstring{actions\_dispatcher()}{actions\_dispatcher()}}
+{\footnotesize\ttfamily QJson\+Object actions\+\_\+dispatcher (\begin{DoxyParamCaption}\item[{const QJson\+Object \&}]{req,  }\item[{const QJson\+Object \&}]{api\+\_\+intent }\end{DoxyParamCaption})}
+
+actions engine for intents\mbox{\Hypertarget{parser_8cpp_aa8fe6ca741972e7ffe29698be64cdbc3}\label{parser_8cpp_aa8fe6ca741972e7ffe29698be64cdbc3}} 
+\index{parser.cpp@{parser.cpp}!check\_fields\_req@{check\_fields\_req}}
+\index{check\_fields\_req@{check\_fields\_req}!parser.cpp@{parser.cpp}}
+\doxysubsubsection{\texorpdfstring{check\_fields\_req()}{check\_fields\_req()}}
+{\footnotesize\ttfamily QJson\+Object check\+\_\+fields\+\_\+req (\begin{DoxyParamCaption}\item[{const QJson\+Object \&}]{req,  }\item[{const QJson\+Value \&}]{fields\+\_\+to\+\_\+test }\end{DoxyParamCaption})}
+
+checks required fields in request\mbox{\Hypertarget{parser_8cpp_ab50c5f96d7d35fedebe7da7cde5107df}\label{parser_8cpp_ab50c5f96d7d35fedebe7da7cde5107df}} 
+\index{parser.cpp@{parser.cpp}!check\_status@{check\_status}}
+\index{check\_status@{check\_status}!parser.cpp@{parser.cpp}}
+\doxysubsubsection{\texorpdfstring{check\_status()}{check\_status()}}
+{\footnotesize\ttfamily bool check\+\_\+status (\begin{DoxyParamCaption}\item[{const QJson\+Object \&}]{response }\end{DoxyParamCaption})}
+
+?\mbox{\Hypertarget{parser_8cpp_a0e85ff9a0641ecc0053b767850cb4943}\label{parser_8cpp_a0e85ff9a0641ecc0053b767850cb4943}} 
+\index{parser.cpp@{parser.cpp}!db\_query\_fields@{db\_query\_fields}}
+\index{db\_query\_fields@{db\_query\_fields}!parser.cpp@{parser.cpp}}
+\doxysubsubsection{\texorpdfstring{db\_query\_fields()}{db\_query\_fields()}}
+{\footnotesize\ttfamily QJson\+Object db\+\_\+query\+\_\+fields (\begin{DoxyParamCaption}\item[{const QJson\+Object \&}]{fields\+\_\+values,  }\item[{const QJson\+Array \&}]{fields\+\_\+possible,  }\item[{const QJson\+Value \&}]{sql,  }\item[{const QString \&}]{result\+\_\+name,  }\item[{const bool}]{multiple\+\_\+rows = {\ttfamily false},  }\item[{const QJson\+Object \&}]{action\+\_\+storage = {\ttfamily QJsonObject()} }\end{DoxyParamCaption})}
+
+db query generic sets of fields\mbox{\Hypertarget{parser_8cpp_ae8829765c32fd7d2f8efc4d2b689ebf5}\label{parser_8cpp_ae8829765c32fd7d2f8efc4d2b689ebf5}} 
+\index{parser.cpp@{parser.cpp}!execute\_line@{execute\_line}}
+\index{execute\_line@{execute\_line}!parser.cpp@{parser.cpp}}
+\doxysubsubsection{\texorpdfstring{execute\_line()}{execute\_line()}}
+{\footnotesize\ttfamily QByte\+Array execute\+\_\+line (\begin{DoxyParamCaption}\item[{const QByte\+Array \&}]{line }\end{DoxyParamCaption})}
+
+converts byte array to json\mbox{\Hypertarget{parser_8cpp_a59b964523c154d7ad8f0dc4580aa5124}\label{parser_8cpp_a59b964523c154d7ad8f0dc4580aa5124}} 
+\index{parser.cpp@{parser.cpp}!execute\_request@{execute\_request}}
+\index{execute\_request@{execute\_request}!parser.cpp@{parser.cpp}}
+\doxysubsubsection{\texorpdfstring{execute\_request()}{execute\_request()}}
+{\footnotesize\ttfamily QJson\+Object execute\+\_\+request (\begin{DoxyParamCaption}\item[{const QJson\+Object \&}]{req }\end{DoxyParamCaption})}
+
+first-\/hand validating request before dispatching for intent execution, e.\+g. required fields and auth checking\mbox{\Hypertarget{parser_8cpp_a9181af4ff2efafc8d2213ca87efac61b}\label{parser_8cpp_a9181af4ff2efafc8d2213ca87efac61b}} 
+\index{parser.cpp@{parser.cpp}!get\_response@{get\_response}}
+\index{get\_response@{get\_response}!parser.cpp@{parser.cpp}}
+\doxysubsubsection{\texorpdfstring{get\_response()}{get\_response()}}
+{\footnotesize\ttfamily QJson\+Object get\+\_\+response (\begin{DoxyParamCaption}\item[{const QString \&\&}]{error }\end{DoxyParamCaption})}
+
+?\mbox{\Hypertarget{parser_8cpp_a659a37680a9a7ae9bddefff934fed958}\label{parser_8cpp_a659a37680a9a7ae9bddefff934fed958}} 
+\index{parser.cpp@{parser.cpp}!init\_api\_map@{init\_api\_map}}
+\index{init\_api\_map@{init\_api\_map}!parser.cpp@{parser.cpp}}
+\doxysubsubsection{\texorpdfstring{init\_api\_map()}{init\_api\_map()}}
+{\footnotesize\ttfamily QJson\+Object init\+\_\+api\+\_\+map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+parses API from api.\+json file and report about reading condition\mbox{\Hypertarget{parser_8cpp_ada488f926708a23a05701a99ad51a205}\label{parser_8cpp_ada488f926708a23a05701a99ad51a205}} 
+\index{parser.cpp@{parser.cpp}!resolve\_query\_template@{resolve\_query\_template}}
+\index{resolve\_query\_template@{resolve\_query\_template}!parser.cpp@{parser.cpp}}
+\doxysubsubsection{\texorpdfstring{resolve\_query\_template()}{resolve\_query\_template()}}
+{\footnotesize\ttfamily QString resolve\+\_\+query\+\_\+template (\begin{DoxyParamCaption}\item[{const QJson\+Object \&}]{fields\+\_\+values,  }\item[{const QJson\+Array \&}]{fields\+\_\+possible,  }\item[{const QJson\+Object \&}]{sql\+\_\+template }\end{DoxyParamCaption})}
+
+qsl template engine, see api.\+json examples
