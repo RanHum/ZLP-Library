@@ -20,7 +20,11 @@ void Full::setText(const QString& text) {
 
 void Full::on_pushButton_clicked()
 {
-    emit on_close();
-    //close();
+    emit remove_requested(this);
 }
 
+void Full::mousePressEvent(QMouseEvent* event)
+{
+    emit clicked(this);
+    QWidget::mousePressEvent(event);
+}

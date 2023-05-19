@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include <QLabel>
+#include <QListWidgetItem>
 namespace Ui {
 class Full;
 }
@@ -15,17 +16,20 @@ public:
     explicit Full(QWidget *parent = nullptr);
     Full(const QString& text, QWidget *parent = nullptr);
     ~Full();
+    QListWidgetItem * item;
 
-void setText(const QString& text);
+    void setText(const QString& text);
 
+protected:
+    void mousePressEvent(QMouseEvent* event) override;
 private slots:
-void on_pushButton_clicked();
+    void on_pushButton_clicked();
 
 private:
     Ui::Full *ui;
-    //QLabel *m_label;
 signals:
-    void on_close();
+    void remove_requested(Full* widget);
+    void clicked(Full* widget);
 };
 
 #endif // FULL_H

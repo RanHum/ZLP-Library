@@ -34,7 +34,7 @@
   <property name="windowTitle">
    <string>Окно регистрации</string>
   </property>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="haveAccountButton">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -65,7 +65,7 @@ color: white;
 font-family: 'Roboto Slab', serif;</string>
    </property>
    <property name="text">
-    <string>Уже есть аккаунт</string>
+    <string>Уже есть аккаунт?</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="mail">
@@ -78,10 +78,13 @@ font-family: 'Roboto Slab', serif;</string>
     </rect>
    </property>
    <property name="text">
+    <string/>
+   </property>
+   <property name="placeholderText">
     <string>Почта</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="login2">
+  <widget class="QLineEdit" name="login">
    <property name="geometry">
     <rect>
      <x>75</x>
@@ -91,10 +94,13 @@ font-family: 'Roboto Slab', serif;</string>
     </rect>
    </property>
    <property name="text">
+    <string/>
+   </property>
+   <property name="placeholderText">
     <string>Логин</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="password2">
+  <widget class="QLineEdit" name="password">
    <property name="geometry">
     <rect>
      <x>75</x>
@@ -104,10 +110,13 @@ font-family: 'Roboto Slab', serif;</string>
     </rect>
    </property>
    <property name="text">
+    <string/>
+   </property>
+   <property name="placeholderText">
     <string>Пароль</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="password3">
+  <widget class="QLineEdit" name="password2">
    <property name="geometry">
     <rect>
      <x>75</x>
@@ -117,10 +126,13 @@ font-family: 'Roboto Slab', serif;</string>
     </rect>
    </property>
    <property name="text">
-    <string>Пароль</string>
+    <string/>
+   </property>
+   <property name="placeholderText">
+    <string>Повторите пароль</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_2">
+  <widget class="QPushButton" name="registerButton">
    <property name="geometry">
     <rect>
      <x>75</x>
@@ -151,7 +163,7 @@ color: white;
 font-family: 'Roboto Slab', serif;</string>
    </property>
    <property name="text">
-    <string>Зарегестрироваться</string>
+    <string>Зарегистрироваться</string>
    </property>
   </widget>
  </widget>

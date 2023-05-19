@@ -21,6 +21,8 @@ void Doska::on_pushButton_clicked()
 {
     QString text = ui->lineEdit_2->text();
     emit signal(text);
+    ui->lineEdit_2->clear();
+    ui->lineEdit_3->clear();
     this->close();
 
 }

@@ -87,6 +87,9 @@ font-family: 'Roboto Slab', serif;</string>
      </font>
     </property>
     <property name="text">
+     <string/>
+    </property>
+    <property name="placeholderText">
      <string>Логин или почта</string>
     </property>
    </widget>
@@ -105,6 +108,9 @@ font-family: 'Roboto Slab', serif;</string>
      </font>
     </property>
     <property name="text">
+     <string/>
+    </property>
+    <property name="placeholderText">
      <string>Пароль</string>
     </property>
    </widget>
@@ -149,7 +155,7 @@ font-family: 'Roboto Slab', serif;</string>
      <x>0</x>
      <y>0</y>
      <width>300</width>
-     <height>34</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>

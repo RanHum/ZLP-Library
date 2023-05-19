@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>book_form</class>
+ <widget class="QWidget" name="book_form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>341</width>
+    <height>490</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QWidget" name="verticalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>341</width>
+     <height>491</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="spacing">
+     <number>1</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QLineEdit" name="name_input">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="placeholderText">
+       <string>Название книги</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="date_input">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="placeholderText">
+       <string>Дата написания</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="description_input">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="placeholderText">
+       <string>Описание</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="page_count_input">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="placeholderText">
+       <string>Количество страниц</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="format_input">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="placeholderText">
+       <string>Формат книги</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="author_input">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="placeholderText">
+       <string>Авторы книги</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="genre_input">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="placeholderText">
+       <string>Жанры книги</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="add_button">
+      <property name="text">
+       <string>Добавить</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>Главный экран</string>
   </property>
-  <widget class="QPushButton" name="pushButton_4">
+  <widget class="QPushButton" name="search_desk_button">
    <property name="geometry">
     <rect>
      <x>815</x>
@@ -41,7 +41,7 @@ font-family: 'Roboto Slab', serif;</string>
     <string>Поиск досок</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_3">
+  <widget class="QPushButton" name="add_desk_button">
    <property name="geometry">
     <rect>
      <x>385</x>
@@ -69,7 +69,7 @@ font-family: 'Roboto Slab', serif;</string>
     <string>Создать доску</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="avatar_button">
    <property name="geometry">
     <rect>
      <x>1430</x>
@@ -107,7 +107,7 @@ font-family: 'Roboto Slab', serif;</string>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout_2">
     <item>
-     <widget class="QPushButton" name="pushButton_25">
+     <widget class="QPushButton" name="bookmarks_button">
       <property name="styleSheet">
        <string notr="true">float: right;
 margin-right: 3%;
@@ -129,7 +129,7 @@ font-family: 'Roboto Slab', serif;</string>
      </widget>
     </item>
     <item>
-     <widget class="QPushButton" name="pushButton_26">
+     <widget class="QPushButton" name="profile_button">
       <property name="styleSheet">
        <string notr="true">float: right;
 margin-right: 3%;
@@ -151,7 +151,7 @@ font-family: 'Roboto Slab', serif;</string>
      </widget>
     </item>
     <item>
-     <widget class="QPushButton" name="pushButton_27">
+     <widget class="QPushButton" name="settings_button">
       <property name="styleSheet">
        <string notr="true">float: right;
 margin-right: 3%;
@@ -174,24 +174,127 @@ font-family: 'Roboto Slab', serif;</string>
     </item>
    </layout>
   </widget>
-  <widget class="QLabel" name="label">
+  <widget class="QScrollArea" name="bookScrollArea">
    <property name="geometry">
     <rect>
-     <x>260</x>
-     <y>520</y>
-     <width>211</width>
-     <height>121</height>
+     <x>280</x>
+     <y>120</y>
+     <width>1071</width>
+     <height>621</height>
     </rect>
    </property>
-   <property name="text">
-    <string/>
+   <property name="widgetResizable">
+    <bool>true</bool>
    </property>
+   <widget class="QWidget" name="scrollAreaWidgetContents">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1069</width>
+      <height>619</height>
+     </rect>
+    </property>
+    <widget class="QWidget" name="gridLayoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>1071</width>
+       <height>621</height>
+      </rect>
+     </property>
+     <layout class="QGridLayout" name="bookContainerLayout" rowstretch="0" columnstretch="0"/>
+    </widget>
+   </widget>
   </widget>
-  <zorder>pushButton_4</zorder>
-  <zorder>pushButton_3</zorder>
+  <widget class="QWidget" name="verticalLayoutWidget_2">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>290</y>
+     <width>160</width>
+     <height>161</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QPushButton" name="add_book_button">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">float: right;
+margin-right: 3%;
+margin-top: 5px;
+border-radius: 5px;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+padding: 5px 9px;
+font-size: 1.2em;
+background-color: rgba(236, 101, 80, 1);
+text-shadow: #454545 0 0 2px;
+border-bottom: 4px solid rgba(217, 91, 72, 1);
+color: white;
+font-family: 'Roboto Slab', serif;</string>
+      </property>
+      <property name="text">
+       <string>Добавить книгу</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="close_desk_button">
+      <property name="styleSheet">
+       <string notr="true">float: right;
+margin-right: 3%;
+margin-top: 5px;
+border-radius: 5px;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+padding: 5px 9px;
+font-size: 1.2em;
+background-color: rgba(236, 101, 80, 1);
+text-shadow: #454545 0 0 2px;
+border-bottom: 4px solid rgba(217, 91, 72, 1);
+color: white;
+font-family: 'Roboto Slab', serif;</string>
+      </property>
+      <property name="text">
+       <string>Закрыть доску</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="delete_desk_button">
+      <property name="styleSheet">
+       <string notr="true">float: right;
+margin-right: 3%;
+margin-top: 5px;
+border-radius: 5px;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+padding: 5px 9px;
+font-size: 1.2em;
+background-color: rgba(236, 101, 80, 1);
+text-shadow: #454545 0 0 2px;
+border-bottom: 4px solid rgba(217, 91, 72, 1);
+color: white;
+font-family: 'Roboto Slab', serif;</string>
+      </property>
+      <property name="text">
+       <string>Удалить доску</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <zorder>search_desk_button</zorder>
+  <zorder>add_desk_button</zorder>
   <zorder>verticalLayoutWidget</zorder>
-  <zorder>pushButton</zorder>
-  <zorder>label</zorder>
+  <zorder>avatar_button</zorder>
+  <zorder>bookScrollArea</zorder>
+  <zorder>verticalLayoutWidget_2</zorder>
  </widget>
  <resources/>
  <connections/>

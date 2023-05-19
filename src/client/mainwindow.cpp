@@ -6,27 +6,17 @@
 #include <requests.h>
 #include <api_utils.h>
 
-MainWindow::MainWindow(QWidget *parent)
-    :
-      QMainWindow(parent)
-
-    , ui(new Ui::MainWindow)
-
-{
+MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow) {
     ui->setupUi(this);
     form = new Form();
     connect(form, &Form::firstWindow, this, &MainWindow::show);
-
 }
 
-MainWindow::~MainWindow()
-{
+MainWindow::~MainWindow() {
     delete ui;
 }
 
-
-void MainWindow::on_pushButton_clicked()
-{
+void MainWindow::on_pushButton_clicked() {
     form->show();
     this->close();
 }
@@ -37,12 +27,11 @@ void delay(int ms) {
 		QCoreApplication::processEvents(QEventLoop::AllEvents, 100);
 }
 
-void MainWindow::on_pushButton_2_clicked()
-{
+void MainWindow::on_pushButton_2_clicked() {
     QString login= ui->login->text();
     QString password= ui->password->text();
     Connection::getInstance().setServer("localhost", 33333);
-	auto req = makeReqJson("user", "login");
+    auto req = makeReqJson("user", "login");
     req.insert("name", login);
     req.insert("password", password);
     const auto resp = RequestClass().sendRequest(req);

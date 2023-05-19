@@ -8,29 +8,39 @@ CONFIG += c++17 console
 
 SOURCES += \
     bigwindow.cpp \
+    book_container.cpp \
+    book_form.cpp \
     doska.cpp \
     form.cpp \
     full.cpp \
     main.cpp \
     mainwindow.cpp \
+    profile.cpp \
     requests.cpp \
     api_utils.cpp
 
 HEADERS += \
     bigwindow.h \
+    book_container.h \
+    book_form.h \
     doska.h \
     form.h \
     full.h \
     mainwindow.h \
+    profile.h \
     requests.h \
     api_utils.h
 
 FORMS += \
     bigwindow.ui \
+    book_container.ui \
+    book_form.ui \
+    desk.ui \
     doska.ui \
     form.ui \
     full.ui \
-    mainwindow.ui
+    mainwindow.ui \
+    profile.ui
 
 TRANSLATIONS += \
     FirstTry_ru_RU.ts

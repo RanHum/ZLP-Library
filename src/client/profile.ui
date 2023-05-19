@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>profile</class>
+ <widget class="QWidget" name="profile">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>938</width>
+    <height>768</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QPushButton" name="back_button">
+   <property name="geometry">
+    <rect>
+     <x>709</x>
+     <y>10</y>
+     <width>221</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">float: right;
+margin-right: 3%;
+margin-top: 5px;
+border-radius: 5px;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+padding: 5px 9px;
+font-size: 1.2em;
+background-color: rgba(236, 101, 80, 1);
+text-shadow: #454545 0 0 2px;
+border-bottom: 4px solid rgba(217, 91, 72, 1);
+color: white;
+font-family: 'Roboto Slab', serif;</string>
+   </property>
+   <property name="text">
+    <string>Закрыть</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="verticalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>280</y>
+     <width>231</width>
+     <height>241</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QLabel" name="name_2">
+        <property name="text">
+         <string>Имя пользователя:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="name">
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QPushButton" name="change_button">
+      <property name="styleSheet">
+       <string notr="true">float: right;
+margin-right: 3%;
+margin-top: 5px;
+border-radius: 5px;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+padding: 5px 9px;
+font-size: 1.2em;
+background-color: rgba(236, 101, 80, 1);
+text-shadow: #454545 0 0 2px;
+border-bottom: 4px solid rgba(217, 91, 72, 1);
+color: white;
+font-family: 'Roboto Slab', serif;</string>
+      </property>
+      <property name="text">
+       <string>Изменить</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
