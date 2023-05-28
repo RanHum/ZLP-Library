@@ -40,16 +40,6 @@
      </widget>
     </item>
     <item>
-     <widget class="QLineEdit" name="lineEdit_3">
-      <property name="text">
-       <string/>
-      </property>
-      <property name="placeholderText">
-       <string>Логин (автоматически)</string>
-      </property>
-     </widget>
-    </item>
-    <item>
      <widget class="QPushButton" name="pushButton">
       <property name="text">
        <string>Сохранить</string>

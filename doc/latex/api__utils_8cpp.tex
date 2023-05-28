@@ -1,0 +1,61 @@
+\hypertarget{api__utils_8cpp}{}\doxysection{D\+:/projects/\+ZLP-\/\+Library/src/client/api\+\_\+utils.cpp File Reference}
+\label{api__utils_8cpp}\index{D:/projects/ZLP-\/Library/src/client/api\_utils.cpp@{D:/projects/ZLP-\/Library/src/client/api\_utils.cpp}}
+
+
+Implementation of the API utilities.  
+
+
+{\ttfamily \#include \char`\"{}api\+\_\+utils.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+QJson\+Object \mbox{\hyperlink{api__utils_8cpp_a8b8d11e1fb78b49377496d34dd55caba}{make\+Req\+Json}} (const QString \&domain, const QString \&intent)
+\begin{DoxyCompactList}\small\item\em Create a JSON object for the request. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{api__utils_8cpp_ab50c5f96d7d35fedebe7da7cde5107df}{check\+\_\+status}} (const QJson\+Object \&response)
+\begin{DoxyCompactList}\small\item\em Check the status of the response. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementation of the API utilities. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{api__utils_8cpp_ab50c5f96d7d35fedebe7da7cde5107df}\label{api__utils_8cpp_ab50c5f96d7d35fedebe7da7cde5107df}} 
+\index{api\_utils.cpp@{api\_utils.cpp}!check\_status@{check\_status}}
+\index{check\_status@{check\_status}!api\_utils.cpp@{api\_utils.cpp}}
+\doxysubsubsection{\texorpdfstring{check\_status()}{check\_status()}}
+{\footnotesize\ttfamily bool check\+\_\+status (\begin{DoxyParamCaption}\item[{const QJson\+Object \&}]{response }\end{DoxyParamCaption})}
+
+
+
+Check the status of the response. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em response} & The response JSON object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if the status is \char`\"{}\+Success\char`\"{}, {\ttfamily false} otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{api__utils_8cpp_a8b8d11e1fb78b49377496d34dd55caba}\label{api__utils_8cpp_a8b8d11e1fb78b49377496d34dd55caba}} 
+\index{api\_utils.cpp@{api\_utils.cpp}!makeReqJson@{makeReqJson}}
+\index{makeReqJson@{makeReqJson}!api\_utils.cpp@{api\_utils.cpp}}
+\doxysubsubsection{\texorpdfstring{makeReqJson()}{makeReqJson()}}
+{\footnotesize\ttfamily QJson\+Object make\+Req\+Json (\begin{DoxyParamCaption}\item[{const QString \&}]{domain,  }\item[{const QString \&}]{intent }\end{DoxyParamCaption})}
+
+
+
+Create a JSON object for the request. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em domain} & The domain of the request. \\
+\hline
+{\em intent} & The intent of the request. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The JSON object representing the request. 
+\end{DoxyReturn}

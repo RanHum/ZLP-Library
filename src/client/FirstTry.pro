@@ -10,6 +10,7 @@ SOURCES += \
     bigwindow.cpp \
     book_container.cpp \
     book_form.cpp \
+    deskadminpanel.cpp \
     doska.cpp \
     form.cpp \
     full.cpp \
@@ -21,21 +22,26 @@ SOURCES += \
 
 HEADERS += \
     bigwindow.h \
+    book.h \
     book_container.h \
     book_form.h \
+    desk.h \
+    deskadminpanel.h \
     doska.h \
     form.h \
     full.h \
     mainwindow.h \
     profile.h \
     requests.h \
-    api_utils.h
+    api_utils.h \
+    user.h
 
 FORMS += \
     bigwindow.ui \
     book_container.ui \
     book_form.ui \
     desk.ui \
+    deskadminpanel.ui \
     doska.ui \
     form.ui \
     full.ui \
@@ -51,3 +57,9 @@ CONFIG += embed_translations
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+DISTFILES += \
+    book_img.png
+
+RESOURCES += \
+    book_img.qrc

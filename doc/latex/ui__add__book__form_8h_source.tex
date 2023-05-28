@@ -1,0 +1,127 @@
+\hypertarget{ui__add__book__form_8h_source}{}\doxysection{ui\+\_\+add\+\_\+book\+\_\+form.\+h}
+\label{ui__add__book__form_8h_source}\index{D:/projects/ZLP-\/Library/src/build-\/FirstTry-\/Desktop\_Qt\_6\_4\_2\_MinGW\_64\_bit-\/Debug/ui\_add\_book\_form.h@{D:/projects/ZLP-\/Library/src/build-\/FirstTry-\/Desktop\_Qt\_6\_4\_2\_MinGW\_64\_bit-\/Debug/ui\_add\_book\_form.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/********************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{**\ Form\ generated\ from\ reading\ UI\ file\ 'add\_book\_form.ui'}}
+\DoxyCodeLine{00003\ \textcolor{comment}{**}}
+\DoxyCodeLine{00004\ \textcolor{comment}{**\ Created\ by:\ Qt\ User\ Interface\ Compiler\ version\ 6.4.2}}
+\DoxyCodeLine{00005\ \textcolor{comment}{**}}
+\DoxyCodeLine{00006\ \textcolor{comment}{**\ WARNING!\ All\ changes\ made\ in\ this\ file\ will\ be\ lost\ when\ recompiling\ UI\ file!}}
+\DoxyCodeLine{00007\ \textcolor{comment}{********************************************************************************/}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ UI\_ADD\_BOOK\_FORM\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ UI\_ADD\_BOOK\_FORM\_H}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <QtCore/QVariant>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <QtWidgets/QApplication>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <QtWidgets/QLineEdit>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <QtWidgets/QPushButton>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <QtWidgets/QVBoxLayout>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <QtWidgets/QWidget>}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ QT\_BEGIN\_NAMESPACE}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_ui___form}{Ui\_Form}}}
+\DoxyCodeLine{00022\ \{}
+\DoxyCodeLine{00023\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024\ \ \ \ \ QWidget\ *verticalLayoutWidget;}
+\DoxyCodeLine{00025\ \ \ \ \ QVBoxLayout\ *verticalLayout;}
+\DoxyCodeLine{00026\ \ \ \ \ QLineEdit\ *name\_input;}
+\DoxyCodeLine{00027\ \ \ \ \ QLineEdit\ *date\_input;}
+\DoxyCodeLine{00028\ \ \ \ \ QLineEdit\ *description\_input;}
+\DoxyCodeLine{00029\ \ \ \ \ QLineEdit\ *page\_count\_input;}
+\DoxyCodeLine{00030\ \ \ \ \ QLineEdit\ *format\_input;}
+\DoxyCodeLine{00031\ \ \ \ \ QLineEdit\ *author\_input;}
+\DoxyCodeLine{00032\ \ \ \ \ QLineEdit\ *genre\_input;}
+\DoxyCodeLine{00033\ \ \ \ \ QPushButton\ *add\_button;}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ setupUi(QWidget\ *\mbox{\hyperlink{class_form}{Form}})}
+\DoxyCodeLine{00036\ \ \ \ \ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_form}{Form}}-\/>objectName().isEmpty())}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_form}{Form}}-\/>setObjectName(\textcolor{stringliteral}{"{}Form"{}});}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_form}{Form}}-\/>resize(337,\ 488);}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ verticalLayoutWidget\ =\ \textcolor{keyword}{new}\ QWidget(\mbox{\hyperlink{class_form}{Form}});}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ verticalLayoutWidget-\/>setObjectName(\textcolor{stringliteral}{"{}verticalLayoutWidget"{}});}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ verticalLayoutWidget-\/>setGeometry(QRect(0,\ 0,\ 341,\ 491));}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ verticalLayout\ =\ \textcolor{keyword}{new}\ QVBoxLayout(verticalLayoutWidget);}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ verticalLayout-\/>setSpacing(1);}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ verticalLayout-\/>setObjectName(\textcolor{stringliteral}{"{}verticalLayout"{}});}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ verticalLayout-\/>setContentsMargins(0,\ 0,\ 0,\ 0);}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ name\_input\ =\ \textcolor{keyword}{new}\ QLineEdit(verticalLayoutWidget);}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ name\_input-\/>setObjectName(\textcolor{stringliteral}{"{}name\_input"{}});}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ verticalLayout-\/>addWidget(name\_input);}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ date\_input\ =\ \textcolor{keyword}{new}\ QLineEdit(verticalLayoutWidget);}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ date\_input-\/>setObjectName(\textcolor{stringliteral}{"{}date\_input"{}});}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ verticalLayout-\/>addWidget(date\_input);}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ description\_input\ =\ \textcolor{keyword}{new}\ QLineEdit(verticalLayoutWidget);}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ description\_input-\/>setObjectName(\textcolor{stringliteral}{"{}description\_input"{}});}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ verticalLayout-\/>addWidget(description\_input);}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ page\_count\_input\ =\ \textcolor{keyword}{new}\ QLineEdit(verticalLayoutWidget);}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ page\_count\_input-\/>setObjectName(\textcolor{stringliteral}{"{}page\_count\_input"{}});}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ verticalLayout-\/>addWidget(page\_count\_input);}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ format\_input\ =\ \textcolor{keyword}{new}\ QLineEdit(verticalLayoutWidget);}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ format\_input-\/>setObjectName(\textcolor{stringliteral}{"{}format\_input"{}});}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ verticalLayout-\/>addWidget(format\_input);}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ author\_input\ =\ \textcolor{keyword}{new}\ QLineEdit(verticalLayoutWidget);}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ author\_input-\/>setObjectName(\textcolor{stringliteral}{"{}author\_input"{}});}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ verticalLayout-\/>addWidget(author\_input);}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ genre\_input\ =\ \textcolor{keyword}{new}\ QLineEdit(verticalLayoutWidget);}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ genre\_input-\/>setObjectName(\textcolor{stringliteral}{"{}genre\_input"{}});}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ verticalLayout-\/>addWidget(genre\_input);}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ add\_button\ =\ \textcolor{keyword}{new}\ QPushButton(verticalLayoutWidget);}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ add\_button-\/>setObjectName(\textcolor{stringliteral}{"{}add\_button"{}});}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ verticalLayout-\/>addWidget(add\_button);}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ retranslateUi(\mbox{\hyperlink{class_form}{Form}});}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ QMetaObject::connectSlotsByName(\mbox{\hyperlink{class_form}{Form}});}
+\DoxyCodeLine{00091\ \ \ \ \ \}\ \textcolor{comment}{//\ setupUi}}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{void}\ retranslateUi(QWidget\ *\mbox{\hyperlink{class_form}{Form}})}
+\DoxyCodeLine{00094\ \ \ \ \ \{}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_form}{Form}}-\/>setWindowTitle(QCoreApplication::translate(\textcolor{stringliteral}{"{}Form"{}},\ \textcolor{stringliteral}{"{}Form"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ name\_input-\/>setText(QString());}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ name\_input-\/>setPlaceholderText(QCoreApplication::translate(\textcolor{stringliteral}{"{}Form"{}},\ \textcolor{stringliteral}{"{}\(\backslash\)320\(\backslash\)235\(\backslash\)320\(\backslash\)260\(\backslash\)320\(\backslash\)267\(\backslash\)320\(\backslash\)262\(\backslash\)320\(\backslash\)260\(\backslash\)320\(\backslash\)275\(\backslash\)320\(\backslash\)270\(\backslash\)320\(\backslash\)265\ \(\backslash\)320\(\backslash\)272\(\backslash\)320\(\backslash\)275\(\backslash\)320\(\backslash\)270\(\backslash\)320\(\backslash\)263\(\backslash\)320\(\backslash\)270"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ date\_input-\/>setText(QString());}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ date\_input-\/>setPlaceholderText(QCoreApplication::translate(\textcolor{stringliteral}{"{}Form"{}},\ \textcolor{stringliteral}{"{}\(\backslash\)320\(\backslash\)224\(\backslash\)320\(\backslash\)260\(\backslash\)321\(\backslash\)202\(\backslash\)320\(\backslash\)260\ \(\backslash\)320\(\backslash\)275\(\backslash\)320\(\backslash\)260\(\backslash\)320\(\backslash\)277\(\backslash\)320\(\backslash\)270\(\backslash\)321\(\backslash\)201\(\backslash\)320\(\backslash\)260\(\backslash\)320\(\backslash\)275\(\backslash\)320\(\backslash\)270\(\backslash\)321\(\backslash\)217"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ description\_input-\/>setText(QString());}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ description\_input-\/>setPlaceholderText(QCoreApplication::translate(\textcolor{stringliteral}{"{}Form"{}},\ \textcolor{stringliteral}{"{}\(\backslash\)320\(\backslash\)236\(\backslash\)320\(\backslash\)277\(\backslash\)320\(\backslash\)270\(\backslash\)321\(\backslash\)201\(\backslash\)320\(\backslash\)260\(\backslash\)320\(\backslash\)275\(\backslash\)320\(\backslash\)270\(\backslash\)320\(\backslash\)265"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ page\_count\_input-\/>setText(QString());}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ page\_count\_input-\/>setPlaceholderText(QCoreApplication::translate(\textcolor{stringliteral}{"{}Form"{}},\ \textcolor{stringliteral}{"{}\(\backslash\)320\(\backslash\)232\(\backslash\)320\(\backslash\)276\(\backslash\)320\(\backslash\)273\(\backslash\)320\(\backslash\)270\(\backslash\)321\(\backslash\)207\(\backslash\)320\(\backslash\)265\(\backslash\)321\(\backslash\)201\(\backslash\)321\(\backslash\)202\(\backslash\)320\(\backslash\)262\(\backslash\)320\(\backslash\)276\ \(\backslash\)321\(\backslash\)201\(\backslash\)321\(\backslash\)202\(\backslash\)321\(\backslash\)200\(\backslash\)320\(\backslash\)260\(\backslash\)320\(\backslash\)275\(\backslash\)320\(\backslash\)270\(\backslash\)321\(\backslash\)206"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ format\_input-\/>setText(QString());}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ format\_input-\/>setPlaceholderText(QCoreApplication::translate(\textcolor{stringliteral}{"{}Form"{}},\ \textcolor{stringliteral}{"{}\(\backslash\)320\(\backslash\)244\(\backslash\)320\(\backslash\)276\(\backslash\)321\(\backslash\)200\(\backslash\)320\(\backslash\)274\(\backslash\)320\(\backslash\)260\(\backslash\)321\(\backslash\)202\ \(\backslash\)320\(\backslash\)272\(\backslash\)320\(\backslash\)275\(\backslash\)320\(\backslash\)270\(\backslash\)320\(\backslash\)263\(\backslash\)320\(\backslash\)270"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ author\_input-\/>setText(QString());}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ author\_input-\/>setPlaceholderText(QCoreApplication::translate(\textcolor{stringliteral}{"{}Form"{}},\ \textcolor{stringliteral}{"{}\(\backslash\)320\(\backslash\)220\(\backslash\)320\(\backslash\)262\(\backslash\)321\(\backslash\)202\(\backslash\)320\(\backslash\)276\(\backslash\)321\(\backslash\)200\(\backslash\)321\(\backslash\)213\ \(\backslash\)320\(\backslash\)272\(\backslash\)320\(\backslash\)275\(\backslash\)320\(\backslash\)270\(\backslash\)320\(\backslash\)263\(\backslash\)320\(\backslash\)270"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ genre\_input-\/>setText(QString());}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ genre\_input-\/>setPlaceholderText(QCoreApplication::translate(\textcolor{stringliteral}{"{}Form"{}},\ \textcolor{stringliteral}{"{}\(\backslash\)320\(\backslash\)226\(\backslash\)320\(\backslash\)260\(\backslash\)320\(\backslash\)275\(\backslash\)321\(\backslash\)200\(\backslash\)321\(\backslash\)213\ \(\backslash\)320\(\backslash\)272\(\backslash\)320\(\backslash\)275\(\backslash\)320\(\backslash\)270\(\backslash\)320\(\backslash\)263\(\backslash\)320\(\backslash\)270"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ add\_button-\/>setText(QCoreApplication::translate(\textcolor{stringliteral}{"{}Form"{}},\ \textcolor{stringliteral}{"{}\(\backslash\)320\(\backslash\)224\(\backslash\)320\(\backslash\)276\(\backslash\)320\(\backslash\)261\(\backslash\)320\(\backslash\)260\(\backslash\)320\(\backslash\)262\(\backslash\)320\(\backslash\)270\(\backslash\)321\(\backslash\)202\(\backslash\)321\(\backslash\)214"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00111\ \ \ \ \ \}\ \textcolor{comment}{//\ retranslateUi}}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \};}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \textcolor{keyword}{namespace\ }Ui\ \{}
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_ui_1_1_form}{Form}}:\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_ui___form}{Ui\_Form}}\ \{\};}
+\DoxyCodeLine{00117\ \}\ \textcolor{comment}{//\ namespace\ Ui}}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ QT\_END\_NAMESPACE}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ UI\_ADD\_BOOK\_FORM\_H}}
+
+\end{DoxyCode}

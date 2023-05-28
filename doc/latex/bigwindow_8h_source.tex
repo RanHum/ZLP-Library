@@ -1,0 +1,121 @@
+\hypertarget{bigwindow_8h_source}{}\doxysection{bigwindow.\+h}
+\label{bigwindow_8h_source}\index{D:/projects/ZLP-\/Library/src/client/bigwindow.h@{D:/projects/ZLP-\/Library/src/client/bigwindow.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ BIGWINDOW\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ BIGWINDOW\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <QDialog>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QDate>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QImage>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QMessageBox>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <QThread>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <QListWidget>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <QMainWindow>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <QJsonArray>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <QJsonValue>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <QDate>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <QRegularExpression>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <QRegularExpressionMatch>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <ctime>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <cstdlib>}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}doska.h"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}full.h"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}book\_container.h"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}book\_form.h"{}}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}doska.h"{}}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}full.h"{}}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}requests.h"{}}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}api\_utils.h"{}}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ "{}profile.h"{}}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ "{}desk.h"{}}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ "{}book.h"{}}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ "{}deskadminpanel.h"{}}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{namespace\ }Ui}
+\DoxyCodeLine{00032\ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_bigwindow}{Bigwindow}};}
+\DoxyCodeLine{00034\ \};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_bigwindow}{Bigwindow}}\ :\ \textcolor{keyword}{public}\ QDialog}
+\DoxyCodeLine{00040\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_bigwindow}{Bigwindow}}(QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{class_bigwindow_acb7769516bb7d893f2bdb68d98a5b2a8}{\string~Bigwindow}}();}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ get\_desks();}
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{struct_desk}{Desk}}\ get\_desk(\textcolor{keywordtype}{int}\ desk\_id);}
+\DoxyCodeLine{00058\ \ \ \ \ std::vector<Book>\ get\_desk\_books(\textcolor{keywordtype}{int}\ desk\_id);}
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{struct_book}{Book}}\ get\_book(\textcolor{keywordtype}{int}\ book\_id);}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{void}\ add\_desk\_to\_list(\mbox{\hyperlink{struct_desk}{Desk}}\ desk);}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ get\_books();}
+\DoxyCodeLine{00062\ \ \ \ \ std::vector<User>\ get\_desk\_users(\textcolor{keywordtype}{int}\ desk\_id);}
+\DoxyCodeLine{00063\ \ \ \ \ \mbox{\hyperlink{struct_user}{User}}\ get\_user(\textcolor{keywordtype}{int}\ user\_id);}
+\DoxyCodeLine{00064\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{void}\ slot(\textcolor{keyword}{const}\ QString\ \&text);}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_label\_linkActivated(\textcolor{keyword}{const}\ QString\ \&link);}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{void}\ onAddWidget(\textcolor{keyword}{const}\ QString\ \&text);}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{void}\ slot\_remove\_fullWidget(\mbox{\hyperlink{class_full}{Full}}\ *deskItemWidget);}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_desk\_item\_clicked(\mbox{\hyperlink{class_full}{Full}}\ *desk);}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{void}\ generate\_book\_containers(\textcolor{keyword}{const}\ std::vector<Book>\ \&books);}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{void}\ clear\_book\_containers();}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_close\_desk\_button\_clicked();}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_delete\_desk\_button\_clicked();}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_create\_book(\textcolor{keyword}{const}\ QString\ name,}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QString\ creation\_date,}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QString\ description,}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QString\ page\_count,}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QString\ format,}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QString\ authors,}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QString\ genres);}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_profile\_button\_clicked();}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_add\_desk\_button\_clicked();}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_avatar\_button\_clicked();}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_create\_book\_button\_clicked();}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_admin\_desk\_button\_clicked();}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \ \ \ \ \textcolor{keywordtype}{void}\ add\_book\_to\_desk(\mbox{\hyperlink{struct_book}{Book}}\ book);}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keywordtype}{void}\ delete\_book\_from\_desk(\mbox{\hyperlink{struct_book}{Book}}\ book);}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{keywordtype}{void}\ send\_invite\_to\_user(\textcolor{keywordtype}{int}\ user\_id);}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keywordtype}{void}\ kick\_user\_from\_desk(\mbox{\hyperlink{struct_user}{User}}\ user);}
+\DoxyCodeLine{00162\ \ \ \ \ \textcolor{keywordtype}{void}\ joinInDesk(\textcolor{keywordtype}{int}\ desk\_id);}
+\DoxyCodeLine{00163\ signals:}
+\DoxyCodeLine{00164\ \ \ \ \ \textcolor{keywordtype}{void}\ addedBook(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_book}{Book}}\ \&book);}
+\DoxyCodeLine{00165\ \ \ \ \ \textcolor{keywordtype}{void}\ deletedBook(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_book}{Book}}\ \&book);}
+\DoxyCodeLine{00166\ \ \ \ \ \textcolor{keywordtype}{void}\ kickedUser(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_user}{User}}\ \&user);}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00168\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00169\ \ \ \ \ Ui::Bigwindow\ *ui;\ \ \ \ \ \ }
+\DoxyCodeLine{00170\ \ \ \ \ \mbox{\hyperlink{class_doska}{Doska}}\ *deskForm;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00171\ \ \ \ \ QListWidget\ *desksList;\ }
+\DoxyCodeLine{00172\ \ \ \ \ \mbox{\hyperlink{class_full}{Full}}\ *deskWidget;\ \ \ \ \ \ \ }
+\DoxyCodeLine{00173\ \ \ \ \ \mbox{\hyperlink{classbook__form}{book\_form}}\ *addBookForm;\ }
+\DoxyCodeLine{00174\ \ \ \ \ std::vector<Desk>\ user\_desks;}
+\DoxyCodeLine{00175\ \ \ \ \ std::vector<Book>\ books;}
+\DoxyCodeLine{00176\ \};}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ BIGWINDOW\_H}}
+
+\end{DoxyCode}

@@ -12,6 +12,7 @@
 		}
 	],
 	"files.associations": {
+		"*.jsx": "javascriptreact",
 		"*.script": "lua",
 		"*.ltx": "ini",
 		"*.json": "jsonc",
@@ -19,7 +20,8 @@
 		"variant": "cpp",
 		"xstring": "cpp",
 		"string": "cpp",
-		"xutility": "cpp"
+		"xutility": "cpp",
+		"xmemory": "cpp"
 	},
 	"cmake.configureOnOpen": true
 

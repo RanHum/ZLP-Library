@@ -1,0 +1,47 @@
+\hypertarget{class_my_tcp_server}{}\doxysection{My\+Tcp\+Server Class Reference}
+\label{class_my_tcp_server}\index{MyTcpServer@{MyTcpServer}}
+
+
+The \mbox{\hyperlink{class_my_tcp_server}{My\+Tcp\+Server}} class represents a TCP server.  
+
+
+
+
+{\ttfamily \#include $<$mytcpserver.\+h$>$}
+
+Inheritance diagram for My\+Tcp\+Server\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_my_tcp_server}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_my_tcp_server_ae174239241daedf24a61dfb35b107a0c}\label{class_my_tcp_server_ae174239241daedf24a61dfb35b107a0c}} 
+void {\bfseries close} ()
+\begin{DoxyCompactList}\small\item\em Closes the server and quits the application. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_my_tcp_server_a0ba7316ffe1a26c57fabde9e74b6c8dc}\label{class_my_tcp_server_a0ba7316ffe1a26c57fabde9e74b6c8dc}} 
+void {\bfseries slot\+New\+Connection} ()
+\begin{DoxyCompactList}\small\item\em Slot for handling new client connections. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_my_tcp_server_a3e040c49dbefd65b9a58ab662fc9f7a2}\label{class_my_tcp_server_a3e040c49dbefd65b9a58ab662fc9f7a2}} 
+void {\bfseries slot\+Client\+Disconnected} ()
+\begin{DoxyCompactList}\small\item\em Slot for handling client disconnections. Closes client\textquotesingle{}s Socket, removes user\textquotesingle{}s socket id. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_my_tcp_server_ab4a64d2eab985d723090963f5c8a2882}\label{class_my_tcp_server_ab4a64d2eab985d723090963f5c8a2882}} 
+void {\bfseries slot\+Server\+Read} ()
+\begin{DoxyCompactList}\small\item\em Slot for handling data received from clients. Reads information (byte array) from client\+Socket and writes it in execute\+\_\+line. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_my_tcp_server_acf367c4695b4d160c7a2d25c2afaaec4}\label{class_my_tcp_server_acf367c4695b4d160c7a2d25c2afaaec4}} 
+{\bfseries My\+Tcp\+Server} (QObject $\ast$parent=nullptr)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{class_my_tcp_server}{My\+Tcp\+Server}} class represents a TCP server. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/projects/\+ZLP-\/\+Library/src/server/mytcpserver.\+h\item 
+D\+:/projects/\+ZLP-\/\+Library/src/server/mytcpserver.\+cpp\end{DoxyCompactItemize}

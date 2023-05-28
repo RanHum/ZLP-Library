@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DeskAdminPanel</class>
+ <widget class="QDialog" name="DeskAdminPanel">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>946</width>
+    <height>628</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QListView" name="listView">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>241</width>
+     <height>631</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStackedWidget" name="stackedWidget">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
+     <y>-1</y>
+     <width>701</width>
+     <height>631</height>
+    </rect>
+   </property>
+   <property name="currentIndex">
+    <number>0</number>
+   </property>
+   <widget class="QWidget" name="book_page">
+    <widget class="QLabel" name="book_list_label">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>20</y>
+       <width>160</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Список книг на доске:</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="book_list_select">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>50</y>
+       <width>160</width>
+       <height>24</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="book_list_to_add_label">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>20</y>
+       <width>210</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Список книг для добавления:</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="book_list_to_add_select">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>50</y>
+       <width>210</width>
+       <height>24</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="delete_book_button">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>480</y>
+       <width>160</width>
+       <height>36</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">float: right;
+margin-right: 3%;
+margin-top: 5px;
+border-radius: 5px;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+padding: 5px 9px;
+font-size: 1.2em;
+background-color: rgba(236, 101, 80, 1);
+text-shadow: #454545 0 0 2px;
+border-bottom: 4px solid rgba(217, 91, 72, 1);
+color: white;
+font-family: 'Roboto Slab', serif;</string>
+     </property>
+     <property name="text">
+      <string>Удалить книгу</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="add_book_button">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>480</y>
+       <width>210</width>
+       <height>36</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">float: right;
+margin-right: 3%;
+margin-top: 5px;
+border-radius: 5px;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+padding: 5px 9px;
+font-size: 1.2em;
+background-color: rgba(236, 101, 80, 1);
+text-shadow: #454545 0 0 2px;
+border-bottom: 4px solid rgba(217, 91, 72, 1);
+color: white;
+font-family: 'Roboto Slab', serif;</string>
+     </property>
+     <property name="text">
+      <string>Добавить книгу</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="book_info">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>160</y>
+       <width>160</width>
+       <height>181</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="book_add_info">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>160</y>
+       <width>210</width>
+       <height>181</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="member_page">
+    <widget class="QLabel" name="member_list_label">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>20</y>
+       <width>160</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Список участников:</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="invite_user_button">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>80</y>
+       <width>200</width>
+       <height>36</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">float: right;
+margin-right: 3%;
+margin-top: 5px;
+border-radius: 5px;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+padding: 5px 9px;
+font-size: 1.2em;
+background-color: rgba(236, 101, 80, 1);
+text-shadow: #454545 0 0 2px;
+border-bottom: 4px solid rgba(217, 91, 72, 1);
+color: white;
+font-family: 'Roboto Slab', serif;</string>
+     </property>
+     <property name="text">
+      <string>Пригласить участника</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="kick_member_button">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>480</y>
+       <width>160</width>
+       <height>36</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">float: right;
+margin-right: 3%;
+margin-top: 5px;
+border-radius: 5px;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+padding: 5px 9px;
+font-size: 1.2em;
+background-color: rgba(236, 101, 80, 1);
+text-shadow: #454545 0 0 2px;
+border-bottom: 4px solid rgba(217, 91, 72, 1);
+color: white;
+font-family: 'Roboto Slab', serif;</string>
+     </property>
+     <property name="text">
+      <string>Выгнать участника</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="member_list_select">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>50</y>
+       <width>160</width>
+       <height>24</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="member_invite_input">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>50</y>
+       <width>200</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="placeholderText">
+      <string>Введите id пользователя</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="member_invite_label">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>20</y>
+       <width>160</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Пригласить участника</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="user_info">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>150</y>
+       <width>160</width>
+       <height>181</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

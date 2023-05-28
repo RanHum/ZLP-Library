@@ -1,0 +1,132 @@
+\hypertarget{ui__mainwindow_8h_source}{}\doxysection{ui\+\_\+mainwindow.\+h}
+\label{ui__mainwindow_8h_source}\index{D:/projects/ZLP-\/Library/src/build-\/FirstTry-\/Desktop\_Qt\_6\_4\_2\_MinGW\_64\_bit-\/Debug/ui\_mainwindow.h@{D:/projects/ZLP-\/Library/src/build-\/FirstTry-\/Desktop\_Qt\_6\_4\_2\_MinGW\_64\_bit-\/Debug/ui\_mainwindow.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/********************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{**\ Form\ generated\ from\ reading\ UI\ file\ 'mainwindow.ui'}}
+\DoxyCodeLine{00003\ \textcolor{comment}{**}}
+\DoxyCodeLine{00004\ \textcolor{comment}{**\ Created\ by:\ Qt\ User\ Interface\ Compiler\ version\ 6.4.2}}
+\DoxyCodeLine{00005\ \textcolor{comment}{**}}
+\DoxyCodeLine{00006\ \textcolor{comment}{**\ WARNING!\ All\ changes\ made\ in\ this\ file\ will\ be\ lost\ when\ recompiling\ UI\ file!}}
+\DoxyCodeLine{00007\ \textcolor{comment}{********************************************************************************/}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ UI\_MAINWINDOW\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ UI\_MAINWINDOW\_H}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <QtCore/QVariant>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <QtWidgets/QApplication>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <QtWidgets/QLineEdit>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <QtWidgets/QMainWindow>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <QtWidgets/QMenuBar>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <QtWidgets/QPushButton>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <QtWidgets/QStatusBar>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <QtWidgets/QWidget>}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ QT\_BEGIN\_NAMESPACE}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_ui___main_window}{Ui\_MainWindow}}}
+\DoxyCodeLine{00024\ \{}
+\DoxyCodeLine{00025\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ \ \ \ \ QWidget\ *centralwidget;}
+\DoxyCodeLine{00027\ \ \ \ \ QPushButton\ *pushButton;}
+\DoxyCodeLine{00028\ \ \ \ \ QLineEdit\ *login;}
+\DoxyCodeLine{00029\ \ \ \ \ QLineEdit\ *password;}
+\DoxyCodeLine{00030\ \ \ \ \ QPushButton\ *pushButton\_2;}
+\DoxyCodeLine{00031\ \ \ \ \ QMenuBar\ *menubar;}
+\DoxyCodeLine{00032\ \ \ \ \ QStatusBar\ *statusbar;}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ setupUi(QMainWindow\ *\mbox{\hyperlink{class_main_window}{MainWindow}})}
+\DoxyCodeLine{00035\ \ \ \ \ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_main_window}{MainWindow}}-\/>objectName().isEmpty())}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window}{MainWindow}}-\/>setObjectName(\textcolor{stringliteral}{"{}MainWindow"{}});}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window}{MainWindow}}-\/>resize(300,\ 300);}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window}{MainWindow}}-\/>setMinimumSize(QSize(300,\ 300));}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window}{MainWindow}}-\/>setMaximumSize(QSize(300,\ 300));}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window}{MainWindow}}-\/>setFocusPolicy(Qt::NoFocus);}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ centralwidget\ =\ \textcolor{keyword}{new}\ QWidget(\mbox{\hyperlink{class_main_window}{MainWindow}});}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ centralwidget-\/>setObjectName(\textcolor{stringliteral}{"{}centralwidget"{}});}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ pushButton\ =\ \textcolor{keyword}{new}\ QPushButton(centralwidget);}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ pushButton-\/>setObjectName(\textcolor{stringliteral}{"{}pushButton"{}});}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ pushButton-\/>setGeometry(QRect(10,\ 200,\ 150,\ 30));}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ QFont\ font;}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ font.setFamilies(\{QString::fromUtf8(\textcolor{stringliteral}{"{}Roboto\ Slab"{}})\});}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ font.setPointSize(8);}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ pushButton-\/>setFont(font);}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ pushButton-\/>setAutoFillBackground(\textcolor{keyword}{false});}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ pushButton-\/>setStyleSheet(QString::fromUtf8(\textcolor{stringliteral}{"{}float:\ right;\(\backslash\)n"{}}}
+\DoxyCodeLine{00053\ \textcolor{stringliteral}{"{}margin-\/right:\ 3\%;\(\backslash\)n"{}}}
+\DoxyCodeLine{00054\ \textcolor{stringliteral}{"{}margin-\/top:\ 5px;\(\backslash\)n"{}}}
+\DoxyCodeLine{00055\ \textcolor{stringliteral}{"{}border-\/radius:\ 5px;\(\backslash\)n"{}}}
+\DoxyCodeLine{00056\ \textcolor{stringliteral}{"{}-\/moz-\/border-\/radius:\ 5px;\(\backslash\)n"{}}}
+\DoxyCodeLine{00057\ \textcolor{stringliteral}{"{}-\/webkit-\/border-\/radius:\ 5px;\(\backslash\)n"{}}}
+\DoxyCodeLine{00058\ \textcolor{stringliteral}{"{}padding:\ 5px\ 9px;\(\backslash\)n"{}}}
+\DoxyCodeLine{00059\ \textcolor{stringliteral}{"{}font-\/size:\ 1.2em;\(\backslash\)n"{}}}
+\DoxyCodeLine{00060\ \textcolor{stringliteral}{"{}background-\/color:\ rgba(236,\ 101,\ 80,\ 1);\(\backslash\)n"{}}}
+\DoxyCodeLine{00061\ \textcolor{stringliteral}{"{}text-\/shadow:\ \#454545\ 0\ 0\ 2px;\(\backslash\)n"{}}}
+\DoxyCodeLine{00062\ \textcolor{stringliteral}{"{}border-\/bottom:\ 4px\ solid\ rgba(217,\ 91,\ 72,\ 1);\(\backslash\)n"{}}}
+\DoxyCodeLine{00063\ \textcolor{stringliteral}{"{}color:\ white;\(\backslash\)n"{}}}
+\DoxyCodeLine{00064\ \textcolor{stringliteral}{"{}font-\/family:\ 'Roboto\ Slab',\ serif;"{}}));}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ pushButton-\/>setIconSize(QSize(28,\ 28));}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ login\ =\ \textcolor{keyword}{new}\ QLineEdit(centralwidget);}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ login-\/>setObjectName(\textcolor{stringliteral}{"{}login"{}});}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ login-\/>setGeometry(QRect(75,\ 20,\ 150,\ 30));}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ QFont\ font1;}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ font1.setPointSize(8);}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ login-\/>setFont(font1);}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ password\ =\ \textcolor{keyword}{new}\ QLineEdit(centralwidget);}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ password-\/>setObjectName(\textcolor{stringliteral}{"{}password"{}});}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ password-\/>setGeometry(QRect(75,\ 70,\ 150,\ 30));}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ password-\/>setFont(font1);}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ pushButton\_2\ =\ \textcolor{keyword}{new}\ QPushButton(centralwidget);}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ pushButton\_2-\/>setObjectName(\textcolor{stringliteral}{"{}pushButton\_2"{}});}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ pushButton\_2-\/>setGeometry(QRect(75,\ 130,\ 150,\ 30));}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ pushButton\_2-\/>setFont(font);}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ pushButton\_2-\/>setStyleSheet(QString::fromUtf8(\textcolor{stringliteral}{"{}float:\ right;\(\backslash\)n"{}}}
+\DoxyCodeLine{00081\ \textcolor{stringliteral}{"{}margin-\/right:\ 3\%;\(\backslash\)n"{}}}
+\DoxyCodeLine{00082\ \textcolor{stringliteral}{"{}margin-\/top:\ 5px;\(\backslash\)n"{}}}
+\DoxyCodeLine{00083\ \textcolor{stringliteral}{"{}border-\/radius:\ 5px;\(\backslash\)n"{}}}
+\DoxyCodeLine{00084\ \textcolor{stringliteral}{"{}-\/moz-\/border-\/radius:\ 5px;\(\backslash\)n"{}}}
+\DoxyCodeLine{00085\ \textcolor{stringliteral}{"{}-\/webkit-\/border-\/radius:\ 5px;\(\backslash\)n"{}}}
+\DoxyCodeLine{00086\ \textcolor{stringliteral}{"{}padding:\ 5px\ 9px;\(\backslash\)n"{}}}
+\DoxyCodeLine{00087\ \textcolor{stringliteral}{"{}font-\/size:\ 1.2em;\(\backslash\)n"{}}}
+\DoxyCodeLine{00088\ \textcolor{stringliteral}{"{}background-\/color:\ rgba(236,\ 101,\ 80,\ 1);\(\backslash\)n"{}}}
+\DoxyCodeLine{00089\ \textcolor{stringliteral}{"{}text-\/shadow:\ \#454545\ 0\ 0\ 2px;\(\backslash\)n"{}}}
+\DoxyCodeLine{00090\ \textcolor{stringliteral}{"{}border-\/bottom:\ 4px\ solid\ rgba(217,\ 91,\ 72,\ 1);\(\backslash\)n"{}}}
+\DoxyCodeLine{00091\ \textcolor{stringliteral}{"{}color:\ white;\(\backslash\)n"{}}}
+\DoxyCodeLine{00092\ \textcolor{stringliteral}{"{}font-\/family:\ 'Roboto\ Slab',\ serif;"{}}));}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window}{MainWindow}}-\/>setCentralWidget(centralwidget);}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ menubar\ =\ \textcolor{keyword}{new}\ QMenuBar(\mbox{\hyperlink{class_main_window}{MainWindow}});}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ menubar-\/>setObjectName(\textcolor{stringliteral}{"{}menubar"{}});}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ menubar-\/>setGeometry(QRect(0,\ 0,\ 300,\ 21));}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window}{MainWindow}}-\/>setMenuBar(menubar);}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ statusbar\ =\ \textcolor{keyword}{new}\ QStatusBar(\mbox{\hyperlink{class_main_window}{MainWindow}});}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ statusbar-\/>setObjectName(\textcolor{stringliteral}{"{}statusbar"{}});}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window}{MainWindow}}-\/>setStatusBar(statusbar);}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ retranslateUi(\mbox{\hyperlink{class_main_window}{MainWindow}});}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ QMetaObject::connectSlotsByName(\mbox{\hyperlink{class_main_window}{MainWindow}});}
+\DoxyCodeLine{00105\ \ \ \ \ \}\ \textcolor{comment}{//\ setupUi}}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordtype}{void}\ retranslateUi(QMainWindow\ *\mbox{\hyperlink{class_main_window}{MainWindow}})}
+\DoxyCodeLine{00108\ \ \ \ \ \{}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window}{MainWindow}}-\/>setWindowTitle(QCoreApplication::translate(\textcolor{stringliteral}{"{}MainWindow"{}},\ \textcolor{stringliteral}{"{}\(\backslash\)320\(\backslash\)236\(\backslash\)320\(\backslash\)272\(\backslash\)320\(\backslash\)275\(\backslash\)320\(\backslash\)276\ \(\backslash\)320\(\backslash\)260\(\backslash\)320\(\backslash\)262\(\backslash\)321\(\backslash\)202\(\backslash\)320\(\backslash\)276\(\backslash\)321\(\backslash\)200\(\backslash\)320\(\backslash\)270\(\backslash\)320\(\backslash\)267\(\backslash\)320\(\backslash\)260\(\backslash\)321\(\backslash\)206\(\backslash\)320\(\backslash\)270\(\backslash\)320\(\backslash\)270"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ pushButton-\/>setText(QCoreApplication::translate(\textcolor{stringliteral}{"{}MainWindow"{}},\ \textcolor{stringliteral}{"{}\(\backslash\)320\(\backslash\)240\(\backslash\)320\(\backslash\)265\(\backslash\)320\(\backslash\)263\(\backslash\)320\(\backslash\)270\(\backslash\)321\(\backslash\)201\(\backslash\)321\(\backslash\)202\(\backslash\)321\(\backslash\)200\(\backslash\)320\(\backslash\)260\(\backslash\)321\(\backslash\)206\(\backslash\)320\(\backslash\)270\(\backslash\)321\(\backslash\)217"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ login-\/>setText(QString());}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ login-\/>setPlaceholderText(QCoreApplication::translate(\textcolor{stringliteral}{"{}MainWindow"{}},\ \textcolor{stringliteral}{"{}\(\backslash\)320\(\backslash\)233\(\backslash\)320\(\backslash\)276\(\backslash\)320\(\backslash\)263\(\backslash\)320\(\backslash\)270\(\backslash\)320\(\backslash\)275\ \(\backslash\)320\(\backslash\)270\(\backslash\)320\(\backslash\)273\(\backslash\)320\(\backslash\)270\ \(\backslash\)320\(\backslash\)277\(\backslash\)320\(\backslash\)276\(\backslash\)321\(\backslash\)207\(\backslash\)321\(\backslash\)202\(\backslash\)320\(\backslash\)260"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ password-\/>setText(QString());}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ password-\/>setPlaceholderText(QCoreApplication::translate(\textcolor{stringliteral}{"{}MainWindow"{}},\ \textcolor{stringliteral}{"{}\(\backslash\)320\(\backslash\)237\(\backslash\)320\(\backslash\)260\(\backslash\)321\(\backslash\)200\(\backslash\)320\(\backslash\)276\(\backslash\)320\(\backslash\)273\(\backslash\)321\(\backslash\)214"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ pushButton\_2-\/>setText(QCoreApplication::translate(\textcolor{stringliteral}{"{}MainWindow"{}},\ \textcolor{stringliteral}{"{}\(\backslash\)320\(\backslash\)222\(\backslash\)320\(\backslash\)276\(\backslash\)320\(\backslash\)271\(\backslash\)321\(\backslash\)202\(\backslash\)320\(\backslash\)270"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00116\ \ \ \ \ \}\ \textcolor{comment}{//\ retranslateUi}}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \};}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \textcolor{keyword}{namespace\ }Ui\ \{}
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_ui_1_1_main_window}{MainWindow}}:\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_ui___main_window}{Ui\_MainWindow}}\ \{\};}
+\DoxyCodeLine{00122\ \}\ \textcolor{comment}{//\ namespace\ Ui}}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ QT\_END\_NAMESPACE}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ UI\_MAINWINDOW\_H}}
+
+\end{DoxyCode}

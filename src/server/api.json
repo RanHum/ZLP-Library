@@ -44,6 +44,17 @@
 						"sql": "select user_id, name, avatar from users where user_id = :user_id",
 						"error": "No such user!"
 				}
+			},
+			"leave_desk": {
+				"required": ["desk_id"],
+				"actions": [
+					{
+						"type": "test",
+						"sql": "select * from users_to_desks where user_id = :_as_user_id and desk_id = :desk_id",
+						"error": "You are not a member of the desk!"
+					},
+					"delete from users_to_desks where user_id = :_as_user_id and desk_id = :desk_id"
+				]
 			}
 		},
 		"book": {
@@ -81,6 +92,13 @@
 					"error": "No such book!"
 				}
 			},
+			"get_all": {
+				"actions": {
+					"sql": "select * from books",
+					"error": "No such books!",
+					"multiple_rows": true
+				}
+			},
 			"add": {
 				"required": ["name"],
 				"optional": [
@@ -103,7 +121,7 @@
 					},
 					{
 						"type": "action",
-						"sql": "insert into books (name) values (:name)"
+						"sql": "insert into books (name, creation_date, description, page_count) values (:name, :creation_date, :description, :page_count)"
 					},
 					"select * from books where name = :name"
 				]
@@ -154,6 +172,13 @@
 				"required": ["author_id"],
 				"actions": {
 					"sql": "select * from authors where author_id = :author_id",
+					"error": "No such author!"
+				}
+			},
+			"get_all": {
+				"actions": {
+					"multiple_rows": true,
+					"sql": "select * from authors",
 					"error": "No such author!"
 				}
 			},
@@ -289,8 +314,30 @@
 			"get": {
 				"required": ["desk_id"],
 				"actions": {
-					"sql": "select desks.name, users_to_desks.*, users.name as users_name from desks, users_to_desks, users where desks.desk_id = :desk_id and users_to_desks.desk_id = desks.desk_id and users_to_desks.user_id = users.user_id",
+					"sql": "select desks.name, desks.owner, users_to_desks.*, users.name as users_name from desks, users_to_desks, users where desks.desk_id = :desk_id and users_to_desks.desk_id = desks.desk_id and users_to_desks.user_id = users.user_id",
 					"error": "No such desk!"
+				}
+			},
+			"get_all": {
+				"actions": {
+					"sql": "select * from users_to_desks where user_id = :_as_user_id",
+					"error": "No such desks!",
+					"multiple_rows": true
+				}
+			},
+			"get_invites": {
+				"actions": {
+					"sql": "select * from invites where desk_id = :desk_id",
+					"multiple_rows": true,
+					"error": "No such invites!"
+				}
+			},
+			"get_users": {
+				"required": ["desk_id"],
+				"actions": {
+					"sql": "select * from users_to_desks where desk_id = :desk_id",
+					"error": "No such users",
+					"multiple_rows": true
 				}
 			},
 			"list_books": {
@@ -307,7 +354,7 @@
 					{
 						"type": "test",
 						"sql": "select * from desks where desk_id = :desk_id and owner = :_as_user_id",
-						"error": "No such desk you owm!"
+						"error": "No such desk you own!"
 					},
 					{
 						"type": "test",
@@ -315,11 +362,13 @@
 						"error": "No such book!"
 					},
 					{
+						// "type": "test",
+						// "sql": {
+						// 	"joining": " and ",
+						// 	"template": "select * from <books_to_desks> where |FIELDS:VALUES|"
+						// },
 						"type": "test",
-						"sql": {
-							"joining": " and ",
-							"template": "select * from <books_to_desks> where |FIELDS:VALUES|"
-						},
+						"sql": "select * from books_to_desks where desk_id = :desk_id and book_id = :book_id",
 						"error_when_not_empty": true,
 						"error": "This book is already on this desk!"
 					},
@@ -336,22 +385,24 @@
 					{
 						"type": "test",
 						"sql": "select * from desks where desk_id = :desk_id and owner = :_as_user_id",
-						"error": "No such desk you owm!"
+						"error": "No such desk you own!"
 					},
 					{
 						"type": "test",
-						"sql": {
-							"joining": " and ",
-							"template": "select * from <books_to_desks> where |FIELDS:VALUES|"
-						},
+						// "sql": {
+						// 	"joining": " and ",
+						// 	"template": "select * from <books_to_desks> where |FIELDS:VALUES|"
+						// },
+						"sql": "select * from books_to_desks where desk_id = :desk_id and book_id = :book_id",
 						"error": "This book is not on this desk!"
 					},
-					{
-						"sql": {
-							"joining": " and ",
-							"template": "delete from <books_to_desks> where |FIELDS:VALUES|"
-						}
-					}
+					"delete from books_to_desks where desk_id = :desk_id and book_id = :book_id"
+					// {
+					// 	"sql": {
+					// 		"joining": " and ",
+					// 		"template": "delete from <books_to_desks> where |FIELDS:VALUES|"
+					// 	}
+					// }
 				]
 			},
 			"add": {
@@ -367,14 +418,14 @@
 						// readme: actions can not only return affected rows, but also save returned fields in temp storage to use in later tasks, only one action result at a time
 						"type": "action",
 						"sql": {
-							"template": "insert into desks (name) values (:name)"
+							"template": "insert into desks (name, owner) values (:name, :_as_user_id)"
 						}
 					},
 					{
 						"type": "action",
 						"sql": {
 							// readme: _desk_id is accessing desk_id from result of previous action
-							"template": "insert into users_to_desks (desk_id, user_id) values (:_desk_id, _as_user_id)"
+							"template": "insert into users_to_desks (desk_id, user_id) values (:_desk_id, :_as_user_id)"
 						}
 					},
 					"select desks.name, users_to_desks.*, users.name as users_name from desks, users_to_desks, users where desks.desk_id = :_desk_id and users_to_desks.desk_id = desks.desk_id and users_to_desks.user_id = users.user_id and users.user_id = :_as_user_id"
@@ -386,7 +437,7 @@
 					{
 						"type": "test",
 						"sql": "select * from desks where desk_id = :desk_id and owner = :_as_user_id",
-						"error": "No such desk you owm!"
+						"error": "No such desk you own!"
 					},
 					{
 						"sql": {"template": "update desks set name = :name where desk_id = :desk_id"}
@@ -399,11 +450,27 @@
 					{
 						"type": "test",
 						"sql": "select * from desks where desk_id = :desk_id and owner = :_as_user_id",
-						"error": "No such desk you owm!"
+						"error": "No such desk you own!"
 					},
 					"delete from users_to_desks where desk_id = :desk_id",
 					"delete from books_to_desks where desk_id = :desk_id",
 					"delete from desks where desk_id = :desk_id"
+				]
+			},
+			"kick_user": {
+				"required": ["desk_id", "user_id"],
+				"actions": [
+					{
+						"type": "test",
+						"sql": "select * from desks where desk_id = :desk_id and owner = :_as_user_id",
+						"error": "No such deck you own!"
+					},
+					{
+						"type": "test",
+						"sql": "select * from users_to_desks where desk_id = :desk_id and user_id = :user_id",
+						"error": "This user is not member of this desk!"
+					},
+					"delete from users_to_desks where desk_id = :desk_id and user_id = :user_id" 
 				]
 			}
 		},
@@ -451,12 +518,12 @@
 				"actions": [
 					{
 						"type": "test",
-						"sql": "select * from desks where desk_id = :desk_id and owner = _as_user_id",
+						"sql": "select * from desks where desk_id = :desk_id and owner = :_as_user_id",
 						"error": "You are not the owner of that board!"
 					},
 					{
 						"type": "test",
-						"sql": "select * from invites, desks where invites.desk_id = :desk_id and user_id = :user_id and desks.owner = _as_user_id and status = 1",
+						"sql": "select * from invites, desks where invites.desk_id = :desk_id and user_id = :user_id and desks.owner = :_as_user_id and status = 1",
 						"error_when_not_empty": true,
 						"error": "Active invite is already sent!"
 					},
@@ -470,7 +537,7 @@
 				"actions": [
 					{
 						"type": "test",
-						"sql": "select * from desks where desk_id = :desk_id and owner = _as_user_id",
+						"sql": "select * from desks where desk_id = :desk_id and owner = :_as_user_id",
 						"error": "You are not the owner of that board!"
 					},
 					{

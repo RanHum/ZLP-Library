@@ -1,0 +1,71 @@
+\hypertarget{requests_8h_source}{}\doxysection{requests.\+h}
+\label{requests_8h_source}\index{D:/projects/ZLP-\/Library/src/client/requests.h@{D:/projects/ZLP-\/Library/src/client/requests.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <QTcpSocket>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QCoreApplication>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QJsonDocument>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QJsonObject>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_connection}{Connection}}}
+\DoxyCodeLine{00012\ \{}
+\DoxyCodeLine{00013\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_connection}{Connection}}\ \&\mbox{\hyperlink{class_connection_a84eb0d0b166aae8a08feb2aa94d874a7}{getInstance}}()}
+\DoxyCodeLine{00020\ \ \ \ \ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_connection}{Connection}}\ instance;}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ instance;}
+\DoxyCodeLine{00023\ \ \ \ \ \}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_connection_adec363dbe9741fad5913babeb14a3461}{setServer}}(\textcolor{keyword}{const}\ QString\ \&hostName,\ quint16\ port)}
+\DoxyCodeLine{00032\ \ \ \ \ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ m\_hostName\ =\ hostName;}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ m\_port\ =\ port;}
+\DoxyCodeLine{00035\ \ \ \ \ \}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00042\ \ \ \ \ QString\ \mbox{\hyperlink{class_connection_a79302d137dfda5838aa0bc2d1d393e95}{getHostName}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00043\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_hostName;}
+\DoxyCodeLine{00045\ \ \ \ \ \}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00052\ \ \ \ \ quint16\ \mbox{\hyperlink{class_connection_aab9753609373c72c84aa9d2bc7d7ba36}{getPort}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00053\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_port;}
+\DoxyCodeLine{00055\ \ \ \ \ \}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{class_connection}{Connection}}()\ \{\}}
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{class_connection}{\string~Connection}}()\ \{\}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ QString\ m\_hostName;\ }
+\DoxyCodeLine{00062\ \ \ \ \ quint16\ m\_port;\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00063\ \};}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00068\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_request_class}{RequestClass}}\ :\ \textcolor{keyword}{public}\ QObject}
+\DoxyCodeLine{00069\ \{}
+\DoxyCodeLine{00070\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00079\ \ \ \ \ \mbox{\hyperlink{class_request_class}{RequestClass}}(QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00083\ \ \ \ \ \mbox{\hyperlink{class_request_class_a9a3bd9f285475aefa1cfc40b537a8d4d}{\string~RequestClass}}();}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00091\ \ \ \ \ QJsonObject\ \mbox{\hyperlink{class_request_class_a2e066255a7fdf2b756c969fef3a04744}{sendRequest}}(\textcolor{keyword}{const}\ QJsonObject\ \&request);}
+\DoxyCodeLine{00097\ \ \ \ \ QJsonObject\ \mbox{\hyperlink{class_request_class_a6f7bc47444de57b0370f6e3479f6e4f1}{getResponse}}();}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ signals:}
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_request_class_a8290bfb3f6ba18bdb94129249d3092a2}{requestFinished}}();}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordtype}{void}\ onConnected();}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordtype}{void}\ onReadyRead();}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordtype}{void}\ onError(QAbstractSocket::SocketError\ socketError);}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00124\ \ \ \ \ QTcpSocket\ *m\_socket;\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00125\ \ \ \ \ QByteArray\ m\_responseBody;\ }
+\DoxyCodeLine{00126\ \};}
+
+\end{DoxyCode}

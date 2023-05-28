@@ -1,0 +1,96 @@
+\hypertarget{class_request_class}{}\doxysection{Request\+Class Class Reference}
+\label{class_request_class}\index{RequestClass@{RequestClass}}
+
+
+The \mbox{\hyperlink{class_request_class}{Request\+Class}} class handles sending requests and receiving responses over a TCP socket.  
+
+
+
+
+{\ttfamily \#include $<$requests.\+h$>$}
+
+Inheritance diagram for Request\+Class\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_request_class}
+\end{center}
+\end{figure}
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_request_class_a8290bfb3f6ba18bdb94129249d3092a2}\label{class_request_class_a8290bfb3f6ba18bdb94129249d3092a2}} 
+void {\bfseries request\+Finished} ()
+\begin{DoxyCompactList}\small\item\em Signals that the request has finished. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_request_class_a01ffebde5e5a5b17169e9e4699df2f6b}{Request\+Class}} (QObject $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{class_request_class}{Request\+Class}} object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_request_class_a9a3bd9f285475aefa1cfc40b537a8d4d}\label{class_request_class_a9a3bd9f285475aefa1cfc40b537a8d4d}} 
+{\bfseries $\sim$\+Request\+Class} ()
+\begin{DoxyCompactList}\small\item\em Destroys the \mbox{\hyperlink{class_request_class}{Request\+Class}} object. \end{DoxyCompactList}\item 
+QJson\+Object \mbox{\hyperlink{class_request_class_a2e066255a7fdf2b756c969fef3a04744}{send\+Request}} (const QJson\+Object \&request)
+\begin{DoxyCompactList}\small\item\em Sends a request over the TCP socket and waits for a response. \end{DoxyCompactList}\item 
+QJson\+Object \mbox{\hyperlink{class_request_class_a6f7bc47444de57b0370f6e3479f6e4f1}{get\+Response}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the response as a QJson\+Object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{class_request_class}{Request\+Class}} class handles sending requests and receiving responses over a TCP socket. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_request_class_a01ffebde5e5a5b17169e9e4699df2f6b}\label{class_request_class_a01ffebde5e5a5b17169e9e4699df2f6b}} 
+\index{RequestClass@{RequestClass}!RequestClass@{RequestClass}}
+\index{RequestClass@{RequestClass}!RequestClass@{RequestClass}}
+\doxysubsubsection{\texorpdfstring{RequestClass()}{RequestClass()}}
+{\footnotesize\ttfamily Request\+Class\+::\+Request\+Class (\begin{DoxyParamCaption}\item[{QObject $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+Constructs a \mbox{\hyperlink{class_request_class}{Request\+Class}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & The parent object. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_request_class_a6f7bc47444de57b0370f6e3479f6e4f1}\label{class_request_class_a6f7bc47444de57b0370f6e3479f6e4f1}} 
+\index{RequestClass@{RequestClass}!getResponse@{getResponse}}
+\index{getResponse@{getResponse}!RequestClass@{RequestClass}}
+\doxysubsubsection{\texorpdfstring{getResponse()}{getResponse()}}
+{\footnotesize\ttfamily QJson\+Object Request\+Class\+::get\+Response (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retrieves the response as a QJson\+Object. 
+
+\begin{DoxyReturn}{Returns}
+The response as a QJson\+Object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_request_class_a2e066255a7fdf2b756c969fef3a04744}\label{class_request_class_a2e066255a7fdf2b756c969fef3a04744}} 
+\index{RequestClass@{RequestClass}!sendRequest@{sendRequest}}
+\index{sendRequest@{sendRequest}!RequestClass@{RequestClass}}
+\doxysubsubsection{\texorpdfstring{sendRequest()}{sendRequest()}}
+{\footnotesize\ttfamily QJson\+Object Request\+Class\+::send\+Request (\begin{DoxyParamCaption}\item[{const QJson\+Object \&}]{request }\end{DoxyParamCaption})}
+
+
+
+Sends a request over the TCP socket and waits for a response. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em request} & The request to send. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The response received from the server. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/projects/\+ZLP-\/\+Library/src/client/requests.\+h\item 
+D\+:/projects/\+ZLP-\/\+Library/src/client/requests.\+cpp\end{DoxyCompactItemize}

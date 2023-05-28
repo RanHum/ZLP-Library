@@ -1,0 +1,127 @@
+\hypertarget{ui__form_8h_source}{}\doxysection{ui\+\_\+form.\+h}
+\label{ui__form_8h_source}\index{D:/projects/ZLP-\/Library/src/build-\/FirstTry-\/Desktop\_Qt\_6\_4\_2\_MinGW\_64\_bit-\/Debug/ui\_form.h@{D:/projects/ZLP-\/Library/src/build-\/FirstTry-\/Desktop\_Qt\_6\_4\_2\_MinGW\_64\_bit-\/Debug/ui\_form.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/********************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{**\ Form\ generated\ from\ reading\ UI\ file\ 'form.ui'}}
+\DoxyCodeLine{00003\ \textcolor{comment}{**}}
+\DoxyCodeLine{00004\ \textcolor{comment}{**\ Created\ by:\ Qt\ User\ Interface\ Compiler\ version\ 6.4.2}}
+\DoxyCodeLine{00005\ \textcolor{comment}{**}}
+\DoxyCodeLine{00006\ \textcolor{comment}{**\ WARNING!\ All\ changes\ made\ in\ this\ file\ will\ be\ lost\ when\ recompiling\ UI\ file!}}
+\DoxyCodeLine{00007\ \textcolor{comment}{********************************************************************************/}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ UI\_FORM\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ UI\_FORM\_H}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <QtCore/QVariant>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <QtWidgets/QApplication>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <QtWidgets/QLineEdit>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <QtWidgets/QPushButton>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <QtWidgets/QWidget>}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ QT\_BEGIN\_NAMESPACE}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_ui___form}{Ui\_Form}}}
+\DoxyCodeLine{00021\ \{}
+\DoxyCodeLine{00022\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023\ \ \ \ \ QPushButton\ *haveAccountButton;}
+\DoxyCodeLine{00024\ \ \ \ \ QLineEdit\ *mail;}
+\DoxyCodeLine{00025\ \ \ \ \ QLineEdit\ *login;}
+\DoxyCodeLine{00026\ \ \ \ \ QLineEdit\ *password;}
+\DoxyCodeLine{00027\ \ \ \ \ QLineEdit\ *password2;}
+\DoxyCodeLine{00028\ \ \ \ \ QPushButton\ *registerButton;}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ setupUi(QWidget\ *\mbox{\hyperlink{class_form}{Form}})}
+\DoxyCodeLine{00031\ \ \ \ \ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_form}{Form}}-\/>objectName().isEmpty())}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_form}{Form}}-\/>setObjectName(\textcolor{stringliteral}{"{}Form"{}});}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_form}{Form}}-\/>setEnabled(\textcolor{keyword}{true});}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_form}{Form}}-\/>resize(300,\ 400);}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ QSizePolicy\ sizePolicy(QSizePolicy::Fixed,\ QSizePolicy::Fixed);}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ sizePolicy.setHorizontalStretch(0);}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ sizePolicy.setVerticalStretch(0);}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ sizePolicy.setHeightForWidth(\mbox{\hyperlink{class_form}{Form}}-\/>sizePolicy().hasHeightForWidth());}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_form}{Form}}-\/>setSizePolicy(sizePolicy);}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_form}{Form}}-\/>setMinimumSize(QSize(0,\ 0));}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_form}{Form}}-\/>setMaximumSize(QSize(10000,\ 10000));}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ haveAccountButton\ =\ \textcolor{keyword}{new}\ QPushButton(\mbox{\hyperlink{class_form}{Form}});}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ haveAccountButton-\/>setObjectName(\textcolor{stringliteral}{"{}haveAccountButton"{}});}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ haveAccountButton-\/>setGeometry(QRect(10,\ 360,\ 150,\ 30));}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ QFont\ font;}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ font.setFamilies(\{QString::fromUtf8(\textcolor{stringliteral}{"{}Roboto\ Slab"{}})\});}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ font.setPointSize(8);}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ haveAccountButton-\/>setFont(font);}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ haveAccountButton-\/>setStyleSheet(QString::fromUtf8(\textcolor{stringliteral}{"{}float:\ right;\(\backslash\)n"{}}}
+\DoxyCodeLine{00051\ \textcolor{stringliteral}{"{}margin-\/right:\ 3\%;\(\backslash\)n"{}}}
+\DoxyCodeLine{00052\ \textcolor{stringliteral}{"{}margin-\/top:\ 5px;\(\backslash\)n"{}}}
+\DoxyCodeLine{00053\ \textcolor{stringliteral}{"{}border-\/radius:\ 5px;\(\backslash\)n"{}}}
+\DoxyCodeLine{00054\ \textcolor{stringliteral}{"{}-\/moz-\/border-\/radius:\ 5px;\(\backslash\)n"{}}}
+\DoxyCodeLine{00055\ \textcolor{stringliteral}{"{}-\/webkit-\/border-\/radius:\ 5px;\(\backslash\)n"{}}}
+\DoxyCodeLine{00056\ \textcolor{stringliteral}{"{}padding:\ 5px\ 9px;\(\backslash\)n"{}}}
+\DoxyCodeLine{00057\ \textcolor{stringliteral}{"{}font-\/size:\ 1.2em;\(\backslash\)n"{}}}
+\DoxyCodeLine{00058\ \textcolor{stringliteral}{"{}background-\/color:\ rgba(236,\ 101,\ 80,\ 1);\(\backslash\)n"{}}}
+\DoxyCodeLine{00059\ \textcolor{stringliteral}{"{}text-\/shadow:\ \#454545\ 0\ 0\ 2px;\(\backslash\)n"{}}}
+\DoxyCodeLine{00060\ \textcolor{stringliteral}{"{}border-\/bottom:\ 4px\ solid\ rgba(217,\ 91,\ 72,\ 1);\(\backslash\)n"{}}}
+\DoxyCodeLine{00061\ \textcolor{stringliteral}{"{}color:\ white;\(\backslash\)n"{}}}
+\DoxyCodeLine{00062\ \textcolor{stringliteral}{"{}font-\/family:\ 'Roboto\ Slab',\ serif;"{}}));}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ mail\ =\ \textcolor{keyword}{new}\ QLineEdit(\mbox{\hyperlink{class_form}{Form}});}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ mail-\/>setObjectName(\textcolor{stringliteral}{"{}mail"{}});}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ mail-\/>setGeometry(QRect(75,\ 20,\ 150,\ 30));}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ login\ =\ \textcolor{keyword}{new}\ QLineEdit(\mbox{\hyperlink{class_form}{Form}});}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ login-\/>setObjectName(\textcolor{stringliteral}{"{}login"{}});}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ login-\/>setGeometry(QRect(75,\ 70,\ 150,\ 30));}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ password\ =\ \textcolor{keyword}{new}\ QLineEdit(\mbox{\hyperlink{class_form}{Form}});}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ password-\/>setObjectName(\textcolor{stringliteral}{"{}password"{}});}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ password-\/>setGeometry(QRect(75,\ 120,\ 150,\ 30));}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ password2\ =\ \textcolor{keyword}{new}\ QLineEdit(\mbox{\hyperlink{class_form}{Form}});}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ password2-\/>setObjectName(\textcolor{stringliteral}{"{}password2"{}});}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ password2-\/>setGeometry(QRect(75,\ 170,\ 150,\ 30));}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ registerButton\ =\ \textcolor{keyword}{new}\ QPushButton(\mbox{\hyperlink{class_form}{Form}});}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ registerButton-\/>setObjectName(\textcolor{stringliteral}{"{}registerButton"{}});}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ registerButton-\/>setGeometry(QRect(75,\ 220,\ 150,\ 30));}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ registerButton-\/>setFont(font);}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ registerButton-\/>setStyleSheet(QString::fromUtf8(\textcolor{stringliteral}{"{}float:\ right;\(\backslash\)n"{}}}
+\DoxyCodeLine{00080\ \textcolor{stringliteral}{"{}margin-\/right:\ 3\%;\(\backslash\)n"{}}}
+\DoxyCodeLine{00081\ \textcolor{stringliteral}{"{}margin-\/top:\ 5px;\(\backslash\)n"{}}}
+\DoxyCodeLine{00082\ \textcolor{stringliteral}{"{}border-\/radius:\ 5px;\(\backslash\)n"{}}}
+\DoxyCodeLine{00083\ \textcolor{stringliteral}{"{}-\/moz-\/border-\/radius:\ 5px;\(\backslash\)n"{}}}
+\DoxyCodeLine{00084\ \textcolor{stringliteral}{"{}-\/webkit-\/border-\/radius:\ 5px;\(\backslash\)n"{}}}
+\DoxyCodeLine{00085\ \textcolor{stringliteral}{"{}padding:\ 5px\ 9px;\(\backslash\)n"{}}}
+\DoxyCodeLine{00086\ \textcolor{stringliteral}{"{}font-\/size:\ 1.2em;\(\backslash\)n"{}}}
+\DoxyCodeLine{00087\ \textcolor{stringliteral}{"{}background-\/color:\ rgba(236,\ 101,\ 80,\ 1);\(\backslash\)n"{}}}
+\DoxyCodeLine{00088\ \textcolor{stringliteral}{"{}text-\/shadow:\ \#454545\ 0\ 0\ 2px;\(\backslash\)n"{}}}
+\DoxyCodeLine{00089\ \textcolor{stringliteral}{"{}border-\/bottom:\ 4px\ solid\ rgba(217,\ 91,\ 72,\ 1);\(\backslash\)n"{}}}
+\DoxyCodeLine{00090\ \textcolor{stringliteral}{"{}color:\ white;\(\backslash\)n"{}}}
+\DoxyCodeLine{00091\ \textcolor{stringliteral}{"{}font-\/family:\ 'Roboto\ Slab',\ serif;"{}}));}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ retranslateUi(\mbox{\hyperlink{class_form}{Form}});}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ QMetaObject::connectSlotsByName(\mbox{\hyperlink{class_form}{Form}});}
+\DoxyCodeLine{00096\ \ \ \ \ \}\ \textcolor{comment}{//\ setupUi}}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{void}\ retranslateUi(QWidget\ *\mbox{\hyperlink{class_form}{Form}})}
+\DoxyCodeLine{00099\ \ \ \ \ \{}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_form}{Form}}-\/>setWindowTitle(QCoreApplication::translate(\textcolor{stringliteral}{"{}Form"{}},\ \textcolor{stringliteral}{"{}\(\backslash\)320\(\backslash\)236\(\backslash\)320\(\backslash\)272\(\backslash\)320\(\backslash\)275\(\backslash\)320\(\backslash\)276\ \(\backslash\)321\(\backslash\)200\(\backslash\)320\(\backslash\)265\(\backslash\)320\(\backslash\)263\(\backslash\)320\(\backslash\)270\(\backslash\)321\(\backslash\)201\(\backslash\)321\(\backslash\)202\(\backslash\)321\(\backslash\)200\(\backslash\)320\(\backslash\)260\(\backslash\)321\(\backslash\)206\(\backslash\)320\(\backslash\)270\(\backslash\)320\(\backslash\)270"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ haveAccountButton-\/>setText(QCoreApplication::translate(\textcolor{stringliteral}{"{}Form"{}},\ \textcolor{stringliteral}{"{}\(\backslash\)320\(\backslash\)243\(\backslash\)320\(\backslash\)266\(\backslash\)320\(\backslash\)265\ \(\backslash\)320\(\backslash\)265\(\backslash\)321\(\backslash\)201\(\backslash\)321\(\backslash\)202\(\backslash\)321\(\backslash\)214\ \(\backslash\)320\(\backslash\)260\(\backslash\)320\(\backslash\)272\(\backslash\)320\(\backslash\)272\(\backslash\)320\(\backslash\)260\(\backslash\)321\(\backslash\)203\(\backslash\)320\(\backslash\)275\(\backslash\)321\(\backslash\)202?"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ mail-\/>setText(QString());}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ mail-\/>setPlaceholderText(QCoreApplication::translate(\textcolor{stringliteral}{"{}Form"{}},\ \textcolor{stringliteral}{"{}\(\backslash\)320\(\backslash\)237\(\backslash\)320\(\backslash\)276\(\backslash\)321\(\backslash\)207\(\backslash\)321\(\backslash\)202\(\backslash\)320\(\backslash\)260"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ login-\/>setText(QString());}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ login-\/>setPlaceholderText(QCoreApplication::translate(\textcolor{stringliteral}{"{}Form"{}},\ \textcolor{stringliteral}{"{}\(\backslash\)320\(\backslash\)233\(\backslash\)320\(\backslash\)276\(\backslash\)320\(\backslash\)263\(\backslash\)320\(\backslash\)270\(\backslash\)320\(\backslash\)275"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ password-\/>setText(QString());}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ password-\/>setPlaceholderText(QCoreApplication::translate(\textcolor{stringliteral}{"{}Form"{}},\ \textcolor{stringliteral}{"{}\(\backslash\)320\(\backslash\)237\(\backslash\)320\(\backslash\)260\(\backslash\)321\(\backslash\)200\(\backslash\)320\(\backslash\)276\(\backslash\)320\(\backslash\)273\(\backslash\)321\(\backslash\)214"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ password2-\/>setText(QString());}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ password2-\/>setPlaceholderText(QCoreApplication::translate(\textcolor{stringliteral}{"{}Form"{}},\ \textcolor{stringliteral}{"{}\(\backslash\)320\(\backslash\)237\(\backslash\)320\(\backslash\)276\(\backslash\)320\(\backslash\)262\(\backslash\)321\(\backslash\)202\(\backslash\)320\(\backslash\)276\(\backslash\)321\(\backslash\)200\(\backslash\)320\(\backslash\)270\(\backslash\)321\(\backslash\)202\(\backslash\)320\(\backslash\)265\ \(\backslash\)320\(\backslash\)277\(\backslash\)320\(\backslash\)260\(\backslash\)321\(\backslash\)200\(\backslash\)320\(\backslash\)276\(\backslash\)320\(\backslash\)273\(\backslash\)321\(\backslash\)214"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ registerButton-\/>setText(QCoreApplication::translate(\textcolor{stringliteral}{"{}Form"{}},\ \textcolor{stringliteral}{"{}\(\backslash\)320\(\backslash\)227\(\backslash\)320\(\backslash\)260\(\backslash\)321\(\backslash\)200\(\backslash\)320\(\backslash\)265\(\backslash\)320\(\backslash\)263\(\backslash\)320\(\backslash\)270\(\backslash\)321\(\backslash\)201\(\backslash\)321\(\backslash\)202\(\backslash\)321\(\backslash\)200\(\backslash\)320\(\backslash\)270\(\backslash\)321\(\backslash\)200\(\backslash\)320\(\backslash\)276\(\backslash\)320\(\backslash\)262\(\backslash\)320\(\backslash\)260\(\backslash\)321\(\backslash\)202\(\backslash\)321\(\backslash\)214\(\backslash\)321\(\backslash\)201\(\backslash\)321\(\backslash\)217"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00111\ \ \ \ \ \}\ \textcolor{comment}{//\ retranslateUi}}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \};}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \textcolor{keyword}{namespace\ }Ui\ \{}
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_form}{Form}}:\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_ui___form}{Ui\_Form}}\ \{\};}
+\DoxyCodeLine{00117\ \}\ \textcolor{comment}{//\ namespace\ Ui}}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ QT\_END\_NAMESPACE}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ UI\_FORM\_H}}
+
+\end{DoxyCode}

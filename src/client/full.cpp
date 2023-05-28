@@ -1,9 +1,8 @@
 #include "full.h"
 #include "ui_full.h"
 
-Full::Full(QWidget *parent) :
-    QWidget(parent),
-    ui(new Ui::Full)
+Full::Full(QWidget *parent) : QWidget(parent),
+                              ui(new Ui::Full)
 {
     ui->setupUi(this);
     show();
@@ -14,17 +13,34 @@ Full::~Full()
     delete ui;
 }
 
-void Full::setText(const QString& text) {
-    ui->label->setText(text);
-}
-
-void Full::on_pushButton_clicked()
+void Full::setDesk(const Desk &desk)
 {
-    emit remove_requested(this);
+    this->desk = desk;
+    ui->label->setText(this->desk.name);
 }
 
-void Full::mousePressEvent(QMouseEvent* event)
+void Full::mousePressEvent(QMouseEvent *event)
 {
     emit clicked(this);
     QWidget::mousePressEvent(event);
+}
+
+int Full::getDeskId() {
+    return this->desk.id;
+}
+
+int Full::getOwner() {
+    return this->desk.owner;
+}
+
+QString Full::getName() {
+    return this->desk.name;
+}
+
+Desk Full::getDesk() {
+    return this->desk;
+}
+
+std::map<int, Book> Full::getBooks() {
+    return this->desk.books;
 }

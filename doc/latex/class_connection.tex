@@ -1,0 +1,92 @@
+\hypertarget{class_connection}{}\doxysection{Connection Class Reference}
+\label{class_connection}\index{Connection@{Connection}}
+
+
+The \mbox{\hyperlink{class_connection}{Connection}} class represents a TCP connection configuration.  
+
+
+
+
+{\ttfamily \#include $<$requests.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_connection_adec363dbe9741fad5913babeb14a3461}{set\+Server}} (const QString \&host\+Name, quint16 port)
+\begin{DoxyCompactList}\small\item\em Sets the server host name and port for the connection. \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{class_connection_a79302d137dfda5838aa0bc2d1d393e95}{get\+Host\+Name}} () const
+\begin{DoxyCompactList}\small\item\em Returns the server host name. \end{DoxyCompactList}\item 
+quint16 \mbox{\hyperlink{class_connection_aab9753609373c72c84aa9d2bc7d7ba36}{get\+Port}} () const
+\begin{DoxyCompactList}\small\item\em Returns the server port. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_connection}{Connection}} \& \mbox{\hyperlink{class_connection_a84eb0d0b166aae8a08feb2aa94d874a7}{get\+Instance}} ()
+\begin{DoxyCompactList}\small\item\em Returns the singleton instance of the \mbox{\hyperlink{class_connection}{Connection}} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{class_connection}{Connection}} class represents a TCP connection configuration. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_connection_a79302d137dfda5838aa0bc2d1d393e95}\label{class_connection_a79302d137dfda5838aa0bc2d1d393e95}} 
+\index{Connection@{Connection}!getHostName@{getHostName}}
+\index{getHostName@{getHostName}!Connection@{Connection}}
+\doxysubsubsection{\texorpdfstring{getHostName()}{getHostName()}}
+{\footnotesize\ttfamily QString Connection\+::get\+Host\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the server host name. 
+
+\begin{DoxyReturn}{Returns}
+The server host name. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_connection_a84eb0d0b166aae8a08feb2aa94d874a7}\label{class_connection_a84eb0d0b166aae8a08feb2aa94d874a7}} 
+\index{Connection@{Connection}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!Connection@{Connection}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_connection}{Connection}} \& Connection\+::get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Returns the singleton instance of the \mbox{\hyperlink{class_connection}{Connection}} class. 
+
+\begin{DoxyReturn}{Returns}
+The singleton instance of \mbox{\hyperlink{class_connection}{Connection}}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_connection_aab9753609373c72c84aa9d2bc7d7ba36}\label{class_connection_aab9753609373c72c84aa9d2bc7d7ba36}} 
+\index{Connection@{Connection}!getPort@{getPort}}
+\index{getPort@{getPort}!Connection@{Connection}}
+\doxysubsubsection{\texorpdfstring{getPort()}{getPort()}}
+{\footnotesize\ttfamily quint16 Connection\+::get\+Port (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the server port. 
+
+\begin{DoxyReturn}{Returns}
+The server port. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_connection_adec363dbe9741fad5913babeb14a3461}\label{class_connection_adec363dbe9741fad5913babeb14a3461}} 
+\index{Connection@{Connection}!setServer@{setServer}}
+\index{setServer@{setServer}!Connection@{Connection}}
+\doxysubsubsection{\texorpdfstring{setServer()}{setServer()}}
+{\footnotesize\ttfamily void Connection\+::set\+Server (\begin{DoxyParamCaption}\item[{const QString \&}]{host\+Name,  }\item[{quint16}]{port }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the server host name and port for the connection. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em host\+Name} & The server host name. \\
+\hline
+{\em port} & The server port. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/projects/\+ZLP-\/\+Library/src/client/requests.\+h\end{DoxyCompactItemize}

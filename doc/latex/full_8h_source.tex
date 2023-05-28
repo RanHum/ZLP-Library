@@ -1,0 +1,57 @@
+\hypertarget{full_8h_source}{}\doxysection{full.\+h}
+\label{full_8h_source}\index{D:/projects/ZLP-\/Library/src/client/full.h@{D:/projects/ZLP-\/Library/src/client/full.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ FULL\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ FULL\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QWidget>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QLabel>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QListWidgetItem>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}desk.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }Ui}
+\DoxyCodeLine{00009\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_full}{Full}};}
+\DoxyCodeLine{00011\ \}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_full}{Full}}\ :\ \textcolor{keyword}{public}\ QWidget}
+\DoxyCodeLine{00019\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_full}{Full}}(QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{class_full}{Full}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_desk}{Desk}}\ \&desk,\ QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{class_full_a570deba1dd01ce1fd2b32d0a2040d4d7}{\string~Full}}();}
+\DoxyCodeLine{00034\ \ \ \ \ QListWidgetItem\ *item;}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_full_a847cef3bcac1dcc176834b2ef12eee7c}{setDesk}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_desk}{Desk}}\ \&text);}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{int}\ getDeskId();}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{int}\ getOwner();}
+\DoxyCodeLine{00043\ \ \ \ \ QString\ getName();}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{struct_desk}{Desk}}\ getDesk();}
+\DoxyCodeLine{00045\ \ \ \ \ std::vector<Book>\ getBooks();}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_full_af94f6fc9e1af4645bb8dd6c197c1b983}{mousePressEvent}}(QMouseEvent\ *event)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00055\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00056\ \textcolor{comment}{//\ \ \ \ /*!}}
+\DoxyCodeLine{00057\ \textcolor{comment}{//\ \ \ \ \ *\ \(\backslash\)brief\ Handles\ the\ click\ event\ of\ the\ push\ button.}}
+\DoxyCodeLine{00058\ \textcolor{comment}{//\ \ \ \ \ */}}
+\DoxyCodeLine{00059\ \textcolor{comment}{//\ \ \ \ void\ on\_pushButton\_clicked();}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00062\ \ \ \ \ Ui::Full\ *ui;}
+\DoxyCodeLine{00063\ \ \ \ \ \mbox{\hyperlink{struct_desk}{Desk}}\ desk;}
+\DoxyCodeLine{00064\ signals:}
+\DoxyCodeLine{00065\ \textcolor{comment}{//\ \ \ \ /*!}}
+\DoxyCodeLine{00066\ \textcolor{comment}{//\ \ \ \ \ *\ \(\backslash\)brief\ Signal\ emitted\ when\ the\ remove\ button\ is\ clicked\ in\ the\ Full\ widget.}}
+\DoxyCodeLine{00067\ \textcolor{comment}{//\ \ \ \ \ *}}
+\DoxyCodeLine{00068\ \textcolor{comment}{//\ \ \ \ \ *\ \(\backslash\)param\ widget\ A\ pointer\ to\ the\ Full\ widget\ emitting\ the\ signal.}}
+\DoxyCodeLine{00069\ \textcolor{comment}{//\ \ \ \ \ */}}
+\DoxyCodeLine{00070\ \textcolor{comment}{//\ \ \ \ void\ remove\_requested(Full\ *widget);}}
+\DoxyCodeLine{00076\ \textcolor{comment}{}\ \ \ \ \textcolor{keywordtype}{void}\ clicked(\mbox{\hyperlink{class_full}{Full}}\ *widget);}
+\DoxyCodeLine{00077\ \};}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ FULL\_H}}
+
+\end{DoxyCode}

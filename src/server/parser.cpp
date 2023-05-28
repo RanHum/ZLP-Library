@@ -78,7 +78,7 @@ QString resolve_query_template(const QJsonObject &fields_values, const QJsonArra
 		if (sql.contains("|FIELDS|"))
 			sql.replace("|FIELDS|", fields.join(","));
 		// insert fields:values if needed
-		if (sql.contains("|FIELDS:VALUES|")) {
+		if (sql.contains("|FIELDSF:VALUES|")) {
 			QStringList values;
 			// assemble list of requested fields:values
 			for (const auto &field : fields) {

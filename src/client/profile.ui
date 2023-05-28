@@ -44,30 +44,26 @@ font-family: 'Roboto Slab', serif;</string>
   <widget class="QWidget" name="verticalLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>370</x>
-     <y>280</y>
-     <width>231</width>
+     <x>340</x>
+     <y>130</y>
+     <width>276</width>
      <height>241</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <layout class="QHBoxLayout" name="horizontalLayout">
-      <item>
-       <widget class="QLabel" name="name_2">
-        <property name="text">
-         <string>Имя пользователя:</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLabel" name="name">
-        <property name="text">
-         <string/>
-        </property>
-       </widget>
-      </item>
-     </layout>
+     <widget class="QLabel" name="user_id">
+      <property name="text">
+       <string>Ваш id:</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="username">
+      <property name="text">
+       <string>Имя пользователя:</string>
+      </property>
+     </widget>
     </item>
     <item>
      <widget class="QPushButton" name="change_button">
@@ -92,6 +88,29 @@ font-family: 'Roboto Slab', serif;</string>
      </widget>
     </item>
    </layout>
+  </widget>
+  <widget class="QListWidget" name="invite_list">
+   <property name="geometry">
+    <rect>
+     <x>340</x>
+     <y>410</y>
+     <width>271</width>
+     <height>251</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="invite_label">
+   <property name="geometry">
+    <rect>
+     <x>340</x>
+     <y>390</y>
+     <width>121</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Список приглашений</string>
+   </property>
   </widget>
  </widget>
  <resources/>

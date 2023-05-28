@@ -1,0 +1,271 @@
+\hypertarget{ui__bigwindow_8h_source}{}\doxysection{ui\+\_\+bigwindow.\+h}
+\label{ui__bigwindow_8h_source}\index{D:/projects/ZLP-\/Library/src/build-\/FirstTry-\/Desktop\_Qt\_6\_4\_2\_MinGW\_64\_bit-\/Debug/ui\_bigwindow.h@{D:/projects/ZLP-\/Library/src/build-\/FirstTry-\/Desktop\_Qt\_6\_4\_2\_MinGW\_64\_bit-\/Debug/ui\_bigwindow.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/********************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{**\ Form\ generated\ from\ reading\ UI\ file\ 'bigwindow.ui'}}
+\DoxyCodeLine{00003\ \textcolor{comment}{**}}
+\DoxyCodeLine{00004\ \textcolor{comment}{**\ Created\ by:\ Qt\ User\ Interface\ Compiler\ version\ 6.4.2}}
+\DoxyCodeLine{00005\ \textcolor{comment}{**}}
+\DoxyCodeLine{00006\ \textcolor{comment}{**\ WARNING!\ All\ changes\ made\ in\ this\ file\ will\ be\ lost\ when\ recompiling\ UI\ file!}}
+\DoxyCodeLine{00007\ \textcolor{comment}{********************************************************************************/}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ UI\_BIGWINDOW\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ UI\_BIGWINDOW\_H}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <QtCore/QVariant>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <QtWidgets/QApplication>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <QtWidgets/QDialog>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <QtWidgets/QGridLayout>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <QtWidgets/QPushButton>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <QtWidgets/QScrollArea>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <QtWidgets/QVBoxLayout>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <QtWidgets/QWidget>}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ QT\_BEGIN\_NAMESPACE}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_ui___bigwindow}{Ui\_Bigwindow}}}
+\DoxyCodeLine{00024\ \{}
+\DoxyCodeLine{00025\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ \ \ \ \ QPushButton\ *search\_desk\_button;}
+\DoxyCodeLine{00027\ \ \ \ \ QPushButton\ *add\_desk\_button;}
+\DoxyCodeLine{00028\ \ \ \ \ QPushButton\ *avatar\_button;}
+\DoxyCodeLine{00029\ \ \ \ \ QWidget\ *verticalLayoutWidget;}
+\DoxyCodeLine{00030\ \ \ \ \ QVBoxLayout\ *verticalLayout\_2;}
+\DoxyCodeLine{00031\ \ \ \ \ QPushButton\ *bookmarks\_button;}
+\DoxyCodeLine{00032\ \ \ \ \ QPushButton\ *profile\_button;}
+\DoxyCodeLine{00033\ \ \ \ \ QPushButton\ *settings\_button;}
+\DoxyCodeLine{00034\ \ \ \ \ QScrollArea\ *bookScrollArea;}
+\DoxyCodeLine{00035\ \ \ \ \ QWidget\ *scrollAreaWidgetContents;}
+\DoxyCodeLine{00036\ \ \ \ \ QWidget\ *gridLayoutWidget;}
+\DoxyCodeLine{00037\ \ \ \ \ QGridLayout\ *bookContainerLayout;}
+\DoxyCodeLine{00038\ \ \ \ \ QWidget\ *verticalLayoutWidget\_2;}
+\DoxyCodeLine{00039\ \ \ \ \ QVBoxLayout\ *verticalLayout;}
+\DoxyCodeLine{00040\ \ \ \ \ QPushButton\ *add\_book\_button;}
+\DoxyCodeLine{00041\ \ \ \ \ QPushButton\ *close\_desk\_button;}
+\DoxyCodeLine{00042\ \ \ \ \ QPushButton\ *delete\_desk\_button;}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ setupUi(QDialog\ *\mbox{\hyperlink{class_bigwindow}{Bigwindow}})}
+\DoxyCodeLine{00045\ \ \ \ \ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_bigwindow}{Bigwindow}}-\/>objectName().isEmpty())}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bigwindow}{Bigwindow}}-\/>setObjectName(\textcolor{stringliteral}{"{}Bigwindow"{}});}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bigwindow}{Bigwindow}}-\/>resize(1500,\ 1000);}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ search\_desk\_button\ =\ \textcolor{keyword}{new}\ QPushButton(\mbox{\hyperlink{class_bigwindow}{Bigwindow}});}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ search\_desk\_button-\/>setObjectName(\textcolor{stringliteral}{"{}search\_desk\_button"{}});}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ search\_desk\_button-\/>setGeometry(QRect(815,\ 30,\ 300,\ 60));}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ search\_desk\_button-\/>setStyleSheet(QString::fromUtf8(\textcolor{stringliteral}{"{}float:\ right;\(\backslash\)n"{}}}
+\DoxyCodeLine{00053\ \textcolor{stringliteral}{"{}margin-\/right:\ 3\%;\(\backslash\)n"{}}}
+\DoxyCodeLine{00054\ \textcolor{stringliteral}{"{}margin-\/top:\ 5px;\(\backslash\)n"{}}}
+\DoxyCodeLine{00055\ \textcolor{stringliteral}{"{}border-\/radius:\ 5px;\(\backslash\)n"{}}}
+\DoxyCodeLine{00056\ \textcolor{stringliteral}{"{}-\/moz-\/border-\/radius:\ 5px;\(\backslash\)n"{}}}
+\DoxyCodeLine{00057\ \textcolor{stringliteral}{"{}-\/webkit-\/border-\/radius:\ 5px;\(\backslash\)n"{}}}
+\DoxyCodeLine{00058\ \textcolor{stringliteral}{"{}padding:\ 5px\ 9px;\(\backslash\)n"{}}}
+\DoxyCodeLine{00059\ \textcolor{stringliteral}{"{}font-\/size:\ 1.2em;\(\backslash\)n"{}}}
+\DoxyCodeLine{00060\ \textcolor{stringliteral}{"{}background-\/color:\ rgba(236,\ 101,\ 80,\ 1);\(\backslash\)n"{}}}
+\DoxyCodeLine{00061\ \textcolor{stringliteral}{"{}text-\/shadow:\ \#454545\ 0\ 0\ 2px;\(\backslash\)n"{}}}
+\DoxyCodeLine{00062\ \textcolor{stringliteral}{"{}border-\/bottom:\ 4px\ solid\ rgba(217,\ 91,\ 72,\ 1);\(\backslash\)n"{}}}
+\DoxyCodeLine{00063\ \textcolor{stringliteral}{"{}color:\ white;\(\backslash\)n"{}}}
+\DoxyCodeLine{00064\ \textcolor{stringliteral}{"{}font-\/family:\ 'Roboto\ Slab',\ serif;"{}}));}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ add\_desk\_button\ =\ \textcolor{keyword}{new}\ QPushButton(\mbox{\hyperlink{class_bigwindow}{Bigwindow}});}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ add\_desk\_button-\/>setObjectName(\textcolor{stringliteral}{"{}add\_desk\_button"{}});}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ add\_desk\_button-\/>setGeometry(QRect(385,\ 30,\ 300,\ 60));}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ add\_desk\_button-\/>setStyleSheet(QString::fromUtf8(\textcolor{stringliteral}{"{}float:\ right;\(\backslash\)n"{}}}
+\DoxyCodeLine{00069\ \textcolor{stringliteral}{"{}margin-\/right:\ 3\%;\(\backslash\)n"{}}}
+\DoxyCodeLine{00070\ \textcolor{stringliteral}{"{}margin-\/top:\ 5px;\(\backslash\)n"{}}}
+\DoxyCodeLine{00071\ \textcolor{stringliteral}{"{}border-\/radius:\ 5px;\(\backslash\)n"{}}}
+\DoxyCodeLine{00072\ \textcolor{stringliteral}{"{}-\/moz-\/border-\/radius:\ 5px;\(\backslash\)n"{}}}
+\DoxyCodeLine{00073\ \textcolor{stringliteral}{"{}-\/webkit-\/border-\/radius:\ 5px;\(\backslash\)n"{}}}
+\DoxyCodeLine{00074\ \textcolor{stringliteral}{"{}padding:\ 5px\ 9px;\(\backslash\)n"{}}}
+\DoxyCodeLine{00075\ \textcolor{stringliteral}{"{}font-\/size:\ 1.2em;\(\backslash\)n"{}}}
+\DoxyCodeLine{00076\ \textcolor{stringliteral}{"{}background-\/color:\ rgba(236,\ 101,\ 80,\ 1);\(\backslash\)n"{}}}
+\DoxyCodeLine{00077\ \textcolor{stringliteral}{"{}text-\/shadow:\ \#454545\ 0\ 0\ 2px;\(\backslash\)n"{}}}
+\DoxyCodeLine{00078\ \textcolor{stringliteral}{"{}border-\/bottom:\ 4px\ solid\ rgba(217,\ 91,\ 72,\ 1);\(\backslash\)n"{}}}
+\DoxyCodeLine{00079\ \textcolor{stringliteral}{"{}color:\ white;\(\backslash\)n"{}}}
+\DoxyCodeLine{00080\ \textcolor{stringliteral}{"{}font-\/family:\ 'Roboto\ Slab',\ serif;"{}}));}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ avatar\_button\ =\ \textcolor{keyword}{new}\ QPushButton(\mbox{\hyperlink{class_bigwindow}{Bigwindow}});}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ avatar\_button-\/>setObjectName(\textcolor{stringliteral}{"{}avatar\_button"{}});}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ avatar\_button-\/>setGeometry(QRect(1430,\ 0,\ 71,\ 71));}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ avatar\_button-\/>setStyleSheet(QString::fromUtf8(\textcolor{stringliteral}{"{}float:\ right;\(\backslash\)n"{}}}
+\DoxyCodeLine{00085\ \textcolor{stringliteral}{"{}margin-\/right:\ 3\%;\(\backslash\)n"{}}}
+\DoxyCodeLine{00086\ \textcolor{stringliteral}{"{}margin-\/top:\ 5px;\(\backslash\)n"{}}}
+\DoxyCodeLine{00087\ \textcolor{stringliteral}{"{}border-\/radius:\ 30px;\(\backslash\)n"{}}}
+\DoxyCodeLine{00088\ \textcolor{stringliteral}{"{}-\/moz-\/border-\/radius:\ 5px;\(\backslash\)n"{}}}
+\DoxyCodeLine{00089\ \textcolor{stringliteral}{"{}webkit-\/border-\/radius:\ 5px;\(\backslash\)n"{}}}
+\DoxyCodeLine{00090\ \textcolor{stringliteral}{"{}padding:\ 5p\(\backslash\)321\(\backslash\)205\ 9\(\backslash\)321\(\backslash\)200\(\backslash\)321\(\backslash\)205;\(\backslash\)n"{}}}
+\DoxyCodeLine{00091\ \textcolor{stringliteral}{"{}font-\/size:\ 1.2em;\(\backslash\)n"{}}}
+\DoxyCodeLine{00092\ \textcolor{stringliteral}{"{}background-\/color:\ rgba(0,\ 0,\ 0,\ 1);\(\backslash\)n"{}}}
+\DoxyCodeLine{00093\ \textcolor{stringliteral}{"{}text-\/shadow:\ \#454545\ 0\ 0\ 2px;\(\backslash\)n"{}}}
+\DoxyCodeLine{00094\ \textcolor{stringliteral}{"{}color:\ white;\(\backslash\)n"{}}}
+\DoxyCodeLine{00095\ \textcolor{stringliteral}{"{}font-\/family:\ 'Roboto\ Slab',\ serif;"{}}));}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ verticalLayoutWidget\ =\ \textcolor{keyword}{new}\ QWidget(\mbox{\hyperlink{class_bigwindow}{Bigwindow}});}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ verticalLayoutWidget-\/>setObjectName(\textcolor{stringliteral}{"{}verticalLayoutWidget"{}});}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ verticalLayoutWidget-\/>setGeometry(QRect(1390,\ 80,\ 124,\ 151));}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ verticalLayout\_2\ =\ \textcolor{keyword}{new}\ QVBoxLayout(verticalLayoutWidget);}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ verticalLayout\_2-\/>setObjectName(\textcolor{stringliteral}{"{}verticalLayout\_2"{}});}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ verticalLayout\_2-\/>setContentsMargins(0,\ 0,\ 0,\ 0);}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ bookmarks\_button\ =\ \textcolor{keyword}{new}\ QPushButton(verticalLayoutWidget);}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ bookmarks\_button-\/>setObjectName(\textcolor{stringliteral}{"{}bookmarks\_button"{}});}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ bookmarks\_button-\/>setStyleSheet(QString::fromUtf8(\textcolor{stringliteral}{"{}float:\ right;\(\backslash\)n"{}}}
+\DoxyCodeLine{00105\ \textcolor{stringliteral}{"{}margin-\/right:\ 3\%;\(\backslash\)n"{}}}
+\DoxyCodeLine{00106\ \textcolor{stringliteral}{"{}margin-\/top:\ 5px;\(\backslash\)n"{}}}
+\DoxyCodeLine{00107\ \textcolor{stringliteral}{"{}border-\/radius:\ 5px;\(\backslash\)n"{}}}
+\DoxyCodeLine{00108\ \textcolor{stringliteral}{"{}-\/moz-\/border-\/radius:\ 5px;\(\backslash\)n"{}}}
+\DoxyCodeLine{00109\ \textcolor{stringliteral}{"{}-\/webkit-\/border-\/radius:\ 5px;\(\backslash\)n"{}}}
+\DoxyCodeLine{00110\ \textcolor{stringliteral}{"{}padding:\ 5px\ 9px;\(\backslash\)n"{}}}
+\DoxyCodeLine{00111\ \textcolor{stringliteral}{"{}font-\/size:\ 1.2em;\(\backslash\)n"{}}}
+\DoxyCodeLine{00112\ \textcolor{stringliteral}{"{}background-\/color:\ rgba(236,\ 101,\ 80,\ 1);\(\backslash\)n"{}}}
+\DoxyCodeLine{00113\ \textcolor{stringliteral}{"{}text-\/shadow:\ \#454545\ 0\ 0\ 2px;\(\backslash\)n"{}}}
+\DoxyCodeLine{00114\ \textcolor{stringliteral}{"{}border-\/bottom:\ 4px\ solid\ rgba(217,\ 91,\ 72,\ 1);\(\backslash\)n"{}}}
+\DoxyCodeLine{00115\ \textcolor{stringliteral}{"{}color:\ white;\(\backslash\)n"{}}}
+\DoxyCodeLine{00116\ \textcolor{stringliteral}{"{}font-\/family:\ 'Roboto\ Slab',\ serif;"{}}));}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ verticalLayout\_2-\/>addWidget(bookmarks\_button);}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ profile\_button\ =\ \textcolor{keyword}{new}\ QPushButton(verticalLayoutWidget);}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ profile\_button-\/>setObjectName(\textcolor{stringliteral}{"{}profile\_button"{}});}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ profile\_button-\/>setStyleSheet(QString::fromUtf8(\textcolor{stringliteral}{"{}float:\ right;\(\backslash\)n"{}}}
+\DoxyCodeLine{00123\ \textcolor{stringliteral}{"{}margin-\/right:\ 3\%;\(\backslash\)n"{}}}
+\DoxyCodeLine{00124\ \textcolor{stringliteral}{"{}margin-\/top:\ 5px;\(\backslash\)n"{}}}
+\DoxyCodeLine{00125\ \textcolor{stringliteral}{"{}border-\/radius:\ 5px;\(\backslash\)n"{}}}
+\DoxyCodeLine{00126\ \textcolor{stringliteral}{"{}-\/moz-\/border-\/radius:\ 5px;\(\backslash\)n"{}}}
+\DoxyCodeLine{00127\ \textcolor{stringliteral}{"{}-\/webkit-\/border-\/radius:\ 5px;\(\backslash\)n"{}}}
+\DoxyCodeLine{00128\ \textcolor{stringliteral}{"{}padding:\ 5px\ 9px;\(\backslash\)n"{}}}
+\DoxyCodeLine{00129\ \textcolor{stringliteral}{"{}font-\/size:\ 1.2em;\(\backslash\)n"{}}}
+\DoxyCodeLine{00130\ \textcolor{stringliteral}{"{}background-\/color:\ rgba(236,\ 101,\ 80,\ 1);\(\backslash\)n"{}}}
+\DoxyCodeLine{00131\ \textcolor{stringliteral}{"{}text-\/shadow:\ \#454545\ 0\ 0\ 2px;\(\backslash\)n"{}}}
+\DoxyCodeLine{00132\ \textcolor{stringliteral}{"{}border-\/bottom:\ 4px\ solid\ rgba(217,\ 91,\ 72,\ 1);\(\backslash\)n"{}}}
+\DoxyCodeLine{00133\ \textcolor{stringliteral}{"{}color:\ white;\(\backslash\)n"{}}}
+\DoxyCodeLine{00134\ \textcolor{stringliteral}{"{}font-\/family:\ 'Roboto\ Slab',\ serif;"{}}));}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ verticalLayout\_2-\/>addWidget(profile\_button);}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ settings\_button\ =\ \textcolor{keyword}{new}\ QPushButton(verticalLayoutWidget);}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ settings\_button-\/>setObjectName(\textcolor{stringliteral}{"{}settings\_button"{}});}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ settings\_button-\/>setStyleSheet(QString::fromUtf8(\textcolor{stringliteral}{"{}float:\ right;\(\backslash\)n"{}}}
+\DoxyCodeLine{00141\ \textcolor{stringliteral}{"{}margin-\/right:\ 3\%;\(\backslash\)n"{}}}
+\DoxyCodeLine{00142\ \textcolor{stringliteral}{"{}margin-\/top:\ 5px;\(\backslash\)n"{}}}
+\DoxyCodeLine{00143\ \textcolor{stringliteral}{"{}border-\/radius:\ 5px;\(\backslash\)n"{}}}
+\DoxyCodeLine{00144\ \textcolor{stringliteral}{"{}-\/moz-\/border-\/radius:\ 5px;\(\backslash\)n"{}}}
+\DoxyCodeLine{00145\ \textcolor{stringliteral}{"{}-\/webkit-\/border-\/radius:\ 5px;\(\backslash\)n"{}}}
+\DoxyCodeLine{00146\ \textcolor{stringliteral}{"{}padding:\ 5px\ 9px;\(\backslash\)n"{}}}
+\DoxyCodeLine{00147\ \textcolor{stringliteral}{"{}font-\/size:\ 1.2em;\(\backslash\)n"{}}}
+\DoxyCodeLine{00148\ \textcolor{stringliteral}{"{}background-\/color:\ rgba(236,\ 101,\ 80,\ 1);\(\backslash\)n"{}}}
+\DoxyCodeLine{00149\ \textcolor{stringliteral}{"{}text-\/shadow:\ \#454545\ 0\ 0\ 2px;\(\backslash\)n"{}}}
+\DoxyCodeLine{00150\ \textcolor{stringliteral}{"{}border-\/bottom:\ 4px\ solid\ rgba(217,\ 91,\ 72,\ 1);\(\backslash\)n"{}}}
+\DoxyCodeLine{00151\ \textcolor{stringliteral}{"{}color:\ white;\(\backslash\)n"{}}}
+\DoxyCodeLine{00152\ \textcolor{stringliteral}{"{}font-\/family:\ 'Roboto\ Slab',\ serif;"{}}));}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ verticalLayout\_2-\/>addWidget(settings\_button);}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ bookScrollArea\ =\ \textcolor{keyword}{new}\ QScrollArea(\mbox{\hyperlink{class_bigwindow}{Bigwindow}});}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ bookScrollArea-\/>setObjectName(\textcolor{stringliteral}{"{}bookScrollArea"{}});}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ bookScrollArea-\/>setGeometry(QRect(280,\ 120,\ 1071,\ 621));}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ bookScrollArea-\/>setWidgetResizable(\textcolor{keyword}{true});}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ scrollAreaWidgetContents\ =\ \textcolor{keyword}{new}\ QWidget();}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ scrollAreaWidgetContents-\/>setObjectName(\textcolor{stringliteral}{"{}scrollAreaWidgetContents"{}});}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ scrollAreaWidgetContents-\/>setGeometry(QRect(0,\ 0,\ 1069,\ 619));}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ gridLayoutWidget\ =\ \textcolor{keyword}{new}\ QWidget(scrollAreaWidgetContents);}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ gridLayoutWidget-\/>setObjectName(\textcolor{stringliteral}{"{}gridLayoutWidget"{}});}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ gridLayoutWidget-\/>setGeometry(QRect(0,\ 0,\ 1071,\ 621));}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ bookContainerLayout\ =\ \textcolor{keyword}{new}\ QGridLayout(gridLayoutWidget);}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ bookContainerLayout-\/>setObjectName(\textcolor{stringliteral}{"{}bookContainerLayout"{}});}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ bookContainerLayout-\/>setContentsMargins(0,\ 0,\ 0,\ 0);}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ bookScrollArea-\/>setWidget(scrollAreaWidgetContents);}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ verticalLayoutWidget\_2\ =\ \textcolor{keyword}{new}\ QWidget(\mbox{\hyperlink{class_bigwindow}{Bigwindow}});}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ verticalLayoutWidget\_2-\/>setObjectName(\textcolor{stringliteral}{"{}verticalLayoutWidget\_2"{}});}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ verticalLayoutWidget\_2-\/>setGeometry(QRect(10,\ 290,\ 160,\ 161));}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ verticalLayout\ =\ \textcolor{keyword}{new}\ QVBoxLayout(verticalLayoutWidget\_2);}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ verticalLayout-\/>setObjectName(\textcolor{stringliteral}{"{}verticalLayout"{}});}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ verticalLayout-\/>setContentsMargins(0,\ 0,\ 0,\ 0);}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ add\_book\_button\ =\ \textcolor{keyword}{new}\ QPushButton(verticalLayoutWidget\_2);}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ add\_book\_button-\/>setObjectName(\textcolor{stringliteral}{"{}add\_book\_button"{}});}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ add\_book\_button-\/>setEnabled(\textcolor{keyword}{true});}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ add\_book\_button-\/>setStyleSheet(QString::fromUtf8(\textcolor{stringliteral}{"{}float:\ right;\(\backslash\)n"{}}}
+\DoxyCodeLine{00180\ \textcolor{stringliteral}{"{}margin-\/right:\ 3\%;\(\backslash\)n"{}}}
+\DoxyCodeLine{00181\ \textcolor{stringliteral}{"{}margin-\/top:\ 5px;\(\backslash\)n"{}}}
+\DoxyCodeLine{00182\ \textcolor{stringliteral}{"{}border-\/radius:\ 5px;\(\backslash\)n"{}}}
+\DoxyCodeLine{00183\ \textcolor{stringliteral}{"{}-\/moz-\/border-\/radius:\ 5px;\(\backslash\)n"{}}}
+\DoxyCodeLine{00184\ \textcolor{stringliteral}{"{}-\/webkit-\/border-\/radius:\ 5px;\(\backslash\)n"{}}}
+\DoxyCodeLine{00185\ \textcolor{stringliteral}{"{}padding:\ 5px\ 9px;\(\backslash\)n"{}}}
+\DoxyCodeLine{00186\ \textcolor{stringliteral}{"{}font-\/size:\ 1.2em;\(\backslash\)n"{}}}
+\DoxyCodeLine{00187\ \textcolor{stringliteral}{"{}background-\/color:\ rgba(236,\ 101,\ 80,\ 1);\(\backslash\)n"{}}}
+\DoxyCodeLine{00188\ \textcolor{stringliteral}{"{}text-\/shadow:\ \#454545\ 0\ 0\ 2px;\(\backslash\)n"{}}}
+\DoxyCodeLine{00189\ \textcolor{stringliteral}{"{}border-\/bottom:\ 4px\ solid\ rgba(217,\ 91,\ 72,\ 1);\(\backslash\)n"{}}}
+\DoxyCodeLine{00190\ \textcolor{stringliteral}{"{}color:\ white;\(\backslash\)n"{}}}
+\DoxyCodeLine{00191\ \textcolor{stringliteral}{"{}font-\/family:\ 'Roboto\ Slab',\ serif;"{}}));}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ verticalLayout-\/>addWidget(add\_book\_button);}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ close\_desk\_button\ =\ \textcolor{keyword}{new}\ QPushButton(verticalLayoutWidget\_2);}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ close\_desk\_button-\/>setObjectName(\textcolor{stringliteral}{"{}close\_desk\_button"{}});}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ close\_desk\_button-\/>setStyleSheet(QString::fromUtf8(\textcolor{stringliteral}{"{}float:\ right;\(\backslash\)n"{}}}
+\DoxyCodeLine{00198\ \textcolor{stringliteral}{"{}margin-\/right:\ 3\%;\(\backslash\)n"{}}}
+\DoxyCodeLine{00199\ \textcolor{stringliteral}{"{}margin-\/top:\ 5px;\(\backslash\)n"{}}}
+\DoxyCodeLine{00200\ \textcolor{stringliteral}{"{}border-\/radius:\ 5px;\(\backslash\)n"{}}}
+\DoxyCodeLine{00201\ \textcolor{stringliteral}{"{}-\/moz-\/border-\/radius:\ 5px;\(\backslash\)n"{}}}
+\DoxyCodeLine{00202\ \textcolor{stringliteral}{"{}-\/webkit-\/border-\/radius:\ 5px;\(\backslash\)n"{}}}
+\DoxyCodeLine{00203\ \textcolor{stringliteral}{"{}padding:\ 5px\ 9px;\(\backslash\)n"{}}}
+\DoxyCodeLine{00204\ \textcolor{stringliteral}{"{}font-\/size:\ 1.2em;\(\backslash\)n"{}}}
+\DoxyCodeLine{00205\ \textcolor{stringliteral}{"{}background-\/color:\ rgba(236,\ 101,\ 80,\ 1);\(\backslash\)n"{}}}
+\DoxyCodeLine{00206\ \textcolor{stringliteral}{"{}text-\/shadow:\ \#454545\ 0\ 0\ 2px;\(\backslash\)n"{}}}
+\DoxyCodeLine{00207\ \textcolor{stringliteral}{"{}border-\/bottom:\ 4px\ solid\ rgba(217,\ 91,\ 72,\ 1);\(\backslash\)n"{}}}
+\DoxyCodeLine{00208\ \textcolor{stringliteral}{"{}color:\ white;\(\backslash\)n"{}}}
+\DoxyCodeLine{00209\ \textcolor{stringliteral}{"{}font-\/family:\ 'Roboto\ Slab',\ serif;"{}}));}
+\DoxyCodeLine{00210\ }
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ verticalLayout-\/>addWidget(close\_desk\_button);}
+\DoxyCodeLine{00212\ }
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ delete\_desk\_button\ =\ \textcolor{keyword}{new}\ QPushButton(verticalLayoutWidget\_2);}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ delete\_desk\_button-\/>setObjectName(\textcolor{stringliteral}{"{}delete\_desk\_button"{}});}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ delete\_desk\_button-\/>setStyleSheet(QString::fromUtf8(\textcolor{stringliteral}{"{}float:\ right;\(\backslash\)n"{}}}
+\DoxyCodeLine{00216\ \textcolor{stringliteral}{"{}margin-\/right:\ 3\%;\(\backslash\)n"{}}}
+\DoxyCodeLine{00217\ \textcolor{stringliteral}{"{}margin-\/top:\ 5px;\(\backslash\)n"{}}}
+\DoxyCodeLine{00218\ \textcolor{stringliteral}{"{}border-\/radius:\ 5px;\(\backslash\)n"{}}}
+\DoxyCodeLine{00219\ \textcolor{stringliteral}{"{}-\/moz-\/border-\/radius:\ 5px;\(\backslash\)n"{}}}
+\DoxyCodeLine{00220\ \textcolor{stringliteral}{"{}-\/webkit-\/border-\/radius:\ 5px;\(\backslash\)n"{}}}
+\DoxyCodeLine{00221\ \textcolor{stringliteral}{"{}padding:\ 5px\ 9px;\(\backslash\)n"{}}}
+\DoxyCodeLine{00222\ \textcolor{stringliteral}{"{}font-\/size:\ 1.2em;\(\backslash\)n"{}}}
+\DoxyCodeLine{00223\ \textcolor{stringliteral}{"{}background-\/color:\ rgba(236,\ 101,\ 80,\ 1);\(\backslash\)n"{}}}
+\DoxyCodeLine{00224\ \textcolor{stringliteral}{"{}text-\/shadow:\ \#454545\ 0\ 0\ 2px;\(\backslash\)n"{}}}
+\DoxyCodeLine{00225\ \textcolor{stringliteral}{"{}border-\/bottom:\ 4px\ solid\ rgba(217,\ 91,\ 72,\ 1);\(\backslash\)n"{}}}
+\DoxyCodeLine{00226\ \textcolor{stringliteral}{"{}color:\ white;\(\backslash\)n"{}}}
+\DoxyCodeLine{00227\ \textcolor{stringliteral}{"{}font-\/family:\ 'Roboto\ Slab',\ serif;"{}}));}
+\DoxyCodeLine{00228\ }
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ verticalLayout-\/>addWidget(delete\_desk\_button);}
+\DoxyCodeLine{00230\ }
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ search\_desk\_button-\/>raise();}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ add\_desk\_button-\/>raise();}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ verticalLayoutWidget-\/>raise();}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ avatar\_button-\/>raise();}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ bookScrollArea-\/>raise();}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ verticalLayoutWidget\_2-\/>raise();}
+\DoxyCodeLine{00237\ }
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ retranslateUi(\mbox{\hyperlink{class_bigwindow}{Bigwindow}});}
+\DoxyCodeLine{00239\ }
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ QMetaObject::connectSlotsByName(\mbox{\hyperlink{class_bigwindow}{Bigwindow}});}
+\DoxyCodeLine{00241\ \ \ \ \ \}\ \textcolor{comment}{//\ setupUi}}
+\DoxyCodeLine{00242\ }
+\DoxyCodeLine{00243\ \ \ \ \ \textcolor{keywordtype}{void}\ retranslateUi(QDialog\ *\mbox{\hyperlink{class_bigwindow}{Bigwindow}})}
+\DoxyCodeLine{00244\ \ \ \ \ \{}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bigwindow}{Bigwindow}}-\/>setWindowTitle(QCoreApplication::translate(\textcolor{stringliteral}{"{}Bigwindow"{}},\ \textcolor{stringliteral}{"{}\(\backslash\)320\(\backslash\)223\(\backslash\)320\(\backslash\)273\(\backslash\)320\(\backslash\)260\(\backslash\)320\(\backslash\)262\(\backslash\)320\(\backslash\)275\(\backslash\)321\(\backslash\)213\(\backslash\)320\(\backslash\)271\ \(\backslash\)321\(\backslash\)215\(\backslash\)320\(\backslash\)272\(\backslash\)321\(\backslash\)200\(\backslash\)320\(\backslash\)260\(\backslash\)320\(\backslash\)275"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ search\_desk\_button-\/>setText(QCoreApplication::translate(\textcolor{stringliteral}{"{}Bigwindow"{}},\ \textcolor{stringliteral}{"{}\(\backslash\)320\(\backslash\)237\(\backslash\)320\(\backslash\)276\(\backslash\)320\(\backslash\)270\(\backslash\)321\(\backslash\)201\(\backslash\)320\(\backslash\)272\ \(\backslash\)320\(\backslash\)264\(\backslash\)320\(\backslash\)276\(\backslash\)321\(\backslash\)201\(\backslash\)320\(\backslash\)276\(\backslash\)320\(\backslash\)272"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ add\_desk\_button-\/>setText(QCoreApplication::translate(\textcolor{stringliteral}{"{}Bigwindow"{}},\ \textcolor{stringliteral}{"{}\(\backslash\)320\(\backslash\)241\(\backslash\)320\(\backslash\)276\(\backslash\)320\(\backslash\)267\(\backslash\)320\(\backslash\)264\(\backslash\)320\(\backslash\)260\(\backslash\)321\(\backslash\)202\(\backslash\)321\(\backslash\)214\ \(\backslash\)320\(\backslash\)264\(\backslash\)320\(\backslash\)276\(\backslash\)321\(\backslash\)201\(\backslash\)320\(\backslash\)272\(\backslash\)321\(\backslash\)203"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ avatar\_button-\/>setText(QCoreApplication::translate(\textcolor{stringliteral}{"{}Bigwindow"{}},\ \textcolor{stringliteral}{"{}\(\backslash\)320\(\backslash\)260\(\backslash\)320\(\backslash\)262\(\backslash\)320\(\backslash\)260"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ bookmarks\_button-\/>setText(QCoreApplication::translate(\textcolor{stringliteral}{"{}Bigwindow"{}},\ \textcolor{stringliteral}{"{}\(\backslash\)320\(\backslash\)227\(\backslash\)320\(\backslash\)260\(\backslash\)320\(\backslash\)272\(\backslash\)320\(\backslash\)273\(\backslash\)320\(\backslash\)260\(\backslash\)320\(\backslash\)264\(\backslash\)320\(\backslash\)272\(\backslash\)320\(\backslash\)270"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ profile\_button-\/>setText(QCoreApplication::translate(\textcolor{stringliteral}{"{}Bigwindow"{}},\ \textcolor{stringliteral}{"{}\(\backslash\)320\(\backslash\)237\(\backslash\)321\(\backslash\)200\(\backslash\)320\(\backslash\)276\(\backslash\)321\(\backslash\)204\(\backslash\)320\(\backslash\)270\(\backslash\)320\(\backslash\)273\(\backslash\)321\(\backslash\)214"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ settings\_button-\/>setText(QCoreApplication::translate(\textcolor{stringliteral}{"{}Bigwindow"{}},\ \textcolor{stringliteral}{"{}\(\backslash\)320\(\backslash\)235\(\backslash\)320\(\backslash\)260\(\backslash\)321\(\backslash\)201\(\backslash\)321\(\backslash\)202\(\backslash\)321\(\backslash\)200\(\backslash\)320\(\backslash\)276\(\backslash\)320\(\backslash\)271\(\backslash\)320\(\backslash\)272\(\backslash\)320\(\backslash\)270"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ add\_book\_button-\/>setText(QCoreApplication::translate(\textcolor{stringliteral}{"{}Bigwindow"{}},\ \textcolor{stringliteral}{"{}\(\backslash\)320\(\backslash\)224\(\backslash\)320\(\backslash\)276\(\backslash\)320\(\backslash\)261\(\backslash\)320\(\backslash\)260\(\backslash\)320\(\backslash\)262\(\backslash\)320\(\backslash\)270\(\backslash\)321\(\backslash\)202\(\backslash\)321\(\backslash\)214\ \(\backslash\)320\(\backslash\)272\(\backslash\)320\(\backslash\)275\(\backslash\)320\(\backslash\)270\(\backslash\)320\(\backslash\)263\(\backslash\)321\(\backslash\)203"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ close\_desk\_button-\/>setText(QCoreApplication::translate(\textcolor{stringliteral}{"{}Bigwindow"{}},\ \textcolor{stringliteral}{"{}\(\backslash\)320\(\backslash\)227\(\backslash\)320\(\backslash\)260\(\backslash\)320\(\backslash\)272\(\backslash\)321\(\backslash\)200\(\backslash\)321\(\backslash\)213\(\backslash\)321\(\backslash\)202\(\backslash\)321\(\backslash\)214\ \(\backslash\)320\(\backslash\)264\(\backslash\)320\(\backslash\)276\(\backslash\)321\(\backslash\)201\(\backslash\)320\(\backslash\)272\(\backslash\)321\(\backslash\)203"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ delete\_desk\_button-\/>setText(QCoreApplication::translate(\textcolor{stringliteral}{"{}Bigwindow"{}},\ \textcolor{stringliteral}{"{}\(\backslash\)320\(\backslash\)243\(\backslash\)320\(\backslash\)264\(\backslash\)320\(\backslash\)260\(\backslash\)320\(\backslash\)273\(\backslash\)320\(\backslash\)270\(\backslash\)321\(\backslash\)202\(\backslash\)321\(\backslash\)214\ \(\backslash\)320\(\backslash\)264\(\backslash\)320\(\backslash\)276\(\backslash\)321\(\backslash\)201\(\backslash\)320\(\backslash\)272\(\backslash\)321\(\backslash\)203"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00255\ \ \ \ \ \}\ \textcolor{comment}{//\ retranslateUi}}
+\DoxyCodeLine{00256\ }
+\DoxyCodeLine{00257\ \};}
+\DoxyCodeLine{00258\ }
+\DoxyCodeLine{00259\ \textcolor{keyword}{namespace\ }Ui\ \{}
+\DoxyCodeLine{00260\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_ui_1_1_bigwindow}{Bigwindow}}:\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_ui___bigwindow}{Ui\_Bigwindow}}\ \{\};}
+\DoxyCodeLine{00261\ \}\ \textcolor{comment}{//\ namespace\ Ui}}
+\DoxyCodeLine{00262\ }
+\DoxyCodeLine{00263\ QT\_END\_NAMESPACE}
+\DoxyCodeLine{00264\ }
+\DoxyCodeLine{00265\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ UI\_BIGWINDOW\_H}}
+
+\end{DoxyCode}

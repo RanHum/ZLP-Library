@@ -1,0 +1,43 @@
+\hypertarget{profile_8h_source}{}\doxysection{profile.\+h}
+\label{profile_8h_source}\index{D:/projects/ZLP-\/Library/src/client/profile.h@{D:/projects/ZLP-\/Library/src/client/profile.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ PROFILE\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ PROFILE\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QWidget>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QJsonArray>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QMessageBox>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <QListWidgetItem>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}api\_utils.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}requests.h"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{namespace\ }Ui}
+\DoxyCodeLine{00012\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classprofile}{profile}};}
+\DoxyCodeLine{00014\ \}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classprofile}{profile}}\ :\ \textcolor{keyword}{public}\ QWidget}
+\DoxyCodeLine{00021\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classprofile}{profile}}(QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{classprofile_a2fbb4edb7b3c84fcc491f57bdb48a7e8}{\string~profile}}();}
+\DoxyCodeLine{00035\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_back\_button\_clicked();}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ handleAcceptButtonClicked(QListWidgetItem\ *invite\_list\_item);}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ handleCancelButtonClicked(QListWidgetItem\ *invite\_list\_item);}
+\DoxyCodeLine{00044\ signals:}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ joinedInDesk(\textcolor{keywordtype}{int}\ desk\_id);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00048\ \ \ \ \ Ui::profile\ *ui;}
+\DoxyCodeLine{00049\ \ \ \ \ QWidget\ *createInviteWidget(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ desk\_id,\ \textcolor{keyword}{const}\ QString\ \&desk\_name);}
+\DoxyCodeLine{00050\ \};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ PROFILE\_H}}
+
+\end{DoxyCode}

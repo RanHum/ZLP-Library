@@ -1,0 +1,36 @@
+\hypertarget{book__container_8h_source}{}\doxysection{book\+\_\+container.\+h}
+\label{book__container_8h_source}\index{D:/projects/ZLP-\/Library/src/client/book\_container.h@{D:/projects/ZLP-\/Library/src/client/book\_container.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ BOOKCONTAINER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ BOOKCONTAINER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QWidget>}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\#include\ <QLabel>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{namespace\ }Ui}
+\DoxyCodeLine{00008\ \{}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_book_container}{BookContainer}};}
+\DoxyCodeLine{00010\ \};}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_book_container}{BookContainer}}\ :\ \textcolor{keyword}{public}\ QWidget}
+\DoxyCodeLine{00017\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_book_container}{BookContainer}}(QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{class_book_container}{\string~BookContainer}}();}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_book_container_ad802d8818d05e2d3fe443f5a7e69548b}{setTitle}}(\textcolor{keyword}{const}\ QString\ \&title);}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_book_container_a81da6ea7c5a53e6ec6a73d37a7093044}{setAuthor}}(\textcolor{keyword}{const}\ QString\ \&author);}
+\DoxyCodeLine{00041\ \ \ \ \ QString\ getTitle();}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00044\ \ \ \ \ Ui::BookContainer\ *ui;}
+\DoxyCodeLine{00045\ \textcolor{comment}{//\ \ \ \ QLabel\ *titleLabel;\ \ /*!<\ The\ label\ to\ display\ the\ book's\ title.\ */}}
+\DoxyCodeLine{00046\ \textcolor{comment}{//\ \ \ \ QLabel\ *authorLabel;\ /*!<\ The\ label\ to\ display\ the\ book's\ author(s).\ */}}
+\DoxyCodeLine{00047\ \};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ BOOKCONTAINER\_H}}
+
+\end{DoxyCode}

@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>Главный экран</string>
   </property>
-  <widget class="QPushButton" name="search_desk_button">
+  <widget class="QPushButton" name="create_book_button">
    <property name="geometry">
     <rect>
      <x>815</x>
@@ -38,7 +38,7 @@ color: white;
 font-family: 'Roboto Slab', serif;</string>
    </property>
    <property name="text">
-    <string>Поиск досок</string>
+    <string>Создать книгу</string>
    </property>
   </widget>
   <widget class="QPushButton" name="add_desk_button">
@@ -102,7 +102,7 @@ font-family: 'Roboto Slab', serif;</string>
      <x>1390</x>
      <y>80</y>
      <width>124</width>
-     <height>151</height>
+     <height>152</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -213,13 +213,13 @@ font-family: 'Roboto Slab', serif;</string>
     <rect>
      <x>10</x>
      <y>290</y>
-     <width>160</width>
+     <width>183</width>
      <height>161</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <widget class="QPushButton" name="add_book_button">
+     <widget class="QPushButton" name="admin_desk_button">
       <property name="enabled">
        <bool>true</bool>
       </property>
@@ -239,7 +239,7 @@ color: white;
 font-family: 'Roboto Slab', serif;</string>
       </property>
       <property name="text">
-       <string>Добавить книгу</string>
+       <string>Управление доской</string>
       </property>
      </widget>
     </item>
@@ -289,7 +289,7 @@ font-family: 'Roboto Slab', serif;</string>
     </item>
    </layout>
   </widget>
-  <zorder>search_desk_button</zorder>
+  <zorder>create_book_button</zorder>
   <zorder>add_desk_button</zorder>
   <zorder>verticalLayoutWidget</zorder>
   <zorder>avatar_button</zorder>
