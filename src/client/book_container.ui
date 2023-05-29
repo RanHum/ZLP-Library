@@ -96,7 +96,7 @@ padding: 20px; </string>
        <set>Qt::AlignCenter</set>
       </property>
       <property name="wordWrap">
-       <bool>false</bool>
+       <bool>true</bool>
       </property>
       <property name="margin">
        <number>0</number>

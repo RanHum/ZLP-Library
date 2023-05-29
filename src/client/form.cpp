@@ -17,33 +17,35 @@ Form::~Form()
 
 void Form::on_registerButton_clicked()
 {
-    QString mail = ui->mail->text();
     QString login = ui->login->text();
     QString password = ui->password->text();
     QString password2 = ui->password2->text();
-    if (password == password2)
-    {
-        auto req = makeReqJson("user", "register");
-        req.insert("name", login);
-        req.insert("password", password);
-        const auto resp = RequestClass().sendRequest(req);
-        qDebug() << req;
-        if (check_status(resp))
+    if (login.trimmed().isEmpty() || password.trimmed().isEmpty() || password2.trimmed().isEmpty())
+        QMessageBox::critical(this, "Ошибка!", "Не все поля заполнены!");
+    else {
+        if (password == password2)
         {
-            this->close();
-            QMessageBox::about(this, "Успех", "Вы зарегистрировались!");
-            MainWindow* window = new MainWindow;
-            window->show();
+            auto req = makeReqJson("user", "register");
+            req.insert("name", login);
+            req.insert("password", password);
+            const auto resp = RequestClass().sendRequest(req);
+            if (check_status(resp))
+            {
+                this->close();
+                QMessageBox::about(this, "Успех", "Вы зарегистрировались!");
+                MainWindow* window = new MainWindow;
+                window->show();
+            }
+            else
+            {
+                qDebug() << resp["text"].toString();
+                QMessageBox::critical(this, "Ошибка!", "Вы не зарегистрировались!");
+            }
         }
         else
         {
-            qDebug() << resp["text"].toString();
-            QMessageBox::critical(this, "Ошибка!", "Вы не зарегистрировались!");
+            QMessageBox::critical(this, "Ошибка!", "Пароли не совпадают!");
         }
-    }
-    else
-    {
-        QMessageBox::critical(this, "Ошибка!", "Пароли не совпадают!");
     }
 }
 

@@ -47,7 +47,7 @@ font-family: 'Roboto Slab', serif;</string>
      <x>340</x>
      <y>130</y>
      <width>276</width>
-     <height>241</height>
+     <height>121</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -93,7 +93,7 @@ font-family: 'Roboto Slab', serif;</string>
    <property name="geometry">
     <rect>
      <x>340</x>
-     <y>410</y>
+     <y>320</y>
      <width>271</width>
      <height>251</height>
     </rect>
@@ -103,7 +103,7 @@ font-family: 'Roboto Slab', serif;</string>
    <property name="geometry">
     <rect>
      <x>340</x>
-     <y>390</y>
+     <y>300</y>
      <width>121</width>
      <height>16</height>
     </rect>

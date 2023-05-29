@@ -70,32 +70,16 @@
      </widget>
     </item>
     <item>
-     <widget class="QLineEdit" name="format_input">
-      <property name="text">
-       <string/>
-      </property>
+     <widget class="QComboBox" name="author_select">
       <property name="placeholderText">
-       <string>Формат книги</string>
+       <string>Автор книги</string>
       </property>
      </widget>
     </item>
     <item>
-     <widget class="QLineEdit" name="author_input">
-      <property name="text">
-       <string/>
-      </property>
+     <widget class="QComboBox" name="genre_select">
       <property name="placeholderText">
-       <string>Авторы книги</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLineEdit" name="genre_input">
-      <property name="text">
-       <string/>
-      </property>
-      <property name="placeholderText">
-       <string>Жанры книги</string>
+       <string>Жанр книги</string>
       </property>
      </widget>
     </item>

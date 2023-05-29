@@ -19,7 +19,12 @@ Doska::~Doska()
 void Doska::on_pushButton_clicked()
 {
     QString text = ui->lineEdit_2->text();
-    emit signal(text);
-    ui->lineEdit_2->clear();
-    this->close();
+    if (text.trimmed().isEmpty()) {
+        QMessageBox::critical(this, "Ошибка!", "Введите название доски!");
+    }
+    else {
+        emit signal(text);
+        ui->lineEdit_2->clear();
+        this->close();
+    }
 }

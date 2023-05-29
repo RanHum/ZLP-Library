@@ -14,6 +14,7 @@
 #include <QRegularExpressionMatch>
 #include <ctime>
 #include <cstdlib>
+#include <algorithm>
 
 #include "doska.h"
 #include "full.h"
@@ -27,6 +28,10 @@
 #include "desk.h"
 #include "book.h"
 #include "deskadminpanel.h"
+#include "createauthordialog.h"
+#include "creategenredialog.h"
+#include "author.h"
+#include "genre.h"
 
 namespace Ui
 {
@@ -61,19 +66,22 @@ private:
     void get_books();
     std::map<int, User> get_desk_users(int desk_id);
     User get_user(int user_id);
+    Author get_book_author(int book_id);
+    Genre get_book_genre(int book_id);
+    std::vector<Book> sort_books(int desk_id, int sort_id);
 public slots:
-    void slot(const QString &text);
+    //    void slot(const QString &text);
 
 private slots:
 
-    void on_label_linkActivated(const QString &link);
+    //    void on_label_linkActivated(const QString &link);
 
     /*!
      * \brief Slot called when a widget is added to the list of desks.
      *
      * \param text The text to be displayed in the added widget.
      */
-    void onAddWidget(const QString &text);
+    void create_new_desk(const QString &text);
 
     /*!
      * \brief Slot called when the remove button is clicked on a desk item widget.
@@ -94,7 +102,7 @@ private slots:
      *
      * \param desk_id The ID of the desk for which to generate book containers.
      */
-    void generate_book_containers(const std::map<int, Book> &books);
+    void generate_book_containers(const std::vector<Book> &books);
 
     /*!
      * \brief Function to clear the book containers area.
@@ -128,9 +136,8 @@ private slots:
                         const QString creation_date,
                         const QString description,
                         const QString page_count,
-                        const QString format,
-                        const QString authors,
-                        const QString genres);
+                        int author,
+                        int genre);
 
     /*!
      * \brief Slot called when the profile button is clicked.
@@ -160,10 +167,17 @@ private slots:
 
     void kick_user_from_desk(User user);
     void joinInDesk(int desk_id);
+    void on_create_author_button_clicked();
+
+    void on_create_genre_button_clicked();
+    void edit_desk(Desk* desk, QString new_name);
+    void onSortSelectChanged(int sort_id);
+
 signals:
     void addedBook(const Book &book);
     void deletedBook(const Book &book);
     void kickedUser(const User &user);
+    void editedDesk(const Desk &desk);
 
 private:
     Ui::Bigwindow *ui;      /*!< The user interface of the Bigwindow. */

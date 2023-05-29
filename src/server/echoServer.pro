@@ -19,7 +19,8 @@ SOURCES += \
         main.cpp \
         parser.cpp \
         db_server.cpp \
-        mytcpserver.cpp
+        mytcpserver.cpp \
+        tests.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -29,4 +30,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 HEADERS += \
     mytcpserver.h \
     parser.h \
-    db_server.h
+    db_server.h \
+    tests.h

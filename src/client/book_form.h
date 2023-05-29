@@ -2,6 +2,12 @@
 #define BOOK_FORM_H
 
 #include <QWidget>
+#include <QJsonArray>
+#include <QMessageBox>
+#include "author.h"
+#include "genre.h"
+#include "api_utils.h"
+#include "requests.h"
 
 namespace Ui
 {
@@ -24,6 +30,11 @@ public:
     explicit book_form(QWidget *parent = nullptr);
     ~book_form();
 
+    void get_authors();
+    void get_genres();
+    void set_author_select_values();
+    void set_genre_select_values();
+
 private slots:
     /*!
      * \brief Handles the click event of the add button.
@@ -32,7 +43,8 @@ private slots:
 
 private:
     Ui::book_form *ui;
-
+    std::vector<Author> authors;
+    std::vector<Genre> genres;
 signals:
     /*!
      * \brief Signal emitted when a book is added.
@@ -50,9 +62,8 @@ signals:
         const QString creation_date,
         const QString description,
         const QString page_count,
-        const QString format,
-        const QString authors,
-        const QString genres);
+        int author,
+        int genre);
 };
 
 #endif // BOOK_FORM_H

@@ -3,6 +3,8 @@
 #define BOOK_H
 #include <QString>
 #include <QDate>
+#include <author.h>
+#include <genre.h>
 
 struct Book {
     int id;
@@ -13,6 +15,8 @@ struct Book {
     int format;
     int locator;
     int owner;
+    Author author;
+    Genre genre;
     QDate creation_date;
 };
 

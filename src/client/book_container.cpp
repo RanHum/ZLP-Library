@@ -20,6 +20,12 @@ void BookContainer::set_detail_label() {
     if (!this->book->name.isEmpty()) {
         ui->detail_label->setText("Название: " + this->book->name + '\n');
     }
+    if (!this->book->author.name.isEmpty()) {
+        ui->detail_label->setText(ui->detail_label->text() + "Автор: " + this->book->author.name + '\n');
+    }
+    if (!this->book->genre.name.isEmpty()) {
+        ui->detail_label->setText(ui->detail_label->text() + "Жанр: " + this->book->genre.name + '\n');
+    }
     if (!this->book->creation_date.isNull()) {
         ui->detail_label->setText(ui->detail_label->text() + "Год написания: " + QString::number(this->book->creation_date.year()) + '\n');
     }

@@ -99,6 +99,22 @@
 					"multiple_rows": true
 				}
 			},
+			"get_author": {
+				"required": ["book_id"],
+				"actions": {
+					"sql": "select * from authors_to_books join authors on authors_to_books.author_id = authors.author_id where authors_to_books.book_id = :book_id",
+					// "multiple_rows": true,
+					"error": "No such author!"
+				}
+			},
+			"get_genre": {
+				"required": ["book_id"],
+				"actions": {
+					"sql": "select * from genres_to_books join genres on genres_to_books.genre_id = genres.genre_id where genres_to_books.book_id = :book_id",
+					// "multiple_rows": true,
+					"error": "No such genre!"
+				}
+			},
 			"add": {
 				"required": ["name"],
 				"optional": [
@@ -109,8 +125,8 @@
 					"format",
 					"locator",
 					"owner",
-					"genre_ids",
-					"authors_ids"
+					"genre_id",
+					"author_id"
 				],
 				"actions": [
 					{
@@ -121,7 +137,21 @@
 					},
 					{
 						"type": "action",
-						"sql": "insert into books (name, creation_date, description, page_count) values (:name, :creation_date, :description, :page_count)"
+						"sql": {
+							"template": "insert into books (name, creation_date, description, page_count) values (:name, :creation_date, :description, :page_count)"
+						}
+					},
+					{
+						"type": "action",
+						"sql": {
+							"template": "insert into authors_to_books (author_id, book_id) values (:author_id, :_book_id)"
+						}
+					},
+					{
+						"type": "action",
+						"sql": {
+							"template": "insert into genres_to_books (genre_id, book_id) values (:genre_id, :_book_id)"
+						}
 					},
 					"select * from books where name = :name"
 				]
@@ -177,8 +207,8 @@
 			},
 			"get_all": {
 				"actions": {
-					"multiple_rows": true,
 					"sql": "select * from authors",
+					"multiple_rows": true,
 					"error": "No such author!"
 				}
 			},
@@ -220,6 +250,13 @@
 				"actions": {
 					"sql": "select * from genres where genre_id = :genre_id",
 					"error": "No such genre!"
+				}
+			},
+			"get_all": {
+				"actions": {
+					"sql": "select * from genres",
+					"multiple_rows": true,
+					"error": "No such genres!"
 				}
 			},
 			"add": {
@@ -325,18 +362,19 @@
 					"multiple_rows": true
 				}
 			},
-			"get_invites": {
-				"actions": {
-					"sql": "select * from invites where desk_id = :desk_id",
-					"multiple_rows": true,
-					"error": "No such invites!"
-				}
-			},
 			"get_users": {
 				"required": ["desk_id"],
 				"actions": {
 					"sql": "select * from users_to_desks where desk_id = :desk_id",
 					"error": "No such users",
+					"multiple_rows": true
+				}
+			},
+			"get_invites": {
+				"required": ["desk_id"],
+				"actions": {
+					"sql": "select * from invites where invites.desk_id = :desk_id",
+					"error": "No such invites!",
 					"multiple_rows": true
 				}
 			},
@@ -444,6 +482,19 @@
 					}
 				]
 			},
+			"desk_user_edit": {
+				"required": ["desk_id", "sort"],
+				"actions": [
+					{
+						"type": "test",
+						"sql": "select * from users_to_desks where desk_id = :desk_id and user_id = :_as_user_id",
+						"error": "You are not a member of the desk!"
+					},
+					{
+						"sql": "update users_to_desks set sort = :sort where desk_id = :desk_id and user_id = :_as_user_id"
+					}
+				]
+			},
 			"delete": {
 				"required": ["desk_id"],
 				"actions": [
@@ -528,6 +579,12 @@
 						"error": "Active invite is already sent!"
 					},
 					{
+						"type": "test",
+						"sql": "select * from users_to_desks where users_to_desks.desk_id = :desk_id and users_to_desks.user_id = :user_id",
+						"error_when_not_empty": true,
+						"error": "This user is already member of this desk!"
+					},
+					{
 						"sql": {"template": "insert into invites (desk_id, user_id, status) values (:desk_id, :user_id, 1)"}
 					}
 				]
@@ -542,11 +599,11 @@
 					},
 					{
 						"type": "test",
-						"sql": "select * from invites where desk_id = :desk_id and user_id = :_as_user_id and status = 1",
+						"sql": "select * from invites where desk_id = :desk_id and user_id = :user_id and status = 1",
 						"error": "No such active invite!"
 					},
 					{
-						"sql": {"template": "update invites set status = 2 where desk_id = :desk_id and user_id = :_as_user_id"}
+						"sql": {"template": "update invites set status = 2 where desk_id = :desk_id and user_id = :user_id"}
 					}
 				]
 			},
@@ -577,6 +634,24 @@
 					},
 					{
 						"sql": {"template": "insert into users_to_desks (desk_id, user_id) values (:desk_id, :_as_user_id)"}
+					}
+				]
+			},
+			"delete": {
+				"required": ["desk_id", "user_id"],
+				"actions": [
+					{
+						"type": "test",
+						"sql": "select * from desks where desk_id = :desk_id and owner = :_as_user_id",
+						"error": "You are not the owner of that board!"
+					},
+					{
+						"type": "test",
+						"sql": "select * from invites where desk_id = :desk_id and user_id = :user_id",
+						"error": "No such active invite!"
+					},
+					{
+						"sql": "delete from invites where desk_id = :desk_id and user_id = :user_id"
 					}
 				]
 			}

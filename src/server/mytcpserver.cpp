@@ -1,4 +1,5 @@
 #include "mytcpserver.h"
+#include "tests.h"
 #include "parser.h"
 #include <QCoreApplication>
 
@@ -27,6 +28,7 @@ MyTcpServer::MyTcpServer(QObject *parent) : QObject(parent)
     {
         server_status = 1;
         qDebug() << "Server started";
+        Tests tests;
     }
 }
 

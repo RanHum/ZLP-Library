@@ -16,9 +16,9 @@
   <widget class="QPushButton" name="create_book_button">
    <property name="geometry">
     <rect>
-     <x>815</x>
+     <x>550</x>
      <y>30</y>
-     <width>300</width>
+     <width>240</width>
      <height>60</height>
     </rect>
    </property>
@@ -44,9 +44,9 @@ font-family: 'Roboto Slab', serif;</string>
   <widget class="QPushButton" name="add_desk_button">
    <property name="geometry">
     <rect>
-     <x>385</x>
+     <x>280</x>
      <y>30</y>
-     <width>300</width>
+     <width>240</width>
      <height>60</height>
     </rect>
    </property>
@@ -178,7 +178,7 @@ font-family: 'Roboto Slab', serif;</string>
    <property name="geometry">
     <rect>
      <x>280</x>
-     <y>120</y>
+     <y>200</y>
      <width>1071</width>
      <height>621</height>
     </rect>
@@ -289,12 +289,95 @@ font-family: 'Roboto Slab', serif;</string>
     </item>
    </layout>
   </widget>
+  <widget class="QPushButton" name="create_author_button">
+   <property name="geometry">
+    <rect>
+     <x>820</x>
+     <y>30</y>
+     <width>240</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">float: right;
+margin-right: 3%;
+margin-top: 5px;
+border-radius: 5px;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+padding: 5px 9px;
+font-size: 1.2em;
+background-color: rgba(236, 101, 80, 1);
+text-shadow: #454545 0 0 2px;
+border-bottom: 4px solid rgba(217, 91, 72, 1);
+color: white;
+font-family: 'Roboto Slab', serif;</string>
+   </property>
+   <property name="text">
+    <string>Создать автора</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="create_genre_button">
+   <property name="geometry">
+    <rect>
+     <x>1090</x>
+     <y>30</y>
+     <width>240</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">float: right;
+margin-right: 3%;
+margin-top: 5px;
+border-radius: 5px;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+padding: 5px 9px;
+font-size: 1.2em;
+background-color: rgba(236, 101, 80, 1);
+text-shadow: #454545 0 0 2px;
+border-bottom: 4px solid rgba(217, 91, 72, 1);
+color: white;
+font-family: 'Roboto Slab', serif;</string>
+   </property>
+   <property name="text">
+    <string>Создать жанр</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="sort_select">
+   <property name="geometry">
+    <rect>
+     <x>1130</x>
+     <y>170</y>
+     <width>220</width>
+     <height>24</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="sort_label">
+   <property name="geometry">
+    <rect>
+     <x>1050</x>
+     <y>174</y>
+     <width>81</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Сортировка:</string>
+   </property>
+  </widget>
   <zorder>create_book_button</zorder>
   <zorder>add_desk_button</zorder>
   <zorder>verticalLayoutWidget</zorder>
   <zorder>avatar_button</zorder>
   <zorder>bookScrollArea</zorder>
   <zorder>verticalLayoutWidget_2</zorder>
+  <zorder>create_author_button</zorder>
+  <zorder>create_genre_button</zorder>
+  <zorder>sort_select</zorder>
+  <zorder>sort_label</zorder>
  </widget>
  <resources/>
  <connections/>

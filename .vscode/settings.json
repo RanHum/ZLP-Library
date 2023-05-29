@@ -21,7 +21,8 @@
 		"xstring": "cpp",
 		"string": "cpp",
 		"xutility": "cpp",
-		"xmemory": "cpp"
+		"xmemory": "cpp",
+		"vector": "cpp"
 	},
 	"cmake.configureOnOpen": true
 

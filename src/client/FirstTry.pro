@@ -10,6 +10,8 @@ SOURCES += \
     bigwindow.cpp \
     book_container.cpp \
     book_form.cpp \
+    createauthordialog.cpp \
+    creategenredialog.cpp \
     deskadminpanel.cpp \
     doska.cpp \
     form.cpp \
@@ -21,15 +23,19 @@ SOURCES += \
     api_utils.cpp
 
 HEADERS += \
+    author.h \
     bigwindow.h \
     book.h \
     book_container.h \
     book_form.h \
+    createauthordialog.h \
+    creategenredialog.h \
     desk.h \
     deskadminpanel.h \
     doska.h \
     form.h \
     full.h \
+    genre.h \
     mainwindow.h \
     profile.h \
     requests.h \
@@ -40,6 +46,8 @@ FORMS += \
     bigwindow.ui \
     book_container.ui \
     book_form.ui \
+    createauthordialog.ui \
+    creategenredialog.ui \
     desk.ui \
     deskadminpanel.ui \
     doska.ui \
