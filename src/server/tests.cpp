@@ -13,11 +13,6 @@ Tests::Tests()
         qDebug() << QString::fromStdString(test);
     }
 }
-//QJsonObject{
-//            {"_as_user_id", UserCredentials::instance().userId()},
-//            {"_with_password", UserCredentials::instance().password()},
-//            {"_domain", domain},
-//            {"_intent", intent}};
 
 std::vector<std::string> Tests::test_registration() {
     std::vector<QJsonObject> test_data = {
@@ -106,7 +101,6 @@ std::vector<std::string> Tests::test_create_book() {
         const auto resp = execute_request(test);
         if (test["test_result"] != resp["status"]) {
             this->test_results.push_back("Test create_book #" + std::to_string(test_number++) + " Fail " + resp["text"].toString().toStdString());
-            qDebug() << resp;
         } else {
             this->test_results.push_back("Test create_book #" + std::to_string(test_number++) + " Pass");
         }
